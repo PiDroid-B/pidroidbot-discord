@@ -51,18 +51,17 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
-      - name: Update i18n badge
+      - name: Update Readme
         run: |
-          cat > docs/BADGE_I18NCOVERAGE.rst <<- EOF
-          .. image:: https://img.shields.io/badge/i18n Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green
-              :alt: i18n Coverage ${{ steps.i18nCoverage.outputs.coverage }}%
+          # i18n Coverage
+          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green)" > docs/README_BADGE_I18NCOVERAGE.md
 
-          EOF
+          # concat into one file
+          echo > README.md
+          cat docs/README_{0..20}_*.md >> README.md
+
+          # add all modify files
           git add .
-#          badge="s#.. image:: https://img.shields.io/badge/i18n Coverage-.*\$#.. image:: https://img.shields.io/badge/i18n Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green#"
-#          alt="s#:alt: i18n Coverage .*\$#:alt: i18n Coverage ${{ steps.i18nCoverage.outputs.coverage }}%#"
-#          sed -ri "$badge" README.rst
-#          sed -ri "$alt" README.rst
 
       - name: Bump Major Version
         env:
