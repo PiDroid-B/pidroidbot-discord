@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-19 15:46+0100\n"
+"POT-Creation-Date: 2021-03-21 22:35+0000\n"
 "PO-Revision-Date: 2021-03-19 15:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -18,11 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: pidroidbot_discord/launcher.py:37
+#: pidroidbot_discord/launcher.py:33
+msgid "Logged as [{bot_username}] with ID [{bot_userid}]"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:41
 msgid "Servers' list :"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:39
+#: pidroidbot_discord/launcher.py:43
 msgid "- Server {servername}"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:44
+msgid "\t- Chans"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:48
+msgid "\t- Roles"
 msgstr ""
 
