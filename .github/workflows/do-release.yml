@@ -93,7 +93,7 @@ jobs:
           git push --follow-tags
           git fetch --tags origin
           echo "AUTH"
-          gh auth login
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           echo "RELEASE"
           gh release create "$(git describe)"
 
