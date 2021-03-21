@@ -7,10 +7,10 @@ on:
       - main
 
 jobs:
-  new-release:
+  build:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
-    name: New release
+    name: Build
 
     steps:
       - name: checkout
@@ -92,6 +92,16 @@ jobs:
         run: |
           git push --follow-tags
 
+  new-release:
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
+    name: New Release
+    defaults:
+      run:
+        working-directory: "${{ github.repository }}"
+    needs:
+      - build
+    steps:
       - name: Create GitHub release
         uses: ncipollo/release-action@v1
         with:
