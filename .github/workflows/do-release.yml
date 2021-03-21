@@ -93,11 +93,17 @@ jobs:
           git push --follow-tags
 
       - name: Create GitHub release
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: ncipollo/release-action@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+#      - name: Create GitHub release
+#        uses: "marvinpinto/action-automatic-releases@latest"
+#        with:
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          tag_name: ${{ github.ref }}
+#          automatic_release_tag: "latest"
+#          prerelease: false
 
 #      - name: Generate base.pot
 #        run: pybabel extract -o locale/base.pot pidroidbot_discord/
