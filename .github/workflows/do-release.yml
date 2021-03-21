@@ -90,7 +90,8 @@ jobs:
 
       - name: Commit version change to master
         run: |
-          git push --follow-tags
+          git push
+#          git push --follow-tags
 
   new-release:
     runs-on: ubuntu-latest
