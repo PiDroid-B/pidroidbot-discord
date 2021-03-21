@@ -60,7 +60,7 @@ jobs:
           # echo > README.md
 
           ls -v docs/README_*.md | xargs cat > README.md
-          cat docs/README_{0..20}_*.md >> README.md
+          # cat docs/README_{0..20}_*.md >> README.md
 
           # add all modify files
           git add .
