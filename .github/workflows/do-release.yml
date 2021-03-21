@@ -95,7 +95,8 @@ jobs:
           echo "AUTH"
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           echo "RELEASE"
-          gh release create "$(git describe)"
+          tag="$(git describe)"
+          gh release create "$tag" -t "Release $tag"
 
 
 #          echo "AUTH"
