@@ -57,7 +57,9 @@ jobs:
           echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green)" > docs/README_BADGE_I18NCOVERAGE.md
 
           # concat into one file
-          echo > README.md
+          # echo > README.md
+
+          ls -v docs/README_*.md | xargs cat > README.md
           cat docs/README_{0..20}_*.md >> README.md
 
           # add all modify files
