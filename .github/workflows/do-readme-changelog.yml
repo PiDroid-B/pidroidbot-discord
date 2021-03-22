@@ -29,7 +29,7 @@ jobs:
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
       - name : Update Changelog
-        run: git log --graph --oneline --decorate --date-order --full-history main..HEAD > tmp_changelog.rst
+        run: git log --graph --oneline --decorate --date-order --full-history origin/HEAD..HEAD > tmp_changelog.rst
 
 # GITHUB_REF
 #      - name : Update Changelog
