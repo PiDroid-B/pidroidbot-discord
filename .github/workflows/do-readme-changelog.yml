@@ -29,10 +29,14 @@ jobs:
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
       - name : Update Changelog
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          output: tmp_changelog.rst
+        run: git log --graph --oneline --decorate --date-order --full-history main..HEAD > tmp_changelog.rst
+
+# GITHUB_REF
+#      - name : Update Changelog
+#        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          output: tmp_changelog.rst
 
       - name: Update Readme
         run: |
