@@ -3,7 +3,7 @@ Changelog
 =========
 
 * [FEATURE] new features
-* this is a new changelog CI
+* [FIX] this is a new changelog CI
 
 v0.1.34 (2021-03-21)
 ------------------------------------------------------------
