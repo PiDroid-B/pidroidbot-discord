@@ -28,6 +28,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
+      - name : Update Changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          output: tmp_changelog.rst
+
       - name: Update Readme
         run: |
           # i18n Coverage
