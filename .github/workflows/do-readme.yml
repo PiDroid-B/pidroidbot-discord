@@ -36,5 +36,5 @@ jobs:
 
           # add all modify files
           git add .
-          git commit --amend -F
+          git commit --amend --no-edit
           git push
