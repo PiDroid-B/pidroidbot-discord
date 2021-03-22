@@ -8,7 +8,7 @@ Situations tested:
 from pathlib import Path
 
 folder = Path(__file__).resolve().parents[1]
-changelog = Path(folder, 'CHANGELOG.md')
+changelog = Path(folder, 'CHANGELOG.rst')
 
 with open(changelog, 'r') as fin:
     for line in fin:
