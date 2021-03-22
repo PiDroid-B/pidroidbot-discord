@@ -8,11 +8,11 @@ Situations tested:
 from pathlib import Path
 
 folder = Path(__file__).resolve().parents[1]
-changelog = Path(folder, 'CHANGELOG.rst')
+changelog = Path(folder, 'CHANGELOG.md')
 
 with open(changelog, 'r') as fin:
     for line in fin:
-        if line.startswith('v'):
+        if line.startswith('## v'):
             raise ValueError(
                 'Please add a summary of your additions to docs/CHANGELOG.rst. '
                 'As described in: https://python-project-skeleton.readthedocs.io'
