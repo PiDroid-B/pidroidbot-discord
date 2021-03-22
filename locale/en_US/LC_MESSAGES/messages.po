@@ -32,7 +32,7 @@ msgstr ""
 
 #: pidroidbot_discord/launcher.py:44
 msgid "\t- Chans"
-msgstr ""
+msgstr "sdfqsd"
 
 #: pidroidbot_discord/launcher.py:48
 msgid "\t- Roles"
