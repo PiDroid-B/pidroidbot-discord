@@ -1,9 +1,7 @@
+# Changelog
 
-Changelog
-=========
-
-v0.1.35 (2021-03-22)
 ------------------------------------------------------------
+## v0.1.35 (2021-03-22)
 
 * [FEATURE] new features
 * [FIX] this is a new changelog CI arf
