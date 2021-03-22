@@ -1,5 +1,5 @@
-Changelog
-=========
+
+# Changelog
 
 * [FEATURE] new features
 * [FIX] this is a new changelog CI arf
