@@ -71,7 +71,7 @@ jobs:
         run: |
           bump2version minor --allow-dirty
           echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
-        if: "startsWith(github.event.head_commit.message, '[MAJOR]') && contains(github.base_ref, 'main')"
+        if: "startsWith(github.event.head_commit.message, '[MAJOR]')"
 
       - name: Bump Minor Version
         env:
@@ -79,7 +79,7 @@ jobs:
         run: |
           bump2version minor --allow-dirty
           echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
-        if: "startsWith(github.event.head_commit.message, '[FEATURE]') && contains(github.base_ref, 'main')"
+        if: "startsWith(github.event.head_commit.message, '[FEATURE]')"
 
       # Default action
       - name: Bump Patch Version
@@ -87,7 +87,7 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           bump2version patch --allow-dirty
-        if: env.SKIPBUMP == 'FALSE'  && contains(github.base_ref, 'main')
+        if: env.SKIPBUMP == 'FALSE'
 
       - name: Commit version change to master
         run: |
