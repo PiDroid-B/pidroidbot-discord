@@ -3,8 +3,8 @@ name: Build README.md
 
 on:
   push:
-    branches:
-      - '!main'
+    branches-ignore:
+      - main
 
 jobs:
   readme:
