@@ -42,8 +42,11 @@ jobs:
           # concat into one file (alphanum order)
           ls -v docs/README_*.md | xargs cat > README.md
 
+      - name: Add and commit
+        run: |
           # add all modify files
           git add README.md && \
+          git add tmp_changelog.rst && \
           git commit -m 'Updated README.md' && \
 
           echo "push=true" >> $GITHUB_ENV || echo "No changes to README.md"
