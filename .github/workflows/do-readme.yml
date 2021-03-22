@@ -38,6 +38,6 @@ jobs:
 
           # add all modify files
           git add README.md && git commit -m 'Updated README.md' && echo "push=true" >> $GITHUB_ENV || echo "No changes to README.md"
-#          git commit --amend --no-edit
           git push
 
+#          git commit --amend --no-edit
