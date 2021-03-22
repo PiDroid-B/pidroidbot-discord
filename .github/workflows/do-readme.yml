@@ -18,6 +18,7 @@ jobs:
         run: |
           git config user.name " PiDroid-B Action New release"
           git config user.email 'pidroid-b@users.noreply.github.com'
+          git checkout "${GITHUB_REF:11}"
 
       - name: Check i18n coverage
         id: i18nCoverage
