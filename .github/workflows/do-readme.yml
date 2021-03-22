@@ -3,6 +3,8 @@ name: Build README.md
 
 on:
   push:
+    branches-ignore:
+      - main
 
 jobs:
   readme:
@@ -40,7 +42,7 @@ jobs:
         run: |
           # add all modify files
           git add README.md && \
-          git commit -m 'Updated README.md' && \
+          git commit -m 'auto-update README.md' && \
           echo "push=true" >> $GITHUB_ENV || echo "No changes to README.md"
 
       - name: Push changes

@@ -28,7 +28,7 @@ msgstr "aasssa"
 
 #: pidroidbot_discord/launcher.py:43
 msgid "- Server {servername}"
-msgstr ""
+msgstr "sdfsd"
 
 #: pidroidbot_discord/launcher.py:44
 msgid "\t- Chans"
@@ -36,5 +36,5 @@ msgstr "sdfqsd"
 
 #: pidroidbot_discord/launcher.py:48
 msgid "\t- Roles"
-msgstr ""
+msgstr "dfdsfsd"
 

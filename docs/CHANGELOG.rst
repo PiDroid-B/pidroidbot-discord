@@ -2,7 +2,8 @@
 Changelog
 =========
 
-* this is a new changelog CI
+* [FEATURE] new features
+* [FIX] this is a new changelog CI arf
 
 v0.1.34 (2021-03-21)
 ------------------------------------------------------------
