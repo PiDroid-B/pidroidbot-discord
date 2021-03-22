@@ -42,5 +42,4 @@ jobs:
           git add .
           git commit --amend --no-edit
           git push
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+
