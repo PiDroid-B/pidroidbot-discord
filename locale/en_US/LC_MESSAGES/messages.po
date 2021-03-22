@@ -24,17 +24,17 @@ msgstr ""
 
 #: pidroidbot_discord/launcher.py:41
 msgid "Servers' list :"
-msgstr "aasssa"
+msgstr ""
 
 #: pidroidbot_discord/launcher.py:43
 msgid "- Server {servername}"
-msgstr "sdfsd"
+msgstr ""
 
 #: pidroidbot_discord/launcher.py:44
 msgid "\t- Chans"
-msgstr "sdfqsd"
+msgstr ""
 
 #: pidroidbot_discord/launcher.py:48
 msgid "\t- Roles"
-msgstr "dfdsfsd"
+msgstr ""
 
