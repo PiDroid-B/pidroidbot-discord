@@ -90,7 +90,6 @@ jobs:
         if: env.SKIPBUMP == 'FALSE'  && contains(github.base_ref, 'main')
 
       - name: Commit version change to master
-        if: contains(github.base_ref, 'main')
         run: |
           git push --follow-tags
           git fetch --tags origin
@@ -99,7 +98,3 @@ jobs:
           echo "RELEASE"
           tag="$(git describe)"
           gh release create "$tag" -t "Release $tag" -F "docs/CHANGELOG.rst"
-
-      - name: Commit version change to dev
-        if: contains(github.base_ref, 'dev')
-        run: git push
