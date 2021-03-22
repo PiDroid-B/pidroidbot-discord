@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-21 22:54+0000\n"
+"POT-Creation-Date: 2021-03-22 10:26+0100\n"
 "PO-Revision-Date: 2021-03-19 15:50+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: pidroidbot_discord/launcher.py:44
 msgid "\t- Chans"
-msgstr ""
+msgstr "sdfqsd"
 
 #: pidroidbot_discord/launcher.py:48
 msgid "\t- Roles"
