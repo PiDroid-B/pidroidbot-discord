@@ -28,8 +28,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
-      - name : Update Changelog
-        run: git log --graph --oneline --decorate --date-order --full-history origin/HEAD..HEAD > tmp_changelog.rst
+      - uses: etcdigital/pull-request-changelog@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+#      - name : Update Changelog
+#        run: git log --graph --oneline --decorate --date-order --full-history origin/HEAD..HEAD > tmp_changelog.rst
 
 # GITHUB_REF
 #      - name : Update Changelog
@@ -52,7 +56,6 @@ jobs:
           git add README.md && \
           git add tmp_changelog.rst && \
           git commit -m 'Updated README.md' && \
-
           echo "push=true" >> $GITHUB_ENV || echo "No changes to README.md"
 
       - name: Push changes
