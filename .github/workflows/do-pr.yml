@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+  Changelog:
     runs-on: ubuntu-latest
 
     steps:
