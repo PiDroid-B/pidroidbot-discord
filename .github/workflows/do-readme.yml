@@ -30,6 +30,8 @@ jobs:
 
       - name: Update Readme
         run: |
+          git pull
+
           # i18n Coverage
           echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
 
@@ -40,3 +42,5 @@ jobs:
           git add .
           git commit --amend --no-edit
           git push
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
