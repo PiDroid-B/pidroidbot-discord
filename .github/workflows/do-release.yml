@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
   build:
@@ -74,7 +75,7 @@ jobs:
         run: |
           bump2version minor --allow-dirty
           echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
-        if: "startsWith(github.event.head_commit.message, '[MAJOR]')"
+        if: "startsWith(github.event.head_commit.message, '[MAJOR]') && contains(github.base_ref, 'main')"
 
       - name: Bump Minor Version
         env:
@@ -82,7 +83,7 @@ jobs:
         run: |
           bump2version minor --allow-dirty
           echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
-        if: "startsWith(github.event.head_commit.message, '[FEATURE]')"
+        if: "startsWith(github.event.head_commit.message, '[FEATURE]') && contains(github.base_ref, 'main')"
 
       # Default action
       - name: Bump Patch Version
@@ -90,9 +91,10 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           bump2version patch --allow-dirty
-        if: env.SKIPBUMP == 'FALSE'
+        if: env.SKIPBUMP == 'FALSE'  && contains(github.base_ref, 'main')
 
       - name: Commit version change to master
+        if: contains(github.base_ref, 'main')
         run: |
           git push --follow-tags
           git fetch --tags origin
@@ -101,3 +103,7 @@ jobs:
           echo "RELEASE"
           tag="$(git describe)"
           gh release create "$tag" -t "Release $tag" -F "docs/CHANGELOG.rst"
+
+      - name: Commit version change to dev
+        if: contains(github.base_ref, 'dev')
+        run: git push
