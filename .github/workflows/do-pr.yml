@@ -41,17 +41,30 @@ jobs:
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
 
-  PRLabel:
-    name: Verify Pull Request Labels
+  PRLink:
+    name: Generate PR Link for changelog
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Print GitHub context
-        run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-
       - name: Generate link
-        run: echo '::set-output name=PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            [${{PR_URL}}](${{github.context.payload.pull_request.title}})
+
+            [#${{ github.event.number }}]
+          allow-repeats: true
+        env:
+          PR_URL: ${{github.event.pull_request.html}}
+          PR_TITLE: "https://api.github.com/repos/PiDroid-B/pidroidbot-discord/pulls/${{ github.event.number }}
+
+#        run: echo '::set-output name=PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
+#
+#      - name: Print GitHub context
+#        run: echo "$GITHUB_CONTEXT"
+#        env:
+#          GITHUB_CONTEXT: ${{ toJson(github) }}
+#
+#
