@@ -100,7 +100,7 @@ jobs:
           sudo gem install github_changelog_generator
           github_changelog_generator
           git add .
-          git commit --amend
+          git commit --amend --no-edit
 
       - name: Commit version change to master
         run: |
