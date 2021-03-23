@@ -54,4 +54,4 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
 
       - name: Generate link
-        run: echo '::set-output PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
+        run: echo '::set-output name=PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
