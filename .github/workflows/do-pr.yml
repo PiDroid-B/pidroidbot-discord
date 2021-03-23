@@ -5,9 +5,13 @@ on:
   pull_request:
     branches:
       - main
+#  push:
+#    branches-ignore:
+#      - main
 
 jobs:
   Changelog:
+    name: Check Changelog
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +30,7 @@ jobs:
         run: python tools/check_changelog.py
 
   i18nCoverage:
+    name: Check i18n Coverage
     runs-on: ubuntu-latest
 
     steps:
