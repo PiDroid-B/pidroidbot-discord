@@ -54,14 +54,12 @@ jobs:
         uses: mshick/add-pr-comment@v1
         with:
           message: |
-            [${{PR_URL}}](${{github.context.payload.pull_request.title}})
-
             [#${{ github.event.number }}]
           allow-repeats: true
-        env:
-          PR_URL: ${{github.event.pull_request.html}}
-          PR_TITLE: "https://api.github.com/repos/PiDroid-B/pidroidbot-discord/pulls/${{ github.event.number }}"
-
+#        env:
+#          PR_URL: ${{github.event.pull_request.html}}
+#          PR_TITLE: "https://api.github.com/repos/PiDroid-B/pidroidbot-discord/pulls/${{ github.event.number }}"
+#
 #        run: echo '::set-output name=PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
 #
 #      - name: Print GitHub context
