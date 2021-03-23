@@ -2,6 +2,9 @@
 # Changelog
 
 ------------------------------------------------------------
+## [v0.2.0](https://github.com/PiDroid-B/pidroidbot-discord/releases/tag/v0.2.0) (2021-03-23)
+
+------------------------------------------------------------
 ## [v0.1.38](https://github.com/PiDroid-B/pidroidbot-discord/releases/tag/v0.1.38) (2021-03-23)
 
 * [FEATURE] #15 test PR
