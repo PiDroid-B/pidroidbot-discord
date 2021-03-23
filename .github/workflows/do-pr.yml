@@ -5,9 +5,9 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches-ignore:
-      - main
+#  push:
+#    branches-ignore:
+#      - main
 
 jobs:
   Changelog:
@@ -60,7 +60,7 @@ jobs:
           allow-repeats: true
         env:
           PR_URL: ${{github.event.pull_request.html}}
-          PR_TITLE: "https://api.github.com/repos/PiDroid-B/pidroidbot-discord/pulls/${{ github.event.number }}
+          PR_TITLE: "https://api.github.com/repos/PiDroid-B/pidroidbot-discord/pulls/${{ github.event.number }}"
 
 #        run: echo '::set-output name=PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
 #
