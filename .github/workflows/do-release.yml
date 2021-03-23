@@ -99,6 +99,8 @@ jobs:
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
           github_changelog_generator
+          git add .
+          git commit --amend
 
       - name: Commit version change to master
         run: |
