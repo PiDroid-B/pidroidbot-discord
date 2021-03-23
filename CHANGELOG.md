@@ -1,6 +1,8 @@
 
 # Changelog
 
+* [FEATURE] #15 test PR
+
 ------------------------------------------------------------
 ## [v0.1.37](https://github.com/PiDroid-B/pidroidbot-discord/releases/tag/v0.1.37) (2021-03-23)
 
