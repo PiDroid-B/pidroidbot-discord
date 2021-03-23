@@ -5,6 +5,7 @@
 * Python 
 
 ```
+apt-get install python3
 python -m pip install --upgrade pip
 #pip install setuptools wheel
 pip install Babel
