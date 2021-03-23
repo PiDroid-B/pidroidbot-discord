@@ -102,11 +102,11 @@ jobs:
           github_changelog_generator --future-release "v${new_version}"
           git add .
           git commit -m "[SKIP] version bump {new_version}"
-          git push "v${new_version}"
+          git tag "v${new_version}"
 
       - name: Commit version change to master
         run: |
-          # git push --follow-tags
+          git push --follow-tags
           git fetch --tags origin
           echo "AUTH"
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
