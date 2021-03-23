@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.0](https://github.com/PiDroid-B/pidroidbot-discord/tree/v1.0.0) (2021-03-23)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.3.9...v1.0.0)
+
+**Merged pull requests:**
+
+- \[MAJOR\] Fix major version and cleaning [\#33](https://github.com/PiDroid-B/pidroidbot-discord/pull/33) ([PiDroid-B](https://github.com/PiDroid-B))
+
 ## [v0.3.9](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.3.9) (2021-03-23)
 
 [Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.3.8...v0.3.9)
