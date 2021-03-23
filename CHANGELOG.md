@@ -1,11 +1,12 @@
 # Changelog
 
-## [v0.3.6](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.3.6) (2021-03-23)
+## [v0.3.7](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.3.7) (2021-03-23)
 
-[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.3.4...v0.3.6)
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.3.4...v0.3.7)
 
 **Merged pull requests:**
 
+- Dev [\#30](https://github.com/PiDroid-B/pidroidbot-discord/pull/30) ([PiDroid-B](https://github.com/PiDroid-B))
 - Dev [\#29](https://github.com/PiDroid-B/pidroidbot-discord/pull/29) ([PiDroid-B](https://github.com/PiDroid-B))
 - Devversion [\#28](https://github.com/PiDroid-B/pidroidbot-discord/pull/28) ([PiDroid-B](https://github.com/PiDroid-B))
 - Dev [\#27](https://github.com/PiDroid-B/pidroidbot-discord/pull/27) ([PiDroid-B](https://github.com/PiDroid-B))
