@@ -54,10 +54,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
-#      - name: changelog
-#        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Readme
         run: |
@@ -93,12 +93,6 @@ jobs:
         run: |
           bump2version patch --allow-dirty
         if: env.SKIPBUMP == 'FALSE'
-
-      - name: Generate changelog
-        run: |
-          apt-get install ruby-full
-          gem install github_changelog_generator
-          github_changelog_generator -u PiDroid-B -p pidroidbot-discord
 
       - name: Commit version change to master
         run: |
