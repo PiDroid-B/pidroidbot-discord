@@ -96,8 +96,8 @@ jobs:
 
       - name: Generate changelog
         run: |
-          apt-get install ruby-full
-          gem install github_changelog_generator
+          sudo apt-get install ruby-full
+          sudo gem install github_changelog_generator
           github_changelog_generator -u PiDroid-B -p pidroidbot-discord
 
       - name: Commit version change to master
