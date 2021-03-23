@@ -98,7 +98,7 @@ jobs:
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          github_changelog_generator -u PiDroid-B -p pidroidbot-discord
+          github_changelog_generator
 
       - name: Commit version change to master
         run: |
