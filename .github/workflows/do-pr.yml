@@ -42,34 +42,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
-
-  PRLink:
-    name: Generate PR Link for changelog
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: venkatsarvesh/pr-tasks-completed-action@v1.0.0
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Generate link
-        uses: mshick/add-pr-comment@v1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: |
-            [](${{github.event.pull_request.html}})
-          allow-repeats: true
-#        env:
-#          PR_URL: ${{github.event.pull_request.html}}
-#          PR_TITLE: "https://api.github.com/repos/PiDroid-B/pidroidbot-discord/pulls/${{ github.event.number }}"
-#
-#        run: echo '::set-output name=PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
-#
-#      - name: Print GitHub context
-#        run: echo "$GITHUB_CONTEXT"
-#        env:
-#          GITHUB_CONTEXT: ${{ toJson(github) }}
-#
-#
