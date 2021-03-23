@@ -50,12 +50,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: etcdigital/pull-request-changelog@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate link
         uses: mshick/add-pr-comment@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            [#${{ github.event.number }}]
+            [](${{github.event.pull_request.html}})
           allow-repeats: true
 #        env:
 #          PR_URL: ${{github.event.pull_request.html}}
