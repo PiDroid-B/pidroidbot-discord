@@ -8,6 +8,7 @@ on:
 
 jobs:
   Changelog:
+    name: Check Changelog
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +27,7 @@ jobs:
         run: python tools/check_changelog.py
 
   i18nCoverage:
+    name: Check i18n Coverage
     runs-on: ubuntu-latest
 
     steps:
@@ -37,3 +39,19 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
+
+
+  PRLabel:
+    name: Verify Pull Request Labels
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Print GitHub context
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+
+      - name: Generate link
+        run: echo '::set-output PR_Link="https://github.com/PiDroid-B/pidroidbot-discord/pull/${{ github.event.number }}"'
