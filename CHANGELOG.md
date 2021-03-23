@@ -2,6 +2,9 @@
 # Changelog
 
 ------------------------------------------------------------
+## [v0.1.37](https://github.com/PiDroid-B/pidroidbot-discord/releases/tag/v0.1.37) (2021-03-23)
+
+------------------------------------------------------------
 ## [v0.1.36](https://github.com/PiDroid-B/pidroidbot-discord/releases/tag/v0.1.36) (2021-03-23)
 
 * [FEATURE] new features

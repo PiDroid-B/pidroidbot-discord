@@ -5,6 +5,7 @@ import os
 from sys import argv
 
 from pidroidbot_discord.modules.config import get_config
+from pidroidbot_discord import __version__
 from discord.ext import commands
 
 
@@ -12,7 +13,7 @@ from discord.ext import commands
 config = get_config()
 log = logging.getLogger("launcher")
 # TODO : gérer numéro de versions
-VERSION = "1.0.0"
+VERSION = __version__
 log.info("*" * 60)
 log.info(f" START pidroidbot-discord {VERSION} ".center(60, "*"))
 log.info("*" * 60)

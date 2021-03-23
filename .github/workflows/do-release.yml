@@ -98,4 +98,3 @@ jobs:
           echo "RELEASE"
           tag="$(git describe)"
           gh release create "$tag" -t "Release $tag"
-          # -F "docs/CHANGELOG.rst"
