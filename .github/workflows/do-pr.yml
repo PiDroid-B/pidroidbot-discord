@@ -40,7 +40,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locale/**/LC_MESSAGES/*.po'
 
-
   PRLink:
     name: Generate PR Link for changelog
     runs-on: ubuntu-latest
