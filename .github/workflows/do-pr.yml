@@ -50,14 +50,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: etcdigital/pull-request-changelog@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: venkatsarvesh/pr-tasks-completed-action@v1.0.0
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-
+        if: github.event.pull_request.type in [edited, opened, synchronize, reopened]
 
       - name: Generate link
         uses: mshick/add-pr-comment@v1
