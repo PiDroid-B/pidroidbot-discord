@@ -1,5 +1,15 @@
 [bumpversion]
 current_version = 0.3.5
+commit = True
+message = 
+	[SKIP] version bump {current_version} -> {new_version}
+	
+	{$COMMIT_MSG}
+tag = True
+tag_message = 
+	version bump {current_version} -> {new_version}
+	
+	{$COMMIT_MSG}
 
 [bumpversion:file:pidroidbot_discord/__init__.py]
 search = __version__ = '{current_version}'
