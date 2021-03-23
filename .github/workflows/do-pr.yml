@@ -53,6 +53,7 @@ jobs:
       - name: Generate link
         uses: mshick/add-pr-comment@v1
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           message: |
             [#${{ github.event.number }}]
           allow-repeats: true
