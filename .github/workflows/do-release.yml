@@ -94,25 +94,22 @@ jobs:
           bump2version patch --allow-dirty
         if: env.SKIPBUMP == 'FALSE'
 
+      - name: Push Version to Env
+        run: |
+          echo "NEW_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+
       - name: Generate changelog
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          new_version=$(awk '/^current_version/{print $3}' .bumpversion.cfg)
-          github_changelog_generator --future-release "v${new_version}"
+          github_changelog_generator --future-release "${{ env.NEW_VERSION }}"
           git add .
-          git commit -m "[SKIP] version bump {new_version}"
-
-          # git tag "v${new_version}"
+          git commit -m "[SKIP] version bump ${{ env.NEW_VERSION }}"
 
       - name: Commit version change to master
         run: |
-          # git push --follow-tags
           git push
-          # git fetch --tags origin
           echo "AUTH"
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           echo "RELEASE"
-          # tag="$(git describe)"
-          tag="v$(awk '/^current_version/{print $3}' .bumpversion.cfg)"
-          gh release create "$tag" -t "Release $tag"
+          gh release create "${{ env.NEW_VERSION }}" -t "Release ${{ env.NEW_VERSION }}"
