@@ -53,7 +53,7 @@ jobs:
       - uses: venkatsarvesh/pr-tasks-completed-action@v1.0.0
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        if: github.event.pull_request.type in [edited, opened, synchronize, reopened]
+        if: ${{github.event.pull_request.type in [edited, opened, synchronize, reopened] }}
 
       - name: Generate link
         uses: mshick/add-pr-comment@v1
