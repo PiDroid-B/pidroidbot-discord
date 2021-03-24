@@ -1,0 +1,111 @@
+---
+name: Build new release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
+    name: Build
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Setup Git
+        run: |
+          git config user.name " PiDroid-B Action New release"
+          git config user.email 'pidroid-b@users.noreply.github.com'
+
+      - name: Setup env variables
+        run: |
+          echo "SKIPBUMP=FALSE" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install bump2version setuptools wheel
+          pip install Babel
+
+      - name: Push Version to Env
+        run: |
+          echo "OLD_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+
+      - name: Generate base.pot
+        run: pybabel extract -o locale/base.pot pidroidbot_discord/
+
+      - name: Upadate catalogs
+        run: pybabel update -i locale/base.pot -d locale
+
+      - name: Compile i18n catalogs
+        run: pybabel compile -d locale
+
+      - name: Check i18n coverage
+        id: i18nCoverage
+        uses: alexkiro/i18n-coverage@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          translations-path: 'locale/**/LC_MESSAGES/*.po'
+
+      - name: Update Readme
+        run: |
+          # i18n Coverage
+          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
+
+          # concat into one file (alphanum order)
+          ls -v docs/README_*.md | xargs cat > README.md
+
+          # add all modify files
+          git add .
+
+      - name: Bump Major Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          bump2version major --allow-dirty
+          echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
+        if: "startsWith(github.event.head_commit.message, '[MAJOR]')"
+
+      - name: Bump Minor Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          bump2version minor --allow-dirty
+          echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
+        if: "startsWith(github.event.head_commit.message, '[FEATURE]')"
+
+      # Default action
+      - name: Bump Patch Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          bump2version patch --allow-dirty
+        if: env.SKIPBUMP == 'FALSE'
+
+      - name: Push Version to Env
+        run: |
+          echo "NEW_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+
+      - name: Generate changelog
+        run: |
+          sudo apt-get install ruby-full
+          sudo gem install github_changelog_generator
+          github_changelog_generator --future-release "${{ env.NEW_VERSION }}" --since-tag "${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
+          github_changelog_generator --future-release "${{ env.NEW_VERSION }}"
+          git add .
+          git commit -m "[SKIP] version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
+
+      - name: Commit version change to master
+        run: |
+          git push
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          gh release create "${{ env.NEW_VERSION }}" -t "Release ${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
