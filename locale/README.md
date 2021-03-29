@@ -29,3 +29,7 @@ pip install Babel
 ### Init catalog for a new language
 
 `pybabel init -l en_US -i locale/base.pot -d locale`
+
+### Compile
+
+`pybabel compile -d locale`

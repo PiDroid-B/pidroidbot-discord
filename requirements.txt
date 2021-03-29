@@ -1,2 +1,4 @@
+
 PyYAML~=5.4.1
 python-dotenv~=0.15.0
+discord.py
