@@ -229,4 +229,6 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 settings/*
+
+# keep all folders contains .gitkeep (must be at the end of gitignore)
 !/**/.gitkeep
