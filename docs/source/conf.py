@@ -6,6 +6,9 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import os
+import sys
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -13,8 +16,25 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import os
-import sys
+# At top on conf.py (with other import statements)
+from recommonmark.transform import AutoStructify
+
+
+# At the bottom of conf.py
+def setup(app):
+    app.add_config_value(
+        "recommonmark_config",
+        {
+            #'url_resolver': lambda url: github_doc_root + url,
+            "auto_toc_tree_section": "Contents",
+            "enable_math": False,
+            "enable_inline_math": False,
+            "enable_eval_rst": True,
+        },
+        True,
+    )
+    app.add_transform(AutoStructify)
+
 
 sys.path.insert(0, os.path.abspath("../.."))
 sys.path.insert(0, os.path.abspath("../../pidroidbot_discord"))
@@ -42,13 +62,8 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "recommonmark",
+    "sphinx.ext.autosectionlabel",
 ]
-
-source_suffix = {
-    ".rst": "restructuredtext",
-    ".txt": "markdown",
-    ".md": "markdown",
-}
 
 autosummary_generate = True
 
@@ -76,3 +91,5 @@ html_static_path = ["_static"]
 
 # -- Extension configuration -------------------------------------------------
 epub_exclude_files = ["search.html"]
+
+autosectionlabel_prefix_document = True
