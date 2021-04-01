@@ -118,8 +118,8 @@ jobs:
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          github_changelog_generator --future-release "${{ env.NEW_VERSION }}" --since-tag "${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
-          github_changelog_generator --future-release "${{ env.NEW_VERSION }}" -t "${{ secrets.GITHUB_TOKEN }}"
+          github_changelog_generator --future-release "${{ env.NEW_VERSION }}"  --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
+          github_changelog_generator --future-release "${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
           git add .
           git commit -m "[SKIP] version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
         if: "env.BRANCH == 'main'"
