@@ -55,6 +55,12 @@ jobs:
       - name: Compile i18n catalogs
         run: pybabel compile -d locales
 
+      - name: Check i18n coverage Source
+        id: i18nCoverageSrc
+        uses: alexkiro/i18n-coverage@v1.0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          translations-path: 'locales/**/LC_MESSAGES/*.po'
 
       - name: Check i18n coverage Documentation
         id: i18nCoverageDoc
