@@ -107,7 +107,7 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           bump2version patch --allow-dirty
-        if: "env.SKIPBUMP == 'FALSE' &&  && env.BRANCH == 'main'"
+        if: "env.SKIPBUMP == 'FALSE' && env.BRANCH == 'main'"
 
       - name: Push Version to Env
         run: |
