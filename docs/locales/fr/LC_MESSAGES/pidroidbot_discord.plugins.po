@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord v0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-01 14:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/pidroidbot_discord.plugins.rst:2
+msgid "pidroidbot\\_discord.plugins package"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.plugins.rst:5
+msgid "Subpackages"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.plugins.rst:13
+msgid "Submodules"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.plugins.rst:16
+msgid "pidroidbot\\_discord.plugins.core module"
+msgstr ""
+
+#: of pidroidbot_discord.plugins.core.CogCore:1
+msgid "Bases: :class:`discord.ext.commands.cog.Cog`"
+msgstr ""
+
+#: of pidroidbot_discord.plugins.core.CogCore.ask:1
+msgid ""
+"Questionne l'utilisateur et vérifie la réponse :param ctx: context :param"
+" title: titre du message :param content: contenu (détail) :param "
+"question: la question a poser :param array_choice: les réponses possibles"
+" :param choice_by_val_accepted: :return: {choice_index: index, "
+"msg_to_remove: array} ou None si pas de réponse"
+msgstr ""
+
+#: of pidroidbot_discord.plugins.core.CogCore.ask_for_user:1
+msgid ""
+"Questionne l'utilisateur et vérifie qu'il s'agisse d'un joueur :param "
+"ctx: context :param title: titre du message :param contains: string must "
+"be included in the nickname (optional) :param not_me: interdit que "
+"l'utilisateur soit le demandeur :return:"
+msgstr ""
+
+#: of pidroidbot_discord.plugins.core.ECogsManagedException:1
+msgid "Bases: :class:`Exception`"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.plugins.rst:24
+msgid "Module contents"
+msgstr ""
+
