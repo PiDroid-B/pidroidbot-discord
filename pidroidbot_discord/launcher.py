@@ -1,3 +1,6 @@
+"""
+This is the launcher of the bot
+"""
 import asyncio
 import logging.config
 import os
@@ -57,6 +60,12 @@ async def on_ready():
 
 
 def main():
+    """
+    This is the main launcher
+
+    :return: None
+    :rtype: None
+    """
 
     log.info(_("Initialization"))
     config["main"]["cogs"]["list_ignore"] = ["core"]
