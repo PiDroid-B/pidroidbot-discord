@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord v0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-01 14:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/pidroidbot_discord.rst:2
+msgid "pidroidbot\\_discord package"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.rst:5
+msgid "Subpackages"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.rst:14
+msgid "Submodules"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.rst:17
+msgid "pidroidbot\\_discord.const module"
+msgstr ""
+
+#: of pidroidbot_discord.const:1
+msgid "All const about this project"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.rst:25
+msgid "pidroidbot\\_discord.default\\_conf module"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.rst:33
+msgid "pidroidbot\\_discord.launcher module"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:1
+msgid "This is the launcher of the bot"
+msgstr ""
+
+#: of pidroidbot_discord.launcher.main:1
+msgid "This is the main launcher"
+msgstr ""
+
+#: of pidroidbot_discord.launcher.main
+msgid "Returns"
+msgstr ""
+
+#: of pidroidbot_discord.launcher.main:3
+msgid "None"
+msgstr ""
+
+#: of pidroidbot_discord.launcher.main
+msgid "Return type"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.rst:41
+msgid "Module contents"
+msgstr ""
+
+#: of pidroidbot_discord:1
+msgid "Initial documentation of SampleProject."
+msgstr ""
+

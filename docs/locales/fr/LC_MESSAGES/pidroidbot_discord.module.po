@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord v0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-01 14:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/pidroidbot_discord.module.rst:2
+msgid "pidroidbot\\_discord.module package"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.module.rst:5
+msgid "Submodules"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.module.rst:8
+msgid "pidroidbot\\_discord.module.config module"
+msgstr ""
+
+#: of pidroidbot_discord.module.config.load_config:1
+msgid ""
+"load configuration from a conf_name and add it to the dict config for the"
+" same conf_name, <conf_name>.local override <conf_name>.conf "
+"<conf_name>.conf will be created if missing (exit(1)) use env variable "
+"PBD__CONFIG_DIR for spécific conf path"
+msgstr ""
+
+#: of pidroidbot_discord.module.config.load_config
+msgid "Parameters"
+msgstr ""
+
+#: of pidroidbot_discord.module.config.load_config:6
+msgid "Name of the config (part of file name without extension)"
+msgstr ""
+
+#: of pidroidbot_discord.module.config.load_config:8
+msgid "Content of the config in yaml"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.module.rst:16
+msgid "pidroidbot\\_discord.module.language module"
+msgstr ""
+
+#: of pidroidbot_discord.module.language.load_language:1
+msgid ""
+"load locales from requested language, default english :param lang: "
+"requested language, coming from locales/ (i.e. : fr_FR) :type lang: "
+"string :return: None"
+msgstr ""
+
+#: ../../source/pidroidbot_discord.module.rst:24
+msgid "Module contents"
+msgstr ""
+
