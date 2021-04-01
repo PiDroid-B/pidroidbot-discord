@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+      - dev
+      - test
 
 jobs:
   build:
@@ -25,44 +27,60 @@ jobs:
         run: |
           git config user.name " PiDroid-B Action New release"
           git config user.email 'pidroid-b@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.AC_GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout "${GITHUB_REF:11}"
 
       - name: Setup env variables
         run: |
           echo "SKIPBUMP=FALSE" >> $GITHUB_ENV
+          echo "BRANCH=${GITHUB_REF:11}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install bump2version setuptools wheel
           pip install Babel
+          pip install -r docs/requirements.txt
 
       - name: Push Version to Env
         run: |
           echo "OLD_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
 
       - name: Generate base.pot
-        run: pybabel extract -o locale/base.pot pidroidbot_discord/
+        run: pybabel extract -o locales/base.pot pidroidbot_discord/
 
       - name: Upadate catalogs
-        run: pybabel update -i locale/base.pot -d locale
+        run: pybabel update -i locales/base.pot -d locales
 
       - name: Compile i18n catalogs
-        run: pybabel compile -d locale
+        run: pybabel compile -d locales
 
-      - name: Check i18n coverage
-        id: i18nCoverage
-        uses: alexkiro/i18n-coverage@v1.0.0
+      - name: Check i18n coverage Source
+        id: i18nCoverageSrc
+        uses: alexkiro/i18n-coverage@v1.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          translations-path: 'locale/**/LC_MESSAGES/*.po'
+          translations-path: 'locales/**/LC_MESSAGES/*.po'
+
+#      - name: Check i18n coverage Documentation
+#        id: i18nCoverageDoc
+#        uses: alexkiro/i18n-coverage@v1.0.1
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          translations-path: 'docs/locales/**/LC_MESSAGES/*.po'
 
       - name: Update Readme
         run: |
           # i18n Coverage
-          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${{ steps.i18nCoverage.outputs.coverage }}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
+          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
+          # DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
+
+          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${SRC}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
+          # echo "![i18n Coverage Docs](https://img.shields.io/badge/i18n%20Coverage%20Docs-${DOC}%25-green)" > docs/README_5_BADGE_I18NCOVERAGEDOCS.md
 
           # concat into one file (alphanum order)
           ls -v docs/README_*.md | xargs cat > README.md
+          cp README.md docs/source/README.md
 
           # add all modify files
           git add .
@@ -73,7 +91,7 @@ jobs:
         run: |
           bump2version major --allow-dirty
           echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
-        if: "startsWith(github.event.head_commit.message, '[MAJOR]')"
+        if: "startsWith(github.event.head_commit.message, '[MAJOR]') && env.BRANCH == 'main'"
 
       - name: Bump Minor Version
         env:
@@ -81,7 +99,7 @@ jobs:
         run: |
           bump2version minor --allow-dirty
           echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
-        if: "startsWith(github.event.head_commit.message, '[FEATURE]')"
+        if: "startsWith(github.event.head_commit.message, '[FEATURE]') && env.BRANCH == 'main'"
 
       # Default action
       - name: Bump Patch Version
@@ -89,11 +107,12 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           bump2version patch --allow-dirty
-        if: env.SKIPBUMP == 'FALSE'
+        if: "env.SKIPBUMP == 'FALSE' && env.BRANCH == 'main'"
 
       - name: Push Version to Env
         run: |
           echo "NEW_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+        if: "env.BRANCH == 'main'"
 
       - name: Generate changelog
         run: |
@@ -103,9 +122,34 @@ jobs:
           github_changelog_generator --future-release "${{ env.NEW_VERSION }}"
           git add .
           git commit -m "[SKIP] version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
+        if: "env.BRANCH == 'main'"
 
       - name: Commit version change to master
         run: |
           git push
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           gh release create "${{ env.NEW_VERSION }}" -t "Release ${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
+        if: "env.BRANCH == 'main'"
+
+  docs:
+    runs-on: ubuntu-latest
+    container: debian:buster-slim
+    name: Documentations
+    needs: build
+
+    steps:
+
+    - name: Prereqs
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        apt-get update
+        apt-get install -y git
+        git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+      shell: bash
+
+    - name: Execute script to build our documentation and update pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: "docs/buildDocs.sh"
+      shell: bash

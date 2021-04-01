@@ -20,12 +20,16 @@ pip install Babel
 
 ### Generate base.pot  
 
-`pybabel extract -o locale/base.pot pidroidbot_discord/`
+`pybabel extract -o locales/base.pot pidroidbot_discord/`
 
 ### Update each catalogs with then new base.pot
 
-`pybabel update -i locale/base.pot -d locale`
+`pybabel update -i locales/base.pot -d locales`
 
 ### Init catalog for a new language
 
-`pybabel init -l en_US -i locale/base.pot -d locale`
+`pybabel init -l en_US -i locales/base.pot -d locales`
+
+### Compile
+
+`pybabel compile -d locales`

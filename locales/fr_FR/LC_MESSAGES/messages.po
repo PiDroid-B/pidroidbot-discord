@@ -1,4 +1,4 @@
-# English (United States) translations for PROJECT.
+# French (France) translations for PROJECT.
 # Copyright (C) 2021 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
@@ -7,34 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-23 23:35+0000\n"
-"PO-Revision-Date: 2021-03-19 15:50+0100\n"
+"POT-Creation-Date: 2021-03-26 11:26+0100\n"
+"PO-Revision-Date: 2021-03-19 15:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en_US\n"
-"Language-Team: en_US <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: fr_FR\n"
+"Language-Team: fr_FR <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: pidroidbot_discord/launcher.py:34
+#: pidroidbot_discord/launcher.py:46
 msgid "Logged as [{bot_username}] with ID [{bot_userid}]"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:42
+#: pidroidbot_discord/launcher.py:54
 msgid "Servers' list :"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:44
+#: pidroidbot_discord/launcher.py:56
 msgid "- Server {servername}"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:45
+#: pidroidbot_discord/launcher.py:57
 msgid "\t- Chans"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:49
+#: pidroidbot_discord/launcher.py:61
 msgid "\t- Roles"
 msgstr ""
+
+#: pidroidbot_discord/launcher.py:66
+msgid "I'm ready !"
+msgstr "Je suis prêt"
+
+#: pidroidbot_discord/launcher.py:71
+msgid "Initialization"
+msgstr "Initialisation"
 
