@@ -4,5 +4,6 @@
 [![GitHub build](https://github.com/PiDroid-B/pidroidbot-discord/workflows/Build%20new%20release/badge.svg?branch=main)](https://github.com/PiDroid-B/pidroidbot-discord/actions?workflow=Build%20new%20release)  ![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-20.0%25-green)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+[![Documentation Status](https://readthedocs.org/projects/pidroidbot-discord/badge/?version=gh-pages)](https://pidroidbot-discord.readthedocs.io/?badge=gh-pages)
   
 some text for body
