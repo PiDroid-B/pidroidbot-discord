@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 ################################################################################
 # File:    buildDocs.sh
 # Purpose: Script that builds our documentation using sphinx and updates GitHub
@@ -17,7 +17,7 @@ set -x
 ###################
 
 apt-get update
-apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
+#apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
 
 python3 -m pip install --upgrade rinohtype pygments
 
@@ -75,19 +75,20 @@ for current_version in ${versions}; do
       ##########
       echo "--------------------------------------------------------------------------------"
       echo "INFO: Building for ${current_language}"
+      echo "$( find . -type d )"
 
       # HTML #
       sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
 
       # PDF #
-      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
-      mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.pdf"
-
-      # EPUB #
-      sphinx-build -b epub docs/source/ docs/_build/epub -D language="${current_language}"
-      mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
+#      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
+#      mkdir -p "${docroot}/${current_language}/${current_version}"
+#      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.pdf"
+#
+#      # EPUB #
+#      sphinx-build -b epub docs/source/ docs/_build/epub -D language="${current_language}"
+#      mkdir -p "${docroot}/${current_language}/${current_version}"
+#      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
 
       # copy the static assets produced by the above build into our docroot
       rsync -av "docs/_build/html/" "${docroot}/"
