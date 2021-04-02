@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/README.md:1
 msgid "PidroidBot for Discord ##version##"
-msgstr ""
+msgstr "PidroidBot for Discord ##FR##"
 
 #: ../../source/README.md:3
 msgid ""
@@ -34,5 +34,5 @@ msgstr ""
 
 #: ../../source/README.md:9
 msgid "some text for body"
-msgstr "du texte pour quelqu'un"
+msgstr ""
 

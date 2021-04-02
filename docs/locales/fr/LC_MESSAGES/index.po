@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../../source/index.rst:2
 msgid "Welcome to pidroidbot-discord's documentation!"
-msgstr ""
+msgstr "Bienvenu"
 
 #: ../../source/index.rst:12
 msgid "Indices and tables"
