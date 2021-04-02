@@ -47,7 +47,7 @@ make -C docs clean
 # versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
 
 # PiDroid-B : define pattern to include instead of exclude some branche
-versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -iE '^(main|dev|v.*)$'`"
+versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -iE '^(main|dev|test|v.*)$'`"
 versions="$(echo "${versions}" | sort -Vr | sort -u -t. -k1,2 )"
 
 for current_version in ${versions}; do
@@ -75,7 +75,7 @@ for current_version in ${versions}; do
       ##########
       echo "----- INFO - ${current_language}/${current_version} --------------------------------------------"
 #      echo "INFO: Building for ${current_language}"
-      echo "$( find . -type d )"
+      echo "$( find docs/. -type d -mindepth 1 -maxdepth 2 )"
 
       # HTML #
       sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
