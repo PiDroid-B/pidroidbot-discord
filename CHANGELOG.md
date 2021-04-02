@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.13](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.13) (2021-04-02)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.12...v0.0.13)
+
 ## [v0.0.12](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.12) (2021-04-02)
 
 [Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.11...v0.0.12)
