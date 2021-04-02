@@ -24,7 +24,7 @@ html:
 	sphinx-apidoc -o source/ "${PYTHONPATH}" -f -d 10
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-clean:
+clean2:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	touch "$(BUILDDIR)/.gitkeep"
 

@@ -51,11 +51,11 @@ versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/
 versions="$(echo "${versions}" | sort -Vr | sort -u -t. -k1,2 )"
 
 for current_version in ${versions}; do
-
    # make the current language available to conf.py
    export current_version
    git checkout ${current_version}
 
+   echo "####################################################################"
    echo "INFO: Building sites for ${current_version}"
 
    # skip this branch if it doesn't have our docs dir & sphinx config
@@ -73,6 +73,7 @@ for current_version in ${versions}; do
       ##########
       # BUILDS #
       ##########
+      echo "--------------------------------------------------------------------------------"
       echo "INFO: Building for ${current_language}"
 
       # HTML #
@@ -94,7 +95,7 @@ for current_version in ${versions}; do
    done
 
 done
-
+echo "INFO END LOOP ##################################################################"
 # return to main branch
 git checkout main
 
@@ -121,7 +122,7 @@ cat > index.html <<EOF
 <!DOCTYPE html>
 <html>
    <head>
-      <title>helloWorld Docs</title>
+      <title>PiDroidBot for Discord Docs</title>
       <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/main/'" />
    </head>
    <body>
