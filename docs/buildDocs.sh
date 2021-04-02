@@ -78,7 +78,7 @@ for current_version in ${versions}; do
       echo "$( find docs/. -type d -mindepth 1 -maxdepth 2 )"
 
       # HTML #
-      sphinx-build -b html docs/locales/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+      sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
 
       # PDF #
 #      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
