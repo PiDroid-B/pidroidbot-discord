@@ -34,6 +34,8 @@ docroot=`mktemp -d`
 
 export REPO_NAME="${GITHUB_REPOSITORY##*/}"
 
+export PRJ_NAME="PidroidBot-Discord"
+
 ##############
 # BUILD DOCS #
 ##############
@@ -57,8 +59,8 @@ for current_version in ${versions}; do
    echo "INFO: Building sites for ${current_version}"
 
    # skip this branch if it doesn't have our docs dir & sphinx config
-   if [ ! -e 'docs/conf.py' ]; then
-      echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
+   if [ ! -e 'docs/source/conf.py' ]; then
+      echo -e "\tINFO: Couldn't find 'docs/source/conf.py' (skipped)"
       continue
    fi
 
@@ -74,17 +76,17 @@ for current_version in ${versions}; do
       echo "INFO: Building for ${current_language}"
 
       # HTML #
-      sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+      sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
 
       # PDF #
-      sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
+      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.pdf"
+      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.pdf"
 
       # EPUB #
-      sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
+      sphinx-build -b epub docs/source/ docs/_build/epub -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.epub"
+      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
 
       # copy the static assets produced by the above build into our docroot
       rsync -av "docs/_build/html/" "${docroot}/"
