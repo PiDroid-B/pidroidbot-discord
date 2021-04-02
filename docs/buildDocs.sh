@@ -55,7 +55,7 @@ for current_version in ${versions}; do
    export current_version
    git checkout ${current_version}
 
-   echo "### INFO - version ${current_version} ########################################"
+   echo "##### INFO - version ${current_version} ########################################"
 #   echo "INFO: Building sites for ${current_version}"
 
    # skip this branch if it doesn't have our docs dir & sphinx config
@@ -73,7 +73,7 @@ for current_version in ${versions}; do
       ##########
       # BUILDS #
       ##########
-      echo "--- INFO - ${current_language}/${current_version} --------------------------------------------"
+      echo "----- INFO - ${current_language}/${current_version} --------------------------------------------"
 #      echo "INFO: Building for ${current_language}"
       echo "$( find . -type d )"
 
