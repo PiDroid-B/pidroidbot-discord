@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord v0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-01 16:17+0200\n"
+"POT-Creation-Date: 2021-04-02 11:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,10 +25,20 @@ msgstr ""
 #: ../../source/README.md:3
 msgid ""
 "GitHub release (latest by date) GitHub build  i18n Coverage License: CC "
-"BY-NC-SA 4.0<br />some text for body"
+"BY-NC-SA 4.0"
 msgstr ""
 
 #: ../../source/README.md:8
-msgid "new test 2"
+msgid "some text for body"
 msgstr ""
+
+#~ msgid ""
+#~ "GitHub release (latest by date) GitHub"
+#~ " build  i18n Coverage License: CC "
+#~ "BY-NC-SA 4.0<br />some text for "
+#~ "body"
+#~ msgstr ""
+
+#~ msgid "new test 2"
+#~ msgstr ""
 

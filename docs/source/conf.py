@@ -14,6 +14,7 @@ import sys
 
 # SET CURRENT_VERSION
 from git import Repo
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -312,7 +313,8 @@ html_context["downloads"].append(
 
 html_context["display_github"] = True
 html_context["github_user"] = "PiDroid-B"
-html_context["github_repo"] = "rtd-github-pages"
+# html_context["github_repo"] = "rtd-github-pages"
+html_context["github_repo"] = "gh-pages"
 html_context["github_version"] = "main/docs/"
 
 # At the bottom of conf.py

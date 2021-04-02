@@ -1,6 +1,7 @@
-docs
-====
+pidroidbot-discord
+==================
 
 .. toctree::
-   :maxdepth: 10
+   :maxdepth: 1
 
+   pidroidbot_discord
