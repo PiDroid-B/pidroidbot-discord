@@ -90,6 +90,7 @@ pygments_style = None
 #
 # html_theme = "alabaster"
 html_theme = "sphinx_rtd_theme"
+html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -311,7 +312,6 @@ html_context["downloads"].append(
 
 html_context["display_github"] = True
 html_context["github_user"] = "PiDroid-B"
-# html_context["github_repo"] = "rtd-github-pages"
 html_context["github_repo"] = "pidroidbot-discord"
 html_context["github_version"] = "main/docs/"
 
