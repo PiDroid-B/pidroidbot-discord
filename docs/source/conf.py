@@ -314,7 +314,7 @@ html_context["downloads"].append(
 html_context["display_github"] = True
 html_context["github_user"] = "PiDroid-B"
 # html_context["github_repo"] = "rtd-github-pages"
-html_context["github_repo"] = "gh-pages"
+html_context["github_repo"] = "pidroidbot-discord"
 html_context["github_version"] = "main/docs/"
 
 # At the bottom of conf.py
