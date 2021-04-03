@@ -47,7 +47,8 @@ make -C docs clean
 # versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
 
 # PiDroid-B : define pattern to include instead of exclude some branche
-versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -iE '^(main|dev|test|v.*)$'`"
+#versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -iE '^(main|dev|test|v.*)$'`"
+versions="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(dev|test|v.*)$' )"
 versions="$(echo "${versions}" | sort -Vr | sort -u -t. -k1,2 )"
 
 for current_version in ${versions}; do
@@ -81,14 +82,14 @@ for current_version in ${versions}; do
       sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
 
       # PDF #
-#      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
-#      mkdir -p "${docroot}/${current_language}/${current_version}"
-#      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.pdf"
-#
-#      # EPUB #
-#      sphinx-build -b epub docs/source/ docs/_build/epub -D language="${current_language}"
-#      mkdir -p "${docroot}/${current_language}/${current_version}"
-#      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
+      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
+      mkdir -p "${docroot}/${current_language}/${current_version}"
+      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.pdf"
+
+      # EPUB #
+      sphinx-build -b epub docs/source/ docs/_build/epub -D language="${current_language}"
+      mkdir -p "${docroot}/${current_language}/${current_version}"
+      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
 
       # copy the static assets produced by the above build into our docroot
       rsync -av "docs/_build/html/" "${docroot}/"

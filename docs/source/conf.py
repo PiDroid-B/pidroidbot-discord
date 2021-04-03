@@ -9,7 +9,6 @@
 # -- Path setup --------------------------------------------------------------
 
 import os
-import pathlib
 import sys
 
 # SET CURRENT_VERSION
