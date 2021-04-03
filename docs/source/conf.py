@@ -248,6 +248,7 @@ if "versions" in os.environ:
     # get the current_version env var set by buildDocs.sh
     versions = os.environ["versions"]
     versions = versions.split(" ")
+    print("version >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", versions)
 else:
     versions = [branch.name for branch in repo.branches]
 
