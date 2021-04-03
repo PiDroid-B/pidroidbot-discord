@@ -51,6 +51,8 @@ make -C docs clean
 versions="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(dev|test|v.*)$' )"
 versions="$(echo "${versions}" | sort -Vr | sort -u -t. -k1,2 )"
 
+export versions
+
 for current_version in ${versions}; do
    # make the current language available to conf.py
    export current_version
