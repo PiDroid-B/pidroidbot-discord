@@ -245,11 +245,13 @@ for lang in languages:
 html_context["versions"] = list()
 
 if "versions" in os.environ:
-    # get the current_version env var set by buildDocs.sh
+    # get verions env var set by buildDocs.sh
     versions = os.environ["versions"]
-    versions = versions.split(" ")
+    versions = versions.splitlines()
+    print("----- INFO - version from buildocs", versions)
 else:
     versions = [branch.name for branch in repo.branches]
+    print("----- INFO - version from repo", versions)
 
 for version in versions:
     html_context["versions"].append(
@@ -327,4 +329,4 @@ def setup(app):
     app.add_transform(AutoStructify)
 
 
-print("----- INFO - config.py :", html_context["languages"], html_context["versions"])
+print("----- INFO - conf.py :", html_context["languages"], html_context["versions"])

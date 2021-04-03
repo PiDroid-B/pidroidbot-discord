@@ -48,10 +48,14 @@ make -C docs clean
 
 # PiDroid-B : define pattern to include instead of exclude some branche
 #versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -iE '^(main|dev|test|v.*)$'`"
-versions="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(dev|test|v.*)$' )"
-versions="$(echo "${versions}" | sort -Vr | sort -u -t. -k1,2 )"
+# version main + dev + test if exist
+versions="$( git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -iE '^(main|dev|test)$' )"
+# all maj/min version (except last)
+versions_old="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(v.*)$' | sort -Vr | sort -ur -t. -k1,2 | sed 1,1d )"
+[ ${#versions_old} -gt 0 ] && versions="$( printf "%s\n%s" "${versions_std}" "${versions_old}" )"
 
 export versions
+echo "##### INFO - All versions from Buildocs ${versions} ########################################"
 
 for current_version in ${versions}; do
    # make the current language available to conf.py
