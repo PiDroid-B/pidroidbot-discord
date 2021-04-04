@@ -126,8 +126,8 @@ jobs:
           INC=1
 
           if [[ $INC -eq 0 ]]; then
-              echo "INFO > Create new version ${l_OLD_VERSION}.dev_0"
-              bump2version build --allow-dirty --new-version "${l_OLD_VERSION}.dev_0"
+              echo "INFO > Create new version ${l_OLD_VERSION}.${l_BRANCH,,}_0"
+              bump2version build --allow-dirty --new-version "${l_OLD_VERSION}.${l_BRANCH,,}_0"
           else
               echo "INFO > version++"
               bump2version build --allow-dirty
@@ -145,12 +145,14 @@ jobs:
           sudo gem install github_changelog_generator
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "v${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Commit version
+        run: |
           git add .
           git commit -m "[SKIP] version bump v${{ env.OLD_VERSION }} -> v${{ env.NEW_VERSION }}"
           git push
-#        if: "env.BRANCH == 'main'"
 
-      - name: Commit version change to master
+      - name: Create tag and release (only on main)
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           gh release create "v${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
