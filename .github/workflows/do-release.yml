@@ -48,8 +48,8 @@ jobs:
 
       - name: "Upload coverage to Codecov"
         uses: codecov/codecov-action@v1
-        with:
-          fail_ci_if_error: true
+#        with:
+#          fail_ci_if_error: true
 
       - name: Generate base.pot
         run: pybabel extract -o locales/base.pot pidroidbot_discord/
@@ -67,21 +67,21 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locales/**/LC_MESSAGES/*.po'
 
-      - name: Update Readme
-        run: |
-          # i18n Coverage
-          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
-          # DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
-
-          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${SRC}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
-          # echo "![i18n Coverage Docs](https://img.shields.io/badge/i18n%20Coverage%20Docs-${DOC}%25-green)" > docs/README_5_BADGE_I18NCOVERAGEDOCS.md
-
-          # concat into one file (alphanum order)
-          ls -v docs/README_*.md | xargs cat > README.md
-          cp README.md docs/source/README.md
-
-          # add all modify files
-          git add .
+#      - name: Update Readme
+#        run: |
+#          # i18n Coverage
+#          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
+#          # DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
+#
+#          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${SRC}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
+#          # echo "![i18n Coverage Docs](https://img.shields.io/badge/i18n%20Coverage%20Docs-${DOC}%25-green)" > docs/README_5_BADGE_I18NCOVERAGEDOCS.md
+#
+#          # concat into one file (alphanum order)
+#          ls -v docs/README_*.md | xargs cat > README.md
+#          cp README.md docs/source/README.md
+#
+#          # add all modify files
+#          git add .
 
       - name: Bump Major Version
         env:
@@ -107,10 +107,33 @@ jobs:
           bump2version patch --allow-dirty
         if: "env.SKIPBUMP == 'FALSE' && env.BRANCH == 'main'"
 
+      # Other branch
+      - name: Bump Branch Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          INC=0
+          l_OLD_VERSION = "${{ env.OLD_VERSION }}"
+          l_BRANCH = "${{ env.BRANCH }}"
+          # check if vars are not empty
+          #   and if current version contains name of the branch
+          # then INC=1
+          [[ "${#l_OLD_VERSION}" -gt 0 ]] && \
+          [[ "${#l_BRANCH}" -gt 0 ]] && \
+          [[ ${l_OLD_VERSION^^} == *"${l_BRANCH^^}"* ]] && \
+          INC=1
+
+          if [[ $INC -gt 0 ]]; then
+              bump2version build --allow-dirty --new-version "${l_OLD_VERSION}.dev_0"
+          else
+              bump2version build --allow-dirty
+          fi
+        if: "env.BRANCH != 'main'"
+
       - name: Push Version to Env
         run: |
           echo "NEW_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
-        if: "env.BRANCH == 'main'"
+#        if: "env.BRANCH == 'main'"
 
       - name: Generate changelog
         run: |
@@ -120,11 +143,11 @@ jobs:
           github_changelog_generator --future-release "${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
           git add .
           git commit -m "[SKIP] version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
-        if: "env.BRANCH == 'main'"
+          git push
+#        if: "env.BRANCH == 'main'"
 
       - name: Commit version change to master
         run: |
-          git push
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           gh release create "${{ env.NEW_VERSION }}" -t "Release ${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
         if: "env.BRANCH == 'main'"
