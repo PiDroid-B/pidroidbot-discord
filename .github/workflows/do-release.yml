@@ -145,7 +145,8 @@ jobs:
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "v${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
+          l_LAST_TAG="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(v.*)$' | sort -Vr | head -1 )"
+          github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "${l_LAST_TAG}" -o docs/CHANGELOG.md
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Commit version
