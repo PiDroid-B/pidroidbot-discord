@@ -115,7 +115,7 @@ jobs:
           INC=0
           l_OLD_VERSION="${{ env.OLD_VERSION }}"
           l_BRANCH="${{ env.BRANCH }}"
-          echo "INFO > old_version:${#l_OLD_VERSION} branch:${l_BRANCH}"
+          echo "INFO > old_version:${l_OLD_VERSION} branch:${l_BRANCH}"
 
           # check if vars are not empty
           #   and if current version contains name of the branch
@@ -125,7 +125,7 @@ jobs:
           [[ ${l_OLD_VERSION^^} == *"${l_BRANCH^^}"* ]] && \
           INC=1
 
-          if [[ $INC -gt 0 ]]; then
+          if [[ $INC -eq 0 ]]; then
               echo "INFO > Create new version ${l_OLD_VERSION}.dev_0"
               bump2version build --allow-dirty --new-version "${l_OLD_VERSION}.dev_0"
           else
