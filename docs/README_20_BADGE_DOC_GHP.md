@@ -1,0 +1,1 @@
+[![Documentation](https://github.com/PiDroid-B/pidroidbot-discord/workflows/Build%20new%20release/badge.svg?branch=main)](https://pidroid-b.github.io/pidroidbot-discord/)
