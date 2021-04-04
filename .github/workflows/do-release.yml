@@ -115,6 +115,8 @@ jobs:
           INC=0
           l_OLD_VERSION="${{ env.OLD_VERSION }}"
           l_BRANCH="${{ env.BRANCH }}"
+          echo "INFO > old_version:${#l_OLD_VERSION} branch:${l_BRANCH}"
+
           # check if vars are not empty
           #   and if current version contains name of the branch
           # then INC=1
