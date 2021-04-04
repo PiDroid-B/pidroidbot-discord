@@ -124,8 +124,10 @@ jobs:
           INC=1
 
           if [[ $INC -gt 0 ]]; then
+              echo "INFO > Create new version ${l_OLD_VERSION}.dev_0"
               bump2version build --allow-dirty --new-version "${l_OLD_VERSION}.dev_0"
           else
+              echo "INFO > version++"
               bump2version build --allow-dirty
           fi
         if: "env.BRANCH != 'main'"
