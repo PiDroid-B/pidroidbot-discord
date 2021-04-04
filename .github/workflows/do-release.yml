@@ -44,7 +44,7 @@ jobs:
 
       - name: Push Version to Env
         run: |
-          echo "OLD_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+          echo "OLD_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
 
       - name: "Upload coverage to Codecov"
         uses: codecov/codecov-action@v1
@@ -136,24 +136,24 @@ jobs:
 
       - name: Push Version to Env
         run: |
-          echo "NEW_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+          echo "NEW_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
 #        if: "env.BRANCH == 'main'"
 
       - name: Generate changelog
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          github_changelog_generator --future-release "${{ env.NEW_VERSION }}"  --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
-          github_changelog_generator --future-release "${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
+          github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "v${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
+          github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
           git add .
-          git commit -m "[SKIP] version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
+          git commit -m "[SKIP] version bump v${{ env.OLD_VERSION }} -> v${{ env.NEW_VERSION }}"
           git push
 #        if: "env.BRANCH == 'main'"
 
       - name: Commit version change to master
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          gh release create "${{ env.NEW_VERSION }}" -t "Release ${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
+          gh release create "v${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
         if: "env.BRANCH == 'main'"
 
   docs:
