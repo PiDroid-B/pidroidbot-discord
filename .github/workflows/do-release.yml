@@ -113,8 +113,8 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           INC=0
-          l_OLD_VERSION = "${{ env.OLD_VERSION }}"
-          l_BRANCH = "${{ env.BRANCH }}"
+          l_OLD_VERSION="${{ env.OLD_VERSION }}"
+          l_BRANCH="${{ env.BRANCH }}"
           # check if vars are not empty
           #   and if current version contains name of the branch
           # then INC=1
