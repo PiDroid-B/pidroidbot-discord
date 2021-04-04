@@ -150,6 +150,7 @@ jobs:
           echo "INFO > Last tag : ${l_LAST_TAG}"
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "${l_LAST_TAG}" -o docs/CHANGELOG.md
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
+        shell: bash
 
       - name: Commit version
         run: |
