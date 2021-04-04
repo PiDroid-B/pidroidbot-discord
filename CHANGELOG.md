@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.0.24](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.24) (2021-04-03)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.23...v0.0.24)
+
+**Merged pull requests:**
+
+- Test [\#36](https://github.com/PiDroid-B/pidroidbot-discord/pull/36) ([PiDroid-B](https://github.com/PiDroid-B))
+
+## [v0.0.23](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.23) (2021-04-03)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.22...v0.0.23)
+
 ## [v0.0.22](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.22) (2021-04-03)
 
 [Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.21...v0.0.22)
