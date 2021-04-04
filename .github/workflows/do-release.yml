@@ -138,6 +138,7 @@ jobs:
 
       - name: Push Version to Env
         run: |
+          set -x
           echo "NEW_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
 #        if: "env.BRANCH == 'main'"
 
@@ -146,6 +147,7 @@ jobs:
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
           l_LAST_TAG="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(v.*)$' | sort -Vr | head -1 )"
+          echo "INFO > Last tag : ${l_LAST_TAG}"
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "${l_LAST_TAG}" -o docs/CHANGELOG.md
           github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
 
