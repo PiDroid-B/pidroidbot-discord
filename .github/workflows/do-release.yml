@@ -44,6 +44,7 @@ jobs:
 
       - name: Push Version to Env
         run: |
+          set -x
           echo "OLD_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
 
       - name: "Upload coverage to Codecov"
@@ -132,6 +133,7 @@ jobs:
               echo "INFO > version++"
               bump2version build --allow-dirty
           fi
+        shell: bash
         if: "env.BRANCH != 'main'"
 
       - name: Push Version to Env
