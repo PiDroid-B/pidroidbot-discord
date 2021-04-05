@@ -1,5 +1,6 @@
 #!/bin/bash
 set -x
+set -e
 ################################################################################
 # File:    buildBadges.sh
 # Purpose: Script that builds some badges for static pages

@@ -211,6 +211,7 @@ jobs:
 
       - name: Execute script to build Statics (badges etc)
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           I18N_COV: ${{ steps.i18nCoverage.outputs.coverage }}
         run: |
           apt-get update
