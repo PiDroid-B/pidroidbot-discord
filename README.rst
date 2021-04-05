@@ -1,5 +1,5 @@
 ================================
-PidroidBot for Discord v0.0.31
+PidroidBot for Discord v0.0.32
 ================================
 
 .. image:: https://img.shields.io/github/v/release/PiDroid-B/pidroidbot-discord
