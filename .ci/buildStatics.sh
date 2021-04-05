@@ -26,12 +26,22 @@ git checkout -b "${TARGET_BRANCH}"
 
 touch .nojekyll
 
-cat > i18n_cov.json <<EOF
+cat > i18n_appcov.json <<EOF
 {
   "schemaVersion": 1,
   "label": "i18n Coverage",
-  "message": "$I18N_COV",
-  "color": "orange"
+  "message": "${I18N_APPCOV} %",
+  "color": "blueviolet"
+}
+
+EOF
+
+cat > i18n_doccov.json <<EOF
+{
+  "schemaVersion": 1,
+  "label": "Documentation i18n Coverage",
+  "message": "${I18N_DOCCOV} %",
+  "color": "blueviolet"
 }
 
 EOF
