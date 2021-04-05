@@ -32,8 +32,11 @@ jobs:
 
       - name: Setup env variables
         run: |
+          set -x
           echo "SKIPBUMP=FALSE" >> $GITHUB_ENV
           echo "BRANCH=${GITHUB_REF:11}" >> $GITHUB_ENV
+          echo "OLD_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+          echo "LAST_TAG=$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(v.*)$' | sort -Vr | head -1 )" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -41,11 +44,6 @@ jobs:
           pip install bump2version setuptools wheel
           pip install Babel
           pip install -r docs/requirements.txt
-
-      - name: Push Version to Env
-        run: |
-          set -x
-          echo "OLD_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
 
       - name: "Upload coverage to Codecov"
         uses: codecov/codecov-action@v1
@@ -112,25 +110,25 @@ jobs:
       - name: Bump Branch Version
         env:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
+          BRANCH: ${{ env.BRANCH }}
+          OLD_VERSION: ${{ env.OLD_VERSION }}
         run: |
           INC=0
-          l_OLD_VERSION="${{ env.OLD_VERSION }}"
-          l_BRANCH="${{ env.BRANCH }}"
-          echo "INFO > old_version:${l_OLD_VERSION} branch:${l_BRANCH}"
+          echo "INFO > old_version:${OLD_VERSION} branch:${BRANCH}"
 
           # check if vars are not empty
           #   and if current version contains name of the branch
           # then INC=1
-          [[ "${#l_OLD_VERSION}" -gt 0 ]] && \
-          [[ "${#l_BRANCH}" -gt 0 ]] && \
-          [[ ${l_OLD_VERSION^^} == *"${l_BRANCH^^}"* ]] && \
+          [[ "${#BRANCH}" -gt 0 ]] && \
+          [[ "${#OLD_VERSION}" -gt 0 ]] && \
+          [[ ${OLD_VERSION^^} == *"${BRANCH^^}"* ]] && \
           INC=1
 
           if [[ $INC -eq 0 ]]; then
-              echo "INFO > Create new version ${l_OLD_VERSION}.${l_BRANCH,,}_0"
-              bump2version build --allow-dirty --new-version "${l_OLD_VERSION}.${l_BRANCH,,}_0"
+              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}_0"
+              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}_0"
           else
-              echo "INFO > version++"
+              echo "INFO > version ++"
               bump2version build --allow-dirty
           fi
         shell: bash
@@ -143,13 +141,15 @@ jobs:
 #        if: "env.BRANCH == 'main'"
 
       - name: Generate changelog
+        env:
+          LAST_TAG: ${{ env.LAST_TAG }}
+          NEW_VERSION: ${{ env.NEW_VERSION }}
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          l_LAST_TAG="`git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(v.*)$' | sort -Vr | head -1 `"
-          echo "INFO > Last tag : $l_LAST_TAG"
-          github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$l_LAST_TAG" -o docs/CHANGELOG.md
-          github_changelog_generator --future-release "v${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
+          echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
+          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o docs/CHANGELOG.md
+          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Commit version
         run: |
