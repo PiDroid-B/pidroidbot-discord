@@ -193,7 +193,12 @@ jobs:
     needs: new_release
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Git clone
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        shell: bash
 
       - name: Check i18n coverage
         id: i18nCoverage
