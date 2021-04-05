@@ -1,5 +1,5 @@
 ---
-name: Build new release
+name: Build
 
 on:
   push:
@@ -9,10 +9,10 @@ on:
       - test
 
 jobs:
-  build:
+  new_release:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
-    name: Build
+    name: New Release
 
     steps:
       - name: checkout
@@ -23,17 +23,20 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Setup env variables
+        run: |
+          set -x
+          echo "SKIPBUMP=FALSE" >> $GITHUB_ENV
+          echo "BRANCH=${GITHUB_REF:11}" >> $GITHUB_ENV
+          echo "OLD_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+          echo "LAST_TAG=$( git ls-remote --tags | grep -o 'refs/tags/v.*' | sort -Vr | head -1 | grep -o '[^\/]*$' )" >> $GITHUB_ENV
+
       - name: Setup Git
         run: |
-          git config user.name " PiDroid-B Action New release"
+          git config user.name 'PiDroid-B Action New release'
           git config user.email 'pidroid-b@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.AC_GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git checkout "${GITHUB_REF:11}"
-
-      - name: Setup env variables
-        run: |
-          echo "SKIPBUMP=FALSE" >> $GITHUB_ENV
-          echo "BRANCH=${GITHUB_REF:11}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -42,9 +45,10 @@ jobs:
           pip install Babel
           pip install -r docs/requirements.txt
 
-      - name: Push Version to Env
-        run: |
-          echo "OLD_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+      - name: "Upload coverage to Codecov"
+        uses: codecov/codecov-action@v1
+#        with:
+#          fail_ci_if_error: true
 
       - name: Generate base.pot
         run: pybabel extract -o locales/base.pot pidroidbot_discord/
@@ -62,28 +66,21 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'locales/**/LC_MESSAGES/*.po'
 
-#      - name: Check i18n coverage Documentation
-#        id: i18nCoverageDoc
-#        uses: alexkiro/i18n-coverage@v1.0.1
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          translations-path: 'docs/locales/**/LC_MESSAGES/*.po'
-
-      - name: Update Readme
-        run: |
-          # i18n Coverage
-          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
-          # DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
-
-          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${SRC}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
-          # echo "![i18n Coverage Docs](https://img.shields.io/badge/i18n%20Coverage%20Docs-${DOC}%25-green)" > docs/README_5_BADGE_I18NCOVERAGEDOCS.md
-
-          # concat into one file (alphanum order)
-          ls -v docs/README_*.md | xargs cat > README.md
-          cp README.md docs/source/README.md
-
-          # add all modify files
-          git add .
+#      - name: Update Readme
+#        run: |
+#          # i18n Coverage
+#          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
+#          # DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
+#
+#          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${SRC}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
+#          # echo "![i18n Coverage Docs](https://img.shields.io/badge/i18n%20Coverage%20Docs-${DOC}%25-green)" > docs/README_5_BADGE_I18NCOVERAGEDOCS.md
+#
+#          # concat into one file (alphanum order)
+#          ls -v docs/README_*.md | xargs cat > README.md
+#          cp README.md docs/source/README.md
+#
+#          # add all modify files
+#          git add .
 
       - name: Bump Major Version
         env:
@@ -109,33 +106,68 @@ jobs:
           bump2version patch --allow-dirty
         if: "env.SKIPBUMP == 'FALSE' && env.BRANCH == 'main'"
 
+      # Other branch
+      - name: Bump Branch Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+          BRANCH: ${{ env.BRANCH }}
+          OLD_VERSION: ${{ env.OLD_VERSION }}
+        run: |
+          INC=0
+          echo "INFO > old_version:${OLD_VERSION} branch:${BRANCH}"
+
+          # check if vars are not empty
+          #   and if current version contains name of the branch
+          # then INC=1
+          [[ "${#BRANCH}" -gt 0 ]] && \
+          [[ "${#OLD_VERSION}" -gt 0 ]] && \
+          [[ ${OLD_VERSION^^} == *"${BRANCH^^}"* ]] && \
+          INC=1
+
+          if [[ $INC -eq 0 ]]; then
+              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}_0"
+              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}_0"
+          else
+              echo "INFO > version ++"
+              bump2version build --allow-dirty
+          fi
+        shell: bash
+        if: "env.BRANCH != 'main'"
+
       - name: Push Version to Env
         run: |
-          echo "NEW_VERSION=v$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
-        if: "env.BRANCH == 'main'"
+          set -x
+          echo "NEW_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+#        if: "env.BRANCH == 'main'"
 
       - name: Generate changelog
+        env:
+          LAST_TAG: ${{ env.LAST_TAG }}
+          NEW_VERSION: ${{ env.NEW_VERSION }}
         run: |
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
-          github_changelog_generator --future-release "${{ env.NEW_VERSION }}"  --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "${{ env.OLD_VERSION }}" -o docs/CHANGELOG.md
-          github_changelog_generator --future-release "${{ env.NEW_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
-          git add .
-          git commit -m "[SKIP] version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
-        if: "env.BRANCH == 'main'"
+          echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
+          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o docs/CHANGELOG.md
+          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Commit version change to master
+      - name: Commit version
         run: |
+          git add .
+          git commit -m "[SKIP] version bump v${{ env.OLD_VERSION }} -> v${{ env.NEW_VERSION }}"
           git push
+
+      - name: Create tag and release (only on main)
+        run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          gh release create "${{ env.NEW_VERSION }}" -t "Release ${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
+          gh release create "v${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
         if: "env.BRANCH == 'main'"
 
   docs:
     runs-on: ubuntu-latest
     container: debian:buster-slim
     name: Documentations
-    needs: build
+    needs: new_release
 
     steps:
 

@@ -1,1 +1,1 @@
-[![Documentation](https://github.com/PiDroid-B/pidroidbot-discord/workflows/Build%20new%20release/badge.svg?branch=main)](https://pidroid-b.github.io/pidroidbot-discord/)
+[![Documentation](https://img.shields.io/badge/Documentation%20(i18n)-GitHub%20Page-blueviolet)](https://pidroid-b.github.io/pidroidbot-discord/)
