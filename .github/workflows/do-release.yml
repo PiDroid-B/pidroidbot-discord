@@ -37,7 +37,6 @@ jobs:
           git config user.email 'pidroid-b@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.AC_GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git checkout "${GITHUB_REF:11}
-          exit 1
 
       - name: Install dependencies
         run: |
