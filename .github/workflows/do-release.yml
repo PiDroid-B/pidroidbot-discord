@@ -212,5 +212,8 @@ jobs:
       - name: Execute script to build Statics (badges etc)
         env:
           I18N_COV: ${{ steps.i18nCoverage.outputs.coverage }}
-        run: "bash .ci/buildStatics.sh"
+        run: |
+          apt-get update
+          apt-get install -y git
+          bash .ci/buildStatics.sh
         shell: bash
