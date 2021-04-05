@@ -6,3 +6,8 @@
 
 [![Documentation](https://github.com/PiDroid-B/pidroidbot-discord/workflows/Build%20new%20release/badge.svg?branch=main)](https://pidroid-b.github.io/pidroidbot-discord/)  
 some text for body
+
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Documentations--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
