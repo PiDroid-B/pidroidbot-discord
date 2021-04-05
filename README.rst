@@ -11,9 +11,6 @@ PidroidBot for Discord v0.0.32
     :alt: Build
 
 .. image:: https://codecov.io/gh/PiDroid-B/pidroidbot-discord/branch/main/graph/badge.svg?token=D66J4JDE6L
-   :target: https://codecov.io/gh/PiDroid-B/pidroidbot-discord
-
-.. image:: https://codecov.io/gh/PiDroid-B/pidroidbot-discord/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/PiDroid-B/pidroidbot-discord
     :alt: Codecov
 
@@ -29,9 +26,7 @@ PidroidBot for Discord v0.0.32
    :target: http://creativecommons.org/licenses/by-nc-sa/4.0/
    :alt: License CC BY-NC-SA 4.0
 
-.. image:: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
-   :target: http://creativecommons.org/licenses/by-nc-sa/4.0/
-   :alt: License CC BY-NC-SA 4.0
+|
 
 .. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PiDroid-B/pidroidbot-discord/gh-statics/i18n_appcov.json
    :alt: Application i18n
