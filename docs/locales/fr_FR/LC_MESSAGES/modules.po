@@ -7,34 +7,19 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pidroidbot-discord test\n"
+"Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 14:12+0200\n"
+"POT-Creation-Date: 2021-04-07 15:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../source/README.md:1
-msgid "PidroidBot for Discord ##version##"
-msgstr "PidroidBot for Discord ##FR##"
-
-#: ../../source/README.md:3
-msgid ""
-"GitHub release (latest by date) GitHub build  i18n Coverage License: CC "
-"BY-NC-SA 4.0"
+#: ../../source/modules.rst:2
+msgid "pidroidbot-discord"
 msgstr ""
-
-#: ../../source/README.md:7
-msgid "Documentation<br />some text for body"
-msgstr ""
-
-#~ msgid "Documentation Status"
-#~ msgstr ""
-
-#~ msgid "some text for body"
-#~ msgstr ""
 
