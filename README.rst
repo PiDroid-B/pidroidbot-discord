@@ -2,6 +2,10 @@
 PidroidBot for Discord v0.0.35
 ================================
 
+.. image:: https://img.shields.io/github/stars/PiDroid-B/pidroidbot-discord?style=social
+   :target: https://github.com/PiDroid-B/pidroidbot-discord/
+   :alt: GitHub Repo stars
+
 .. image:: https://img.shields.io/github/v/release/PiDroid-B/pidroidbot-discord
     :target: https://github.com/PiDroid-B/pidroidbot-discord/releases
     :alt: GitHub release (latest by date)
@@ -28,9 +32,9 @@ PidroidBot for Discord v0.0.35
 
 |
 
-.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PiDroid-B/pidroidbot-discord/gh-statics/i18n_appcov.json
+.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PiDroid-B/pidroidbot-discord/main/.ci/badges/i18n_appcov.json
    :alt: Application i18n
 
-.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PiDroid-B/pidroidbot-discord/gh-statics/i18n_doccov.json
+.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PiDroid-B/pidroidbot-discord/main/.ci/badges/i18n_doccov.json
    :target: https://pidroid-b.github.io/pidroidbot-discord/
    :alt: Application i18n

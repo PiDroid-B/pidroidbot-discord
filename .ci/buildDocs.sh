@@ -78,7 +78,7 @@ for current_version in ${versions}; do
       # BUILDS #
       ##########
       echo "----- INFO - ${current_language}/${current_version} --------------------------------------------"
-      echo "$( find docs/. -type d -mindepth 1 -maxdepth 2 )"
+      echo "$( find docs/. -mindepth 1 -maxdepth 2 -type d )"
 
       # HTML #
       sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
