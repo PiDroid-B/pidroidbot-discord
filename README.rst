@@ -1,5 +1,5 @@
 ================================
-PidroidBot for Discord v0.0.36
+PidroidBot for Discord v0.0.37
 ================================
 
 .. image:: https://img.shields.io/github/stars/PiDroid-B/pidroidbot-discord?style=social
