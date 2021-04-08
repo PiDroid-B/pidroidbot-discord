@@ -13,39 +13,21 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fr_FR\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../source/_templates/versions.html:12
-msgid "Languages"
+#: ../../source/pidroidbot_discord.plugins.vers.rst:2
+msgid "pidroidbot\\_discord.plugins.vers package"
 msgstr ""
 
-#: ../../source/_templates/versions.html:22
-msgid "Versions"
+#: ../../source/pidroidbot_discord.plugins.vers.rst:5
+msgid "Module contents"
 msgstr ""
 
-#: ../../source/_templates/versions.html:32
-msgid "Downloads"
-msgstr ""
-
-#: ../../source/_templates/versions.html:40
-msgid "On Read the Docs"
-msgstr ""
-
-#: ../../source/_templates/versions.html:42
-msgid "Project Home"
-msgstr ""
-
-#: ../../source/_templates/versions.html:45
-msgid "Builds"
-msgstr ""
-
-#: ../../source/_templates/versions.html:50
-msgid ""
-"Free document hosting provided by <a "
-"href=\"http://www.readthedocs.org\">Read the Docs</a>."
+#: of pidroidbot_discord.plugins.vers.Version:1
+msgid "Bases: :class:`pidroidbot_discord.plugins.core.CogCore`"
 msgstr ""
 

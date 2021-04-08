@@ -13,23 +13,13 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fr_FR\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../source/README.md:1
-msgid "PidroidBot for Discord ##version##"
-msgstr ""
-
-#: ../../source/README.md:3
-msgid ""
-"GitHub release (latest by date) GitHub build  i18n Coverage License: CC "
-"BY-NC-SA 4.0"
-msgstr ""
-
-#: ../../source/README.md:7
-msgid "Documentation<br />some text for body"
+#: ../../source/modules.rst:2
+msgid "pidroidbot-discord"
 msgstr ""
 
