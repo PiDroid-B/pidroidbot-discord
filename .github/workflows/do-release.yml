@@ -73,14 +73,25 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'docs/locales/**/LC_MESSAGES/*.po'
 
+      - name: Check i18n languages
+        run: |
+          set -x
+          I18N_SRC_COUNT="$( find locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; | wc -l )"
+          I18N_DOC_COUNT="$( find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; | wc -l )"
+          echo "I18N_SRC_COUNT=${I18N_SRC_COUNT}" >> $GITHUB_ENV
+          echo "I18N_DOC_COUNT=${I18N_DOC_COUNT}" >> $GITHUB_ENV
+
       - name: Create json's files for bages i18n
+        env:
+          SRC_NB: ${{ env.I18N_SRC_COUNT }}
+          DOC_NB: ${{ env.I18N_DOC_COUNT }}
         run: |
           # i18n Coverage
-          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
-          DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
+          SRC_PCT="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
+          DOC_PCT="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
 
-          echo "{ \"schemaVersion\": 1, \"label\": \"i18n Coverage\", \"message\": \"${SRC} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_appcov.json
-          echo "{ \"schemaVersion\": 1, \"label\": \"i18n Docs Coverage\", \"message\": \"${DOC} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_doccov.json
+          echo "{ \"schemaVersion\": 1, \"label\": \"i18n Bot\", \"message\": \"${SRC_NB} | ${SRC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_appcov.json
+          echo "{ \"schemaVersion\": 1, \"label\": \"i18n Documentation\", \"message\": \"${DOC_NB} | ${DOC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_doccov.json
 
           git add .
 #      - name: Update Readme
