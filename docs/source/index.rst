@@ -5,7 +5,7 @@ Welcome to pidroidbot-discord's documentation!
    :maxdepth: 4
    :caption: Contents:
 
-   Readme <README.md>
+   Readme <readme>
    Source <modules>
 
 Indices and tables

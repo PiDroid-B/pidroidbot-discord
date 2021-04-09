@@ -89,6 +89,9 @@ jobs:
           # i18n Coverage
           SRC_PCT="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
           DOC_PCT="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
+          # add default language
+          ((SRC_NB++))
+          ((DOC_NB++))
 
           echo "{ \"schemaVersion\": 1, \"label\": \"i18n Bot\", \"message\": \"${SRC_NB} | ${SRC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_appcov.json
           echo "{ \"schemaVersion\": 1, \"label\": \"i18n Documentation\", \"message\": \"${DOC_NB} | ${DOC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_doccov.json
