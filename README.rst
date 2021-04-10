@@ -7,11 +7,54 @@ PidroidBot for Discord v0.0.39 |i_gh_star| |i_gh_license|
 Internationalization(Languages | Coverage) : |i_gh_i18nApp| |i_gh_i18nDoc|
 
 A new friend to manage your discord server !
-""""""""""""""""""""""""
+##############################
 
-Great place to our documentation
---------------------
+Table of Contents
+*****************
 
+* `How it works`_
+* `Plugins' inventory`_
+* `Installation`_
+* `Configuration`_
+* `License`_
+* `Author Information`_
+* `Feedback, bug-reports, requests, ...`_
+
+How it works
+*****************
+`Table of Contents`_
+
+Plugins' inventory
+*****************
+`Table of Contents`_
+
+Installation
+*****************
+`Table of Contents`_
+
+Configuration
+*****************
+`Table of Contents`_
+
+License
+*****************
+`Table of Contents`_
+
+|i_gh_license|
+
+`Creative Commons : Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) <http://creativecommons.org/licenses/by-nc-sa/4.0/>`_
+
+Author Information
+*****************
+`Table of Contents`_
+
+This woks was initiated in 2021 by `PiDroid-B <https://github.com/PiDroid-B>`_
+
+Feedback, bug-reports, requests, ...
+*****************
+`Table of Contents`_
+
+Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_
 
 .. |i_gh_star| image:: https://img.shields.io/github/stars/PiDroid-B/pidroidbot-discord?style=social
    :target: https://github.com/PiDroid-B/pidroidbot-discord/

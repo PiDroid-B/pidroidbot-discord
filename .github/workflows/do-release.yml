@@ -97,21 +97,6 @@ jobs:
           echo "{ \"schemaVersion\": 1, \"label\": \"i18n Documentation\", \"message\": \"${DOC_NB} | ${DOC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_doccov.json
 
           git add .
-#      - name: Update Readme
-#        run: |
-#          # i18n Coverage
-#          SRC="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
-#          # DOC="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
-#
-#          echo "![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-${SRC}%25-green)" > docs/README_1_BADGE_I18NCOVERAGE.md
-#          # echo "![i18n Coverage Docs](https://img.shields.io/badge/i18n%20Coverage%20Docs-${DOC}%25-green)" > docs/README_5_BADGE_I18NCOVERAGEDOCS.md
-#
-#          # concat into one file (alphanum order)
-#          ls -v docs/README_*.md | xargs cat > README.md
-#          cp README.md docs/source/README.md
-#
-#          # add all modify files
-#          git add .
 
       - name: Bump Major Version
         env:
@@ -216,41 +201,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: "bash .ci/buildDocs.sh"
       shell: bash
-
-  statics:
-    runs-on: ubuntu-latest
-    container: debian:buster-slim
-    name: Statics
-    needs: new_release
-
-    steps:
-      - name: Git clone
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          apt-get update
-          apt-get install -y git
-          git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
-        shell: bash
-
-      - name: Check i18n coverage
-        id: i18nCoverage
-        uses: alexkiro/i18n-coverage@v1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          translations-path: 'locales/**/LC_MESSAGES/*.po'
-
-#      - name: Check i18n coverage Documentation
-#        id: i18nCoverage
-#        uses: alexkiro/i18n-coverage@v1.0.1
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          translations-path: 'docs/locales/**/LC_MESSAGES/*.po'
-
-      - name: Execute script to build Statics (badges etc)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          I18N_APPCOV: ${{ steps.i18nCoverage.outputs.coverage }}
-#          I18N_DOCCOV: ${{ steps.i18nCoverageDoc.outputs.coverage }}
-        run: "bash .ci/buildStatics.sh"
-        shell: bash
