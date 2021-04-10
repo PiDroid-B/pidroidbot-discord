@@ -1,4 +1,12 @@
+sphinx
+sphinx-rtd-theme
+sphinx-intl
+pystemmer
+recommonmark
+GitPython
+bump2version
 setuptools
 wheel
-bump2version
 Babel
+pytest
+pytest-cov
