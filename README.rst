@@ -1,5 +1,5 @@
 ================================================================
-PidroidBot for Discord v0.0.44 |i_gh_star| |i_gh_license|
+PidroidBot for Discord v0.0.45 |i_gh_star| |i_gh_license|
 ================================================================
 
 |i_gh_release| |i_gh_build| |i_gh_codecov| |i_gh_codacy| |i_gh_codeclimate|
