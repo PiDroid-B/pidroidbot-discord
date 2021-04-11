@@ -185,7 +185,6 @@ jobs:
 
   docs:
     runs-on: ubuntu-latest
-    container: debian:buster-slim
     name: Documentations
     needs: new_release
 
