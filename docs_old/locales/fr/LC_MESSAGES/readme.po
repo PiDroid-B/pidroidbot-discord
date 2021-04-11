@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-10 15:51+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../README.rst:3
+msgid "PidroidBot for Discord v0.0.40 |i_gh_star| |i_gh_license|"
+msgstr ""
+
+#: ../../../README.rst:5
+msgid ""
+"|i_gh_release| |i_gh_build| |i_gh_codecov| |i_gh_codacy| "
+"|i_gh_codeclimate|"
+msgstr ""
+
+#: ../../../README.rst:7
+msgid "Internationalization(Languages | Coverage) : |i_gh_i18nApp| |i_gh_i18nDoc|"
+msgstr ""
+
+#: ../../../README.rst:10
+msgid "A new friend to manage your discord server !"
+msgstr ""
+
+#: ../../../README.rst:13
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../../README.rst:15
+msgid "`How it works`_"
+msgstr ""
+
+#: ../../../README.rst:16
+msgid "`Plugins' inventory`_"
+msgstr ""
+
+#: ../../../README.rst:17
+msgid "`Installation`_"
+msgstr ""
+
+#: ../../../README.rst:18
+msgid "`Configuration`_"
+msgstr ""
+
+#: ../../../README.rst:19
+msgid "`License`_"
+msgstr ""
+
+#: ../../../README.rst:20
+msgid "`Author Information`_"
+msgstr ""
+
+#: ../../../README.rst:21
+msgid "`Feedback, bug-reports, requests, ...`_"
+msgstr ""
+
+#: ../../../README.rst:24
+msgid "How it works"
+msgstr ""
+
+#: ../../../README.rst:25 ../../../README.rst:29 ../../../README.rst:33
+#: ../../../README.rst:37 ../../../README.rst:41 ../../../README.rst:49
+#: ../../../README.rst:55
+msgid "`Table of Contents`_"
+msgstr ""
+
+#: ../../../README.rst:28
+msgid "Plugins' inventory"
+msgstr ""
+
+#: ../../../README.rst:32
+msgid "Installation"
+msgstr ""
+
+#: ../../../README.rst:36
+msgid "Configuration"
+msgstr ""
+
+#: ../../../README.rst:40
+msgid "License"
+msgstr ""
+
+#: ../../../README.rst:43
+msgid "|i_gh_license|"
+msgstr ""
+
+#: ../../../README.rst:45
+msgid ""
+"`Creative Commons : Attribution-NonCommercial-ShareAlike 4.0 "
+"International (CC BY-NC-SA 4.0) <http://creativecommons.org/licenses/by-"
+"nc-sa/4.0/>`_"
+msgstr ""
+
+#: ../../../README.rst:48
+msgid "Author Information"
+msgstr ""
+
+#: ../../../README.rst:51
+msgid ""
+"This woks was initiated in 2021 by `PiDroid-B "
+"<https://github.com/PiDroid-B>`_"
+msgstr ""
+
+#: ../../../README.rst:54
+msgid "Feedback, bug-reports, requests, ..."
+msgstr ""
+
+#: ../../../README.rst:57
+msgid "Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_"
+msgstr ""
+

@@ -2,7 +2,8 @@ sphinx
 sphinx-rtd-theme
 sphinx-intl
 pystemmer
-recommonmark
+rinohtype
+pygments
 GitPython
 bump2version
 setuptools

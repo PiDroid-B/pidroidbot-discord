@@ -1,11 +1,11 @@
 #!/bin/bash
 #set -x
 
-export PYTHONPATH=..
+export PYTHONPATH=./..
 
-sphinx-apidoc -o source/ "${PYTHONPATH}" -f -d 1
+sphinx-apidoc -o source/src/ "${PYTHONPATH}" -f -d 1
 make gettext
-sphinx-intl update -p _build/gettext ./
+sphinx-intl update -p build/gettext
 
 for d in $(ls -d locales/*/ ); do
   lang="$( basename ${d})"
@@ -17,3 +17,15 @@ for d in $(ls -d locales/*/ ); do
     fi
   done
 done
+
+#set -x
+#
+#export PYTHONPATH=./..
+#
+#sphinx-apidoc -o source/ "${PYTHONPATH}" -f -d 1
+#make gettext
+#
+#for d in $(ls -d locales/*/ ); do
+#  lang="$( basename ${d})"
+#  sphinx-intl update -p build/gettext -l "$lang"
+#done

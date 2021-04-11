@@ -52,6 +52,7 @@ jobs:
         with:
           fail_ci_if_error: true
           verbose: true
+          files: ./coverage.xml
 
       - name: Generate base.pot
         run: pybabel extract -o locales/base.pot pidroidbot_discord/

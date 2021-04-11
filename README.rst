@@ -1,16 +1,16 @@
-================================
+================================================================
 PidroidBot for Discord v0.0.40 |i_gh_star| |i_gh_license|
-================================
+================================================================
 
 |i_gh_release| |i_gh_build| |i_gh_codecov| |i_gh_codacy| |i_gh_codeclimate|
 
 Internationalization(Languages | Coverage) : |i_gh_i18nApp| |i_gh_i18nDoc|
 
 A new friend to manage your discord server !
-##############################
+################################################################
 
 Table of Contents
-*****************
+****************************************************************
 
 * `How it works`_
 * `Plugins' inventory`_
@@ -21,23 +21,23 @@ Table of Contents
 * `Feedback, bug-reports, requests, ...`_
 
 How it works
-*****************
+****************************************************************
 `Table of Contents`_
 
 Plugins' inventory
-*****************
+****************************************************************
 `Table of Contents`_
 
 Installation
-*****************
+****************************************************************
 `Table of Contents`_
 
 Configuration
-*****************
+****************************************************************
 `Table of Contents`_
 
 License
-*****************
+****************************************************************
 `Table of Contents`_
 
 |i_gh_license|
@@ -45,13 +45,13 @@ License
 `Creative Commons : Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) <http://creativecommons.org/licenses/by-nc-sa/4.0/>`_
 
 Author Information
-*****************
+****************************************************************
 `Table of Contents`_
 
 This woks was initiated in 2021 by `PiDroid-B <https://github.com/PiDroid-B>`_
 
 Feedback, bug-reports, requests, ...
-*****************
+****************************************************************
 `Table of Contents`_
 
 Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_

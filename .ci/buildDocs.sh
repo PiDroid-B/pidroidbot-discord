@@ -16,7 +16,7 @@
 # INSTALL DEPENDS #
 ###################
 
-python3 -m pip install --upgrade rinohtype pygments
+#python3 -m pip install --upgrade rinohtype pygments
 
 #####################
 # DECLARE VARIABLES #
@@ -63,8 +63,8 @@ for current_version in ${versions}; do
    echo "##### INFO - version ${current_version} ########################################"
 
    # skip this branch if it doesn't have our docs dir & sphinx config
-   if [ ! -e 'docs/source/conf.py' ]; then
-      echo -e "\tINFO: Couldn't find 'docs/source/conf.py' (skipped)"
+   if [ ! -e 'docs/conf.py' ]; then
+      echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
       continue
    fi
 
@@ -81,15 +81,15 @@ for current_version in ${versions}; do
       echo "$( find docs/. -mindepth 1 -maxdepth 2 -type d )"
 
       # HTML #
-      sphinx-build -b html docs/source/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+      sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
 
       # PDF #
-      sphinx-build -b rinoh docs/source/ docs/_build/rinoh -D language="${current_language}"
+      sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
       cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.pdf"
 
       # EPUB #
-      sphinx-build -b epub docs/source/ docs/_build/epub -D language="${current_language}"
+      sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
       cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
 
