@@ -52,7 +52,7 @@ versions_old="$( git for-each-ref '--format=%(refname:lstrip=-1)' | grep -iE '^(
 [ ${#versions_old} -gt 0 ] && versions="$( printf "%s\n%s" "${versions_std}" "${versions_old}" )"
 
 export versions
-echo "##### INFO - All versions from Buildocs ${versions} ########################################"
+echo "##### INFO - All versions from Buildocs : ${versions} ########################################"
 
 for current_version in ${versions}; do
    # make the current language available to conf.py
