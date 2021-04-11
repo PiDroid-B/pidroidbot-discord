@@ -14,9 +14,9 @@ import os
 import sys
 from git import Repo
 from recommonmark.transform import AutoStructify
-sys.path.insert(0, os.path.abspath(".."))
-# sys.path.insert(0, os.path.abspath("../pidroidbot_discord"))
-
+sys.path.insert(0, os.path.abspath("."))
+sys.path.insert(0, os.path.abspath("pidroidbot_discord"))
+print("----- INFO - os path :",os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
