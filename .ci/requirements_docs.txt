@@ -6,9 +6,3 @@ rinohtype
 pygments
 recommonmark
 GitPython
-bump2version
-setuptools
-wheel
-Babel
-pytest
-pytest-cov
