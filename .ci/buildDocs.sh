@@ -23,7 +23,7 @@ set -x
 #####################
 
 echo "##### INFO - Change directory ########################################"
-cd ../docs/
+cd docs/
 
 pwd
 ls -lah
