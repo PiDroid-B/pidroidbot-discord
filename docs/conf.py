@@ -14,6 +14,7 @@ import os
 import sys
 from git import Repo
 from recommonmark.transform import AutoStructify
+print(os.path.abspath("../pidroidbot_discord"))
 sys.path.insert(0, os.path.abspath("../pidroidbot_discord"))
 
 
@@ -40,6 +41,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.autosectionlabel',
+    'sphinx.ext.imgconverter',
     'recommonmark',
 ]
 
