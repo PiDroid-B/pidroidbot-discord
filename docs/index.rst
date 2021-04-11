@@ -10,6 +10,8 @@ Welcome to pidroidbot-discord's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   readme
+   CHANGELOG.md
 
 
 Indices and tables
