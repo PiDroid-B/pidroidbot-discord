@@ -170,7 +170,7 @@ jobs:
           echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
           github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
           cp CHANGELOG.md docs/autogen/CHANGELOG.md
-#          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o docs/CHANGELOG.md
+          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o .ci/CHANGELOG.md
 
       - name: Commit version
         run: |
@@ -181,7 +181,7 @@ jobs:
       - name: Create tag and release (only on main)
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          gh release create "v${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F docs/CHANGELOG.md
+          gh release create "v${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F .ci/CHANGELOG.md
         if: "env.BRANCH == 'main'"
 
   docs:
