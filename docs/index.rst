@@ -10,8 +10,9 @@ Welcome to pidroidbot-discord's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   Readme <readme.rst>
+   Readme <readme>
    Changelog <autogen/CHANGELOG.md>
+
 
 
 Indices and tables
