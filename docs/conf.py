@@ -13,6 +13,7 @@
 import os
 import sys
 from git import Repo
+from recommonmark.transform import AutoStructify
 
 sys.path.insert(0, os.path.abspath("../pidroidbot_discord"))
 
@@ -40,6 +41,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.autosectionlabel',
+    'recommonmark',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -215,7 +217,7 @@ html_context["version"] = current_version
 # POPULATE LINKS TO OTHER LANGUAGES
 html_context["languages"] = [("en", "/" + REPO_NAME + "/en/" + current_version + "/")]
 
-languages = [lang.name for lang in os.scandir("../locales") if lang.is_dir()]
+languages = [lang.name for lang in os.scandir("locales") if lang.is_dir()]
 for lang in languages:
     html_context["languages"].append(
         (lang, "/" + REPO_NAME + "/" + lang + "/" + current_version + "/")
@@ -292,6 +294,21 @@ html_context["display_github"] = True
 html_context["github_user"] = "PiDroid-B"
 html_context["github_repo"] = "pidroidbot-discord"
 html_context["github_version"] = "main/docs/"
+
+# At the bottom of conf.py
+def setup(app):
+    app.add_config_value(
+        "recommonmark_config",
+        {
+            #'url_resolver': lambda url: github_doc_root + url,
+            "auto_toc_tree_section": "Contents",
+            "enable_math": False,
+            "enable_inline_math": False,
+            "enable_eval_rst": True,
+        },
+        True,
+    )
+    app.add_transform(AutoStructify)
 
 print("----- INFO - conf.py :", html_context["languages"], html_context["versions"])
 

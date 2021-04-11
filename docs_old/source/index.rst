@@ -6,6 +6,7 @@ Welcome to pidroidbot-discord's documentation!
    :caption: Contents:
 
    Readme <readme>
+   Changelog <CHANGELOG.md>
    Source <src/modules>
 
 Indices and tables
