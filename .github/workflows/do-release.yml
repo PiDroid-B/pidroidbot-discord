@@ -168,8 +168,9 @@ jobs:
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
           echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
-          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o docs/CHANGELOG.md
           github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
+          cp CHANGELOG.md docs/autogen/CHANGELOG.md
+#          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o docs/CHANGELOG.md
 
       - name: Commit version
         run: |
