@@ -68,7 +68,7 @@ for current_version in ${versions}; do
    fi
 
    pushd pidroidbot_discord
-   python3 __main__.py
+   PYTHONPATH=.. python3 __main__.py
    popd
 
    languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
