@@ -13,13 +13,13 @@ log:
       stream: ext://sys.stderr
       level: WARNING
       formatter: full
-    stderr_file:
-      class : logging.handlers.RotatingFileHandler
-      filename: ../log/logconfig.log
-      maxBytes: 1024000
-      backupCount: 3
-      level: INFO
-      formatter: full
+    # stderr_file:
+    #   class : logging.handlers.RotatingFileHandler
+    #   filename: ../log/logconfig.log
+    #   maxBytes: 1024000
+    #   backupCount: 3
+    #   level: INFO
+    #   formatter: full
     stdout:
       class: logging.StreamHandler
       stream: ext://sys.stdout
@@ -28,10 +28,10 @@ log:
   loggers:
     main:
       level: DEBUG
-      handlers: [stdout,stderr_file]
+      handlers: [stdout]
     plugins:
       level: DEBUG
-      handlers: [stdout,stderr_file]
+      handlers: [stdout]
 cogs:
   list_ignore: []
 bot:
@@ -40,8 +40,6 @@ bot:
 debug:
   what_i_see: False
 lang: 'en_UK'
-git:
-  url: "https://github.com/PiDroid-B/BotMarkdownForDiscord"
 
 
 """
