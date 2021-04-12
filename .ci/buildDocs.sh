@@ -72,6 +72,7 @@ for current_version in ${versions}; do
    popd
    # workaround about ci logger
    cp .ci/main_for_docs.conf settings/main.conf
+   sed -i "s/DISCORD_TOKEN/${DISCORD}/" .ci/main_for_docs.conf
 
    languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
    for current_language in ${languages}; do
