@@ -11,7 +11,8 @@ on:
 jobs:
   new_release:
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
+#    if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
+    if: "1 == 0"
     name: New Release
 
     steps:
@@ -187,7 +188,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     name: Documentations
-    needs: new_release
+#    needs: new_release
 
     steps:
       - name: Prereqs
