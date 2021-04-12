@@ -67,6 +67,9 @@ for current_version in ${versions}; do
       continue
    fi
 
+   touch log/logconfig.log
+   touch settings/main.conf
+
    languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
    for current_language in ${languages}; do
 
