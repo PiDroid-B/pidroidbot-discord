@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autosummary',
     'recommonmark',
+    'rinoh.frontend.sphinx',
 ]
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary

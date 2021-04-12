@@ -5,4 +5,4 @@ Source
    :toctree: _autosummary
    :recursive:
 
-   pidroidbot_discord
+   pidroidbot_discord.*
