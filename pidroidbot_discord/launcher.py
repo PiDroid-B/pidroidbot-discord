@@ -68,6 +68,7 @@ def main():
     """
 
     log.info(_("Initialization"))
+    # TODO list_ignore cogs hardcoded a retirer
     config["main"]["cogs"]["list_ignore"] = ["core"]
     try:
         log.info(_("Load extensions..."))

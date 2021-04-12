@@ -36,7 +36,7 @@ cogs:
   list_ignore: []
 bot:
   prefix: "."
-  token: ""
+  token: "YOUR_TOKEN"
 debug:
   what_i_see: False
 lang: 'en_UK'
