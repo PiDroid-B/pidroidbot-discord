@@ -12,7 +12,7 @@ Welcome to pidroidbot-discord's documentation!
 
    Readme <readme>
    Changelog <autogen/CHANGELOG.md>
-   Source <source/pidroidbot_discord>
+   Source <source>
 
 
 Indices and tables

@@ -43,8 +43,12 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.imgconverter',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.autosummary',
     'recommonmark',
 ]
+
+autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

@@ -3,9 +3,9 @@
 
 export PYTHONPATH=..
 
-sphinx-apidoc -o source/ "${PYTHONPATH}" -f -d 1
+#sphinx-apidoc -o source/ "${PYTHONPATH}" -f -d 1
 make gettext
-sphinx-intl update -p _build/gettext ./
+sphinx-intl update -p _build/gettext
 
 for d in $(ls -d locales/*/ ); do
   lang="$( basename ${d})"
