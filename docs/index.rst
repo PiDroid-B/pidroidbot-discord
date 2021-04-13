@@ -11,7 +11,6 @@ Welcome to pidroidbot-discord's documentation!
    :caption: Contents:
 
    Readme <readme>
-   Changelog <autogen/CHANGELOG.md>
    Source <source>
 
 

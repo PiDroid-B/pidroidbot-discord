@@ -21,9 +21,9 @@ sys.path.insert(0, os.path.abspath("../pidroidbot_discord"))
 
 # -- Project information -----------------------------------------------------
 
-project = 'pidroidbot-discord'
-copyright = '2021, PiDroid-B'
-author = 'PiDroid-B'
+project = "pidroidbot-discord"
+copyright = "2021, PiDroid-B"
+author = "PiDroid-B"
 
 # The short X.Y version
 version = ""
@@ -38,14 +38,14 @@ release = "v0.0.62"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_rtd_theme',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.autosectionlabel',
-    'sphinx.ext.imgconverter',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.autosummary',
-    'recommonmark',
+    "sphinx_rtd_theme",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.imgconverter",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autosummary",
+    "recommonmark",
 ]
 # TODO : Sphinx and PDF
 # don't find how to use rinoh + cairosvg with sphinx...
@@ -85,7 +85,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -93,7 +93,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'alabaster'
+# html_theme = 'alabaster'
 html_theme = "sphinx_rtd_theme"
 html_show_sourcelink = False
 # Output file base name for HTML help builder.
@@ -102,7 +102,7 @@ htmlhelp_basename = "pidroidbot-discord-doc"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -110,16 +110,16 @@ html_static_path = ['_static']
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    'papersize': 'letterpaper',
+    "papersize": "letterpaper",
     # The font size ('10pt', '11pt' or '12pt').
     #
-    'pointsize': '10pt',
+    "pointsize": "10pt",
     # Additional stuff for the LaTeX preamble.
     #
-    'preamble': '',
+    "preamble": "",
     # Latex figure (float) alignment
     #
-    'figure_align': 'htbp',
+    "figure_align": "htbp",
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -309,6 +309,23 @@ html_context["downloads"].append(
     )
 )
 
+html_context["onreadthedoc"] = list()
+html_context["onreadthedoc"].append(
+    ("Home", "/" + REPO_NAME + "/" + current_language + "/" + current_version + "/",)
+)
+html_context["onreadthedoc"].append(
+    (
+        "Changelog",
+        "/"
+        + REPO_NAME
+        + "/"
+        + current_language
+        + "/"
+        + current_version
+        + "/autogen/CHANGELOG.html",
+    )
+)
+
 html_context["display_github"] = True
 html_context["github_user"] = "PiDroid-B"
 html_context["github_repo"] = "pidroidbot-discord"
@@ -329,5 +346,5 @@ def setup(app):
     )
     app.add_transform(AutoStructify)
 
-print("----- INFO - conf.py :", html_context["languages"], html_context["versions"])
 
+print("----- INFO - conf.py :", html_context["languages"], html_context["versions"])

@@ -37,12 +37,11 @@
       {% endif %}
       <dl>
         <dt>{{ _('On Read the Docs') }}</dt>
+          {% for slug, url in onreadthedoc %}
           <dd>
-            <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">{{ _('Project Home') }}</a>
+            <a href="{{ url }}">{{ slug }}</a>
           </dd>
-          <dd>
-            <a href="//{{ PRODUCTION_DOMAIN }}/builds/{{ slug }}/?fromdocs={{ slug }}">{{ _('Builds') }}</a>
-          </dd>
+          {% endfor %}
       </dl>
     </div>
   </div>
