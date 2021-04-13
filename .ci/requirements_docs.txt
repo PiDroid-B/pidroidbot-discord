@@ -2,7 +2,6 @@ sphinx
 sphinx-rtd-theme
 sphinx-intl
 pystemmer
-rinohtype
 pygments
 recommonmark
 GitPython

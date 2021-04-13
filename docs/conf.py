@@ -15,8 +15,8 @@ import sys
 from git import Repo
 from recommonmark.transform import AutoStructify
 
-sys.path.insert(0, os.path.abspath("../"))
-sys.path.insert(0, os.path.abspath("../pidroidbot_discord/"))
+sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../pidroidbot_discord"))
 
 
 # -- Project information -----------------------------------------------------
@@ -46,8 +46,20 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autosummary',
     'recommonmark',
-    'rinoh.frontend.sphinx',
 ]
+# TODO : Sphinx and PDF
+# don't find how to use rinoh + cairosvg with sphinx...
+# no PDF generation
+# in requirements_docs.txt :
+#     sphinxcontrib-svg2pdfconverter[CairoSVG]
+#     cairosvg
+#     rinohtype
+# ?   Pillow
+# in extensions (in this file)
+#     'rinoh.frontend.sphinx',
+#     'sphinxcontrib.cairosvgconverter',
+# at the end of this file (uncomment) html_context["downloads"].append about PDF
+
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
@@ -98,16 +110,16 @@ html_static_path = ['_static']
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'letterpaper',
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
+    'pointsize': '10pt',
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
+    'preamble': '',
     # Latex figure (float) alignment
     #
-    # 'figure_align': 'htbp',
+    'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -259,24 +271,24 @@ today_fmt = "%B %d, %Y"
 epub_basename = "target"
 
 html_context["downloads"] = list()
-html_context["downloads"].append(
-    (
-        "pdf",
-        "/"
-        + REPO_NAME
-        + "/"
-        + current_language
-        + "/"
-        + current_version
-        + "/"
-        + project
-        + "-docs_"
-        + current_language
-        + "_"
-        + current_version
-        + ".pdf",
-    )
-)
+# html_context["downloads"].append(
+#     (
+#         "pdf",
+#         "/"
+#         + REPO_NAME
+#         + "/"
+#         + current_language
+#         + "/"
+#         + current_version
+#         + "/"
+#         + project
+#         + "-docs_"
+#         + current_language
+#         + "_"
+#         + current_version
+#         + ".pdf",
+#     )
+# )
 
 html_context["downloads"].append(
     (
