@@ -4,9 +4,7 @@ name: Push on main, dev or test
 on:
   push:
     branches:
-      - main
-      - dev
-      - test
+      - tox
 
 jobs:
   test:
