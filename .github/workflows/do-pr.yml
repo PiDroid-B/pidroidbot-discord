@@ -4,7 +4,8 @@ name: Pull Request Requirements
 on:
   pull_request:
     branches:
-      - main
+      - pouet
+#      - main
 
 jobs:
   i18nCoverage:
