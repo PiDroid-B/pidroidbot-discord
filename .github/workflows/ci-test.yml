@@ -1,10 +1,12 @@
 ---
-name: Push on main, dev or test
+name: Test CI
 
 on:
   push:
     branches:
-      - toxxxxx
+      - main
+      - dev
+      - test
 
 jobs:
   test:
