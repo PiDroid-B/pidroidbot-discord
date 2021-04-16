@@ -99,7 +99,7 @@ setup(
         ],
     entry_points={
         'console_scripts': [
-            'pidroidbot-discord = pidroidbot-discord.pidroidbot_discord:main',
+            'pidroidbot-discord = pidroidbot_discord:main',
             ]
         #
         },
