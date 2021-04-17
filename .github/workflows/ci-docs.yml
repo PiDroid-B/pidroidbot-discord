@@ -1,16 +1,13 @@
 ---
-name: Documentations
+name: Test i18n
 
 on:
   pull_request:
 
 jobs:
   test-i18n:
-    name: Check i18n Coverage
     runs-on: ubuntu-latest
-    outputs:
-      pouet: "toto"
-
+    name: Test i18n
     steps:
       - uses: actions/checkout@v2
 

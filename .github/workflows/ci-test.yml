@@ -1,5 +1,5 @@
 ---
-name: Test CI
+name: Test Python
 
 on:
   pull_request:
@@ -12,8 +12,8 @@ on:
 
 jobs:
   test-py:
-    name: Test
     runs-on: ${{ matrix.platform }}
+    name: Test Python
     strategy:
       matrix:
 #        platform: [ubuntu-latest, macos-latest, windows-latest]
