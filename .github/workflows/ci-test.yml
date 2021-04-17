@@ -2,8 +2,6 @@
 name: Test CI
 
 on:
-  pull_request:
-
   push:
     branches:
       - main

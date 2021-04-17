@@ -9,6 +9,11 @@ on:
 #      - dev
 #      - test
 
+#echo "::group::My title"
+#echo "Inside group"
+#echo "::endgroup::"
+
+
 jobs:
   test:
     name: Test
