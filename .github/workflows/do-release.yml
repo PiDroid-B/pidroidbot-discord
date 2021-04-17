@@ -4,16 +4,27 @@ name: Build
 on:
   push:
     branches:
-      - main
-      - dev
-      - test
+      - pouet
+#      - main
+#      - dev
+#      - test
+
+#echo "::group::My title"
+#echo "Inside group"
+#echo "::endgroup::"
+
 
 jobs:
+
   new_release:
     runs-on: ubuntu-latest
 #    if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
     if: "1 == 0"
     name: New Release
+    needs:
+      - ci-test
+      - ci-lint
+      - ci-i18n
 
     steps:
       - name: checkout
@@ -166,8 +177,10 @@ jobs:
           LAST_TAG: ${{ env.LAST_TAG }}
           NEW_VERSION: ${{ env.NEW_VERSION }}
         run: |
+          echo "::group::install Ruby and github_changelog_generator"
           sudo apt-get install ruby-full
           sudo gem install github_changelog_generator
+          echo "::endgroup::"
           echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
           github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
           cp CHANGELOG.md docs/autogen/CHANGELOG.md
@@ -188,7 +201,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     name: Documentations
-#    needs: new_release
+    needs: new_release
 
     steps:
       - name: Prereqs
