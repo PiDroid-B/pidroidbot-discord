@@ -1,11 +1,8 @@
 ---
-name: Pull Request Requirements
+name: Documentations
 
 on:
   pull_request:
-    branches:
-      - pouet
-#      - main
 
 jobs:
   i18nCoverage:
