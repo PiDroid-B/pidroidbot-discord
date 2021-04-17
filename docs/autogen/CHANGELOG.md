@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.0.63](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.63) (2021-04-17)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.62...v0.0.63)
+
+**Merged pull requests:**
+
+- New Tox [\#41](https://github.com/PiDroid-B/pidroidbot-discord/pull/41) ([PiDroid-B](https://github.com/PiDroid-B))
+- Final Tox [\#40](https://github.com/PiDroid-B/pidroidbot-discord/pull/40) ([PiDroid-B](https://github.com/PiDroid-B))
+- Tox [\#39](https://github.com/PiDroid-B/pidroidbot-discord/pull/39) ([PiDroid-B](https://github.com/PiDroid-B))
+
+## [v0.0.62](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.62) (2021-04-12)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.61...v0.0.62)
+
 ## [v0.0.61](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.61) (2021-04-12)
 
 [Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.60...v0.0.61)
