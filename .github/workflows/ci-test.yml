@@ -2,17 +2,14 @@
 name: Test CI
 
 on:
+  pull_request:
+
   push:
     branches:
       - main
       - dev
       - test
       - tox
-  pull_request:
-    branches:
-      - main
-      - dev
-      - test
 
 jobs:
   test:
