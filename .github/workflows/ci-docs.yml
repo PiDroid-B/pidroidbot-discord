@@ -31,3 +31,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           translations-path: 'docs/locales/**/LC_MESSAGES/*.po'
+      - name: test
+        run: |
+          echo "::set-output name=setout::test out"
+          echo "::debug::Set the debug message"
