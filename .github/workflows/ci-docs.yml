@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  ci-i18n:
+  test-i18n:
     name: Check i18n Coverage
     runs-on: ubuntu-latest
     outputs:

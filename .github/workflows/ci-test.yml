@@ -11,7 +11,7 @@ on:
 #      - tox
 
 jobs:
-  ci-test:
+  test-py:
     name: Test
     runs-on: ${{ matrix.platform }}
     strategy:
