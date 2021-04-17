@@ -4,17 +4,9 @@ name: Build
 on:
   push:
     branches:
-      - pouet
-#      - main
-#      - dev
-#      - test
-
-#echo "::group::My title"
-#echo "Inside group"
-#echo "::endgroup::"
-
-
-
+      - main
+      - dev
+      - test
 
 jobs:
 
@@ -22,11 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
 #    if: "1 == 0"
-    name: New Release
-    needs:
-      - ci-test
-      - ci-lint
-      - ci-i18n
+    name: New Release / Dev / Test
 
     steps:
       - name: checkout
