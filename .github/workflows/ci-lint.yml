@@ -11,8 +11,6 @@ jobs:
   ci-lint:
     name: Lint
     runs-on: ubuntu-latest
-    outputs:
-      pouet: "toto"
     steps:
     - uses: actions/checkout@v2
 

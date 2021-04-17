@@ -8,6 +8,8 @@ jobs:
   ci-i18n:
     name: Check i18n Coverage
     runs-on: ubuntu-latest
+    outputs:
+      pouet: "toto"
 
     steps:
       - uses: actions/checkout@v2
