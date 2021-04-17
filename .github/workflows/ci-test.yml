@@ -2,12 +2,13 @@
 name: Test CI
 
 on:
-  push:
-    branches:
-      - main
-      - dev
-      - test
-      - tox
+  pull_request:
+#  push:
+#    branches:
+#      - main
+#      - dev
+#      - test
+#      - tox
 
 jobs:
   ci-test:
