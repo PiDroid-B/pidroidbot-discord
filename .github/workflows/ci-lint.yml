@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  build:
+  ci-lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -19,10 +19,18 @@ jobs:
       with:
         python-version: "3.x"
 
+#echo "::group::My title"
+#echo "Inside group"
+#echo "::endgroup::"
+
     - name: Install dependencies
       run: |
+        echo "::group::Pip install"
         python -m pip install --upgrade pip setuptools wheel
+        echo "::endgroup::"
+        echo "::group::install virtualenv tox tox-gh-actions"
         pip install virtualenv tox tox-gh-actions
+        echo "::endgroup::"
 
     - name: Lint
       run: tox -e lint
