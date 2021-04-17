@@ -8,6 +8,11 @@ on:
       - dev
       - test
       - tox
+  pull_request:
+    branches:
+      - main
+      - dev
+      - test
 
 jobs:
   test:
