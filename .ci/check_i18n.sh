@@ -18,6 +18,14 @@ rsync -vr -f '+ *.po' -f '+ **/' -f '- *' --prune-empty-dirs locales/. "$dir_aft
 mkdir -p "$dir_after"/docs/locales/
 rsync -vr -f '+ *.po' -f '+ **/' -f '- *' --prune-empty-dirs docs/locales/. "$dir_after"/docs/locales/
 
+for f in $( find $dir_before -type f -name "*.po" ) ; do
+  sed -ir 's/"POT-Creation-Date.*$//' "${f}"
+done
+
+for f in $( find $dir_after -type f -name "*.po" ) ; do
+  sed -ir 's/"POT-Creation-Date.*$//' "${f}"
+done
+
 git diff --check $dir_before/ $dir_after/ || {
   echo "i18n require an update, please run devtools/updateI18N.sh"
   exit 1
