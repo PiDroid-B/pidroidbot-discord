@@ -1,6 +1,9 @@
 #!/bin/bash
 #set -x
 
+echo "OBSOLETE"
+exit 1
+
 export PYTHONPATH=..
 
 #sphinx-apidoc -o source/ "${PYTHONPATH}" -f -d 1
