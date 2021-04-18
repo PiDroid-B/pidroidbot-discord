@@ -24,10 +24,7 @@ jobs:
           pip install -r .ci/requirements_release.txt
 
       - name: Execute script to build our documentation and update pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: "bash .ci/check_i18n.sh"
-        shell: bash
 
 #      - name: Check i18n coverage
 #        id: i18nCoverage
