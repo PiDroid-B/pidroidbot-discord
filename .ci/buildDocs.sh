@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 ################################################################################
 # File:    buildDocs.sh
 # Purpose: Script that builds our documentation using sphinx and updates GitHub
@@ -83,7 +83,7 @@ for current_version in ${versions}; do
       ##########
       # BUILDS #
       ##########
-      echo "----- INFO - ${current_language}/${current_version} --------------------------------------------"
+      echo "::group:: INFO - ${current_language}/${current_version} --------------------------------------------"
       echo "$( find docs/. -mindepth 1 -maxdepth 2 -type d )"
 
       # HTML #
@@ -97,11 +97,11 @@ for current_version in ${versions}; do
       # EPUB #
       sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME}-docs_${current_language}_${current_version}.epub"
+      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/${PRJ_NAME,,}-docs_${current_language}_${current_version}.epub"
 
       # copy the static assets produced by the above build into our docroot
       rsync -av "docs/_build/html/" "${docroot}/"
-
+      echo "::endgroup::"
    done
 
 done

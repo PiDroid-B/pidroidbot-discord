@@ -1,5 +1,5 @@
 ---
-name: Test CI
+name: Test Python
 
 on:
   pull_request:
@@ -11,15 +11,15 @@ on:
 #      - tox
 
 jobs:
-  ci-test:
-    name: Test
+  test-py:
     runs-on: ${{ matrix.platform }}
+    name: Test Python
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: [3.6, 3.7, 3.8]
-#        platform: [ubuntu-latest]
-#        python-version: [3.7]
+#        platform: [ubuntu-latest, macos-latest, windows-latest]
+#        python-version: [3.6, 3.7, 3.8]
+        platform: [ubuntu-latest]
+        python-version: [3.7]
     steps:
       - name: checkout
         uses: actions/checkout@v2

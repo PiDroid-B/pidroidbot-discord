@@ -1,8 +1,16 @@
 #!/bin/bash
-#set -x
 
-echo "OBSOLETE"
-exit 1
+[ "$(dirname "$0")" != "." ] && {
+  echo "Please go to the devtools' directory before run this script"
+  exit 1
+}
+
+pushd ..
+
+pybabel extract -o locales/base.pot pidroidbot_discord/
+pybabel update -i locales/base.pot -d locales
+
+pushd docs/
 
 export PYTHONPATH=..
 
@@ -20,3 +28,6 @@ for d in $(ls -d locales/*/ ); do
     fi
   done
 done
+
+popd
+popd

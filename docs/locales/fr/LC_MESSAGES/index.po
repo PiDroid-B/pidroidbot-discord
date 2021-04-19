@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 15:38+0200\n"
+"POT-Creation-Date: 2021-04-18 14:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -25,10 +25,6 @@ msgid "Readme"
 msgstr ""
 
 #: ../../index.rst:9
-msgid "Changelog"
-msgstr ""
-
-#: ../../index.rst:9
 msgid "Source"
 msgstr ""
 
@@ -40,19 +36,22 @@ msgstr ""
 msgid "Welcome to pidroidbot-discord's documentation!"
 msgstr ""
 
-#: ../../index.rst:19
+#: ../../index.rst:18
 msgid "Indices and tables"
 msgstr ""
 
-#: ../../index.rst:21
+#: ../../index.rst:20
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../index.rst:22
+#: ../../index.rst:21
 msgid ":ref:`modindex`"
 msgstr ""
 
-#: ../../index.rst:23
+#: ../../index.rst:22
 msgid ":ref:`search`"
 msgstr ""
+
+#~ msgid "Changelog"
+#~ msgstr ""
 
