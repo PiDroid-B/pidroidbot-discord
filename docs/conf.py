@@ -1,4 +1,4 @@
-# Configuration file for the Sphinx documentation builder.
+"""Configuration file for the Sphinx documentation builder."""
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
@@ -6,14 +6,18 @@
 
 # -- Path setup --------------------------------------------------------------
 
+# Standard Library
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
 import sys
+
+# Third Party
 from git import Repo
 from recommonmark.transform import AutoStructify
+
 
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.insert(0, os.path.abspath("../pidroidbot_discord"))
@@ -209,7 +213,7 @@ autosectionlabel_prefix_document = True
 #     html_context
 # except NameError:
 #     html_context = dict()
-if not "html_context" in vars() and not "html_context" in globals():
+if "html_context" not in vars() and "html_context" not in globals():
     html_context = dict()
 
 html_context["display_lower_left"] = True
@@ -276,7 +280,12 @@ for version in versions:
 
 # setting for creating PDF with rinoh
 rinoh_documents = [
-    (master_doc, "target", project + " Documentation", "© " + copyright,)
+    (
+        master_doc,
+        "target",
+        project + " Documentation",
+        "© " + copyright,
+    )
 ]
 today_fmt = "%B %d, %Y"
 
@@ -324,7 +333,10 @@ html_context["downloads"].append(
 
 html_context["onreadthedoc"] = list()
 html_context["onreadthedoc"].append(
-    ("Home", "/" + REPO_NAME + "/" + current_language + "/" + current_version + "/",)
+    (
+        "Home",
+        "/" + REPO_NAME + "/" + current_language + "/" + current_version + "/",
+    )
 )
 html_context["onreadthedoc"].append(
     (
@@ -344,12 +356,12 @@ html_context["github_user"] = "PiDroid-B"
 html_context["github_repo"] = "pidroidbot-discord"
 html_context["github_version"] = "main/docs/"
 
-# At the bottom of conf.py
-def setup(app):
+
+def setup(app):  # noqa D103
     app.add_config_value(
         "recommonmark_config",
         {
-            #'url_resolver': lambda url: github_doc_root + url,
+            # 'url_resolver': lambda url: github_doc_root + url,
             "auto_toc_tree_section": "Contents",
             "enable_math": False,
             "enable_inline_math": False,
