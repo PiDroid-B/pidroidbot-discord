@@ -1,4 +1,4 @@
-"""Performs general tests."""
+"""Performs general test."""
 import pidroidbot_discord
 # from sampleproject.libs import samplemodule as SM
 #

@@ -2,7 +2,7 @@
 
 Manage :
 - logging system (log)
-- main settings (main.conf overrided by main.local if exist)
+- main setting (main.conf overrided by main.local if exist)
 - pluggins and bot initialization
 """
 # Standard Library
@@ -15,9 +15,9 @@ from discord.errors import LoginFailure
 from discord.ext import commands
 
 # Project
-from default_conf import DEFAULT_CONFIG
 from pidroidbot_discord import __version__
 from pidroidbot_discord.const import CONF_DIR, PLUGIN_DIR
+from pidroidbot_discord.default_conf import DEFAULT_CONFIG
 from pidroidbot_discord.module.config import config, load_config
 from pidroidbot_discord.module.language import load_language
 
@@ -32,7 +32,8 @@ log = logging.getLogger("main")
 log.info("*" * 80)
 log.info(
     " START pidroidbot-discord v{version} [{lang}] ".format(
-        version=__version__, lang=config["main"]["lang"]
+        version=__version__,
+        lang=config["main"]["lang"],
     ).center(80, "*")
 )
 log.info("*" * 80)
@@ -46,7 +47,8 @@ async def on_ready():
     """Event called when all plugins are loaded and the bot is logged."""
     log.info(
         _("Logged as [{bot_username}] with ID [{bot_userid}]").format(
-            bot_username=bot.user.name, bot_userid=bot.user.id
+            bot_username=bot.user.name,
+            bot_userid=bot.user.id,
         )
     )
     await asyncio.sleep(1)
@@ -70,40 +72,38 @@ async def on_ready():
 
 
 def main():
-    """This is the main launcher
-
-    :return: None
-    :rtype: None
-    """
-
+    """Launch the bot."""
     log.info(_("Initialization"))
     # TODO list_ignore cogs hardcoded a retirer
-    config["main"]["cogs"]["list_ignore"] = ["core"]
+    config["main"]["pluggin"] = ["core"]
     try:
         log.info(_("Load extensions..."))
-        log.info(PLUGIN_DIR)
         for extension in [
             f
             for f in os.listdir(PLUGIN_DIR)
             if os.path.isdir(os.path.join(PLUGIN_DIR, f)) and not f.startswith("_")
         ]:
             try:
-                if extension not in config["main"]["cogs"]["list_ignore"]:
+                if extension in config["main"]["pluggin"]:
                     log.info("\t" + extension)
-                    bot.load_extension(f"plugins.{extension}")
+                    bot.load_extension(f"plugin.{extension}")
 
-            except commands.ExtensionError as e:
-                log.error(f'Failed to load extension "{extension}". \n', exc_info=True)
+            except commands.ExtensionError:
+                log.error(
+                    f'Failed to load extension "{extension}". \n',
+                    exc_info=True,
+                )
 
         bot.run(config["main"]["bot"]["token"])
-    except FileNotFoundError as e:
+    except FileNotFoundError:
         log.error(
             _(
-                "No plugin found in plugins' directory...\n\tPlease check your installation"
+                "No plugin found in plugin' directory...\n\t"
+                "Please check your installation"
             )
         )
         exit(1)
-    except LoginFailure as e:
+    except LoginFailure:
         log.error(
             _(
                 "Token is wrong or missing in configuration's file"

@@ -1,3 +1,12 @@
+"""Default global configuration.
+
+Pluggins' configurations are not included.
+"""
+
+# Third Party
+from const import LOG_FILE
+
+
 DEFAULT_CONFIG = f"""---
 
 log:
@@ -15,7 +24,7 @@ log:
       formatter: full
     stderr_file:
       class : logging.handlers.RotatingFileHandler
-      filename: log/logconfig.log
+      filename: {LOG_FILE}
       maxBytes: 1024000
       backupCount: 3
       level: WARNING
@@ -40,6 +49,5 @@ bot:
 debug:
   what_i_see: False
 lang: 'en_UK'
-
 
 """

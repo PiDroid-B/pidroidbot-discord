@@ -63,7 +63,7 @@ extensions = [
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
-# Napoleon settings
+# Napoleon setting
 napoleon_google_docstring = True
 napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = True
@@ -274,13 +274,13 @@ for version in versions:
 
 # POPULATE LINKS TO OTHER FORMATS/DOWNLOADS
 
-# settings for creating PDF with rinoh
+# setting for creating PDF with rinoh
 rinoh_documents = [
     (master_doc, "target", project + " Documentation", "© " + copyright,)
 ]
 today_fmt = "%B %d, %Y"
 
-# settings for EPUB
+# setting for EPUB
 epub_basename = "target"
 
 html_context["downloads"] = list()

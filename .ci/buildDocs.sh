@@ -72,7 +72,7 @@ for current_version in ${versions}; do
    PYTHONPATH=.. python3 __main__.py
    popd
    # override only log part
-#   cp .ci/main_for_docs.conf settings/main.local
+#   cp .ci/main_for_docs.conf setting/main.local
 
    languages="en $(find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; )"
    for current_language in ${languages}; do
