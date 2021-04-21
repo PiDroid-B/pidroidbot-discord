@@ -33,7 +33,7 @@ author = "PiDroid-B"
 version = ""
 
 # The full version, including alpha/beta/rc tags
-release = "v0.0.65"
+release = "v0.0.66"
 
 
 # -- General configuration ---------------------------------------------------

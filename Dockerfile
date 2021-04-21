@@ -1,6 +1,6 @@
 FROM python:3.8-slim
 
-LABEL version="v0.0.65" maintainer="Pidroid-B" url="https://github.com/PiDroid-B/pidroidbot-discord"
+LABEL version="v0.0.66" maintainer="Pidroid-B" url="https://github.com/PiDroid-B/pidroidbot-discord"
 
 ARG USER_ID="10001"
 ARG GROUP_ID="app"

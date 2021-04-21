@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.0.66](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.66) (2021-04-21)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.65...v0.0.66)
+
+**Merged pull requests:**
+
+- CI and Tox and Lint ok [\#43](https://github.com/PiDroid-B/pidroidbot-discord/pull/43) ([PiDroid-B](https://github.com/PiDroid-B))
+
+## [v0.0.65](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.65) (2021-04-21)
+
+[Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.64...v0.0.65)
+
 ## [v0.0.64](https://github.com/PiDroid-B/pidroidbot-discord/tree/v0.0.64) (2021-04-19)
 
 [Full Changelog](https://github.com/PiDroid-B/pidroidbot-discord/compare/v0.0.63...v0.0.64)
