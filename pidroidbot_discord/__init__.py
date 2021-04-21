@@ -2,7 +2,7 @@
 
 This is the init package interface.
 """
-__version__ = "0.0.64"
+__version__ = "0.0.65"
 
 
 from pidroidbot_discord import launcher
