@@ -129,11 +129,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder project setting
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope project setting
 .ropeproject
 
 # mkdocs documentation
@@ -228,7 +228,7 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-settings/*
+setting/*
 build/*
 
 # keep all folders contains .gitkeep (must be at the end of gitignore)

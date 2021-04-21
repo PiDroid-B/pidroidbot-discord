@@ -64,7 +64,7 @@ Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_
     :target: https://github.com/PiDroid-B/pidroidbot-discord/releases
     :alt: GitHub release (latest by date)
 
-.. |i_gh_build| image:: https://github.com/PiDroid-B/pidroidbot-discord/actions/workflows/do-release.yml/badge.svg?branch=main
+.. |i_gh_build| image:: https://github.com/PiDroid-B/pidroidbot-discord/actions/workflows/ci-build.yml/badge.svg?branch=main
     :target: https://github.com/PiDroid-B/pidroidbot-discord/actions/workflows/ci-build.yml
     :alt: Build
 

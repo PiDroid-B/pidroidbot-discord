@@ -1,5 +1,8 @@
-"""Performs general tests."""
-import pidroidbot_discord
+"""Performs general test."""
+# Project
+# import pidroidbot_discord
+
+
 # from sampleproject.libs import samplemodule as SM
 #
 #
@@ -11,6 +14,7 @@ import pidroidbot_discord
 def test_true():
     """Just asserts True."""
     assert True
+
 
 #
 # def test_sampleclass():

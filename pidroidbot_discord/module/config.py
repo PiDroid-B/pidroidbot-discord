@@ -1,20 +1,28 @@
+"""Manage all configuration's features.
+
+global var config{} contains all setting ordered by key=(pluggin name|main)
+filled by function load_config(conf_name, yaml_default_conf)
+"""
+# Standard Library
 import logging
 import logging.config
 import os
 from pathlib import Path
 from sys import exit
 
+# Third Party
 import yaml
 
-from pidroidbot_discord.const import CONF_DIR, ROOT_DIR
+# Project
+from pidroidbot_discord.const import CONF_DIR
+
 
 config = {}
 
-# _DEFAULT_CONF_DIR = os.path.join(ROOT_DIR, "settings")
-
 
 def load_config(conf_name, yaml_default_conf):
-    """
+    """Load config from file or default_conf.
+
     load configuration from a conf_name and add it to the dict config
     for the same conf_name, <conf_name>.local override <conf_name>.conf
     <conf_name>.conf will be created if missing (exit(1))
@@ -25,7 +33,6 @@ def load_config(conf_name, yaml_default_conf):
     :param yaml_default_conf: Content of the config in yaml
     :type yaml_default_conf: string
     """
-
     # load default conf or create it and exit(1)
     config_content = {}
     # config_file_without_ext = CONF_DIR os.path.join(
@@ -36,7 +43,7 @@ def load_config(conf_name, yaml_default_conf):
     config_file_local = os.path.join(CONF_DIR, f"{conf_name}.local")
     try:
         config_content = yaml.safe_load(Path(config_file_default).read_text())
-    except IOError as e:
+    except IOError:
         with open(config_file_default, "w") as f:
             f.write(yaml_default_conf)
             f.close()
@@ -45,7 +52,8 @@ def load_config(conf_name, yaml_default_conf):
         )
         exit(1)
 
-    # if "main" then we load default log conf as the first choice (help for later log in this unit)
+    # if "main" then we load default log conf as the first choice
+    # will help for next log in this unit
     if conf_name == "main":
         logging.config.dictConfig(config_content["log"])
     # use log setting of "main"
@@ -61,7 +69,7 @@ def load_config(conf_name, yaml_default_conf):
     except yaml.YAMLError as e:
         logging.error(f"YAML syntax error in {config_file_local}\n{e}")
         exit(1)
-    except FileNotFoundError as e:
+    except FileNotFoundError:
         log.warning(
             f"No {config_file_local} found - default configuration is not overrided"
         )

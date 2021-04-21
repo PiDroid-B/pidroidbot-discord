@@ -1,12 +1,15 @@
+"""Manage all i18n features."""
+# Standard Library
 import gettext
 import logging
 
+# Project
 from pidroidbot_discord.const import LANG_DIR
 
 
 def load_language(lang):
-    """
-    load locales from requested language, default english
+    """Load locales from requested language, default english.
+
     :param lang: requested language, coming from locales/ (i.e. : fr_FR)
     :type lang: string
     :return: None
@@ -27,6 +30,6 @@ def load_language(lang):
             traduction.install()
             _ = traduction.gettext
             __ = traduction.ngettext
-        except FileNotFoundError as e:
+        except FileNotFoundError:
             log.debug(f"Language {lang} not found. English used as default language")
     return _, __
