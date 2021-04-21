@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-18 14:36+0200\n"
+"POT-Creation-Date: 2021-04-21 08:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../../README.rst:3
-msgid "PidroidBot for Discord v0.0.63 |i_gh_star| |i_gh_license|"
+msgid "PidroidBot for Discord v0.0.64 |i_gh_star| |i_gh_license|"
 msgstr ""
 
 #: ../../../README.rst:5
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../../../README.rst:51
 msgid ""
-"This woks was initiated in 2021 by `PiDroid-B "
+"This works was initiated in 2021 by `PiDroid-B "
 "<https://github.com/PiDroid-B>`_"
 msgstr ""
 
@@ -126,5 +126,13 @@ msgid "Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_
 msgstr ""
 
 #~ msgid "PidroidBot for Discord v0.0.56 |i_gh_star| |i_gh_license|"
+#~ msgstr ""
+
+#~ msgid "PidroidBot for Discord v0.0.63 |i_gh_star| |i_gh_license|"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This woks was initiated in 2021 by"
+#~ " `PiDroid-B <https://github.com/PiDroid-B>`_"
 #~ msgstr ""
 

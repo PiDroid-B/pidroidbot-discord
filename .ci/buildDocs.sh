@@ -29,7 +29,7 @@ ls -lah
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 
 # make a new temp dir which will be our GitHub Pages docroot
-docroot=`mktemp -d`
+docroot=$(mktemp -d)
 
 export REPO_NAME="${GITHUB_REPOSITORY##*/}"
 export PRJ_NAME="PidroidBot-Discord"
@@ -57,7 +57,7 @@ echo "##### INFO - All versions from Buildocs : ${versions} ####################
 for current_version in ${versions}; do
    # make the current language available to conf.py
    export current_version
-   git checkout ${current_version}
+   git checkout "${current_version}"
 
    echo "##### INFO - version ${current_version} ########################################"
 
@@ -74,7 +74,7 @@ for current_version in ${versions}; do
    # override only log part
 #   cp .ci/main_for_docs.conf settings/main.local
 
-   languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
+   languages="en $(find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; )"
    for current_language in ${languages}; do
 
       # make the current language available to conf.py
@@ -87,7 +87,7 @@ for current_version in ${versions}; do
       echo "$( find docs/. -mindepth 1 -maxdepth 2 -type d )"
 
       # HTML #
-      sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+      sphinx-build -b html docs/ "docs/_build/html/${current_language}/${current_version}" -D language="${current_language}"
 
       # PDF #
       # sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
@@ -159,7 +159,7 @@ EOF
 git add .
 
 # commit all the new files
-msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
+msg="Updating Docs for commit ${GITHUB_SHA} made on $( date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds ) from ${GITHUB_REF} by ${GITHUB_ACTOR}"
 git commit -am "${msg}"
 
 # overwrite the contents of the gh-pages branch on our github.com repo

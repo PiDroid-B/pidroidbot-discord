@@ -1,4 +1,4 @@
-DEFAULT_CONFIG = """---
+DEFAULT_CONFIG = f"""---
 
 log:
   version: 1
@@ -13,13 +13,13 @@ log:
       stream: ext://sys.stderr
       level: WARNING
       formatter: full
-    # stderr_file:
-    #   class : logging.handlers.RotatingFileHandler
-    #   filename: ../log/logconfig.log
-    #   maxBytes: 1024000
-    #   backupCount: 3
-    #   level: INFO
-    #   formatter: full
+    stderr_file:
+      class : logging.handlers.RotatingFileHandler
+      filename: log/logconfig.log
+      maxBytes: 1024000
+      backupCount: 3
+      level: WARNING
+      formatter: full
     stdout:
       class: logging.StreamHandler
       stream: ext://sys.stdout
@@ -27,11 +27,11 @@ log:
       formatter: full
   loggers:
     main:
-      level: DEBUG
-      handlers: [stdout]
+      level: INFO
+      handlers: [stdout,stderr_file]
     plugins:
-      level: DEBUG
-      handlers: [stdout]
+      level: INFO
+      handlers: [stdout,stderr_file]
 cogs:
   list_ignore: []
 bot:

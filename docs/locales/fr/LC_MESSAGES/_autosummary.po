@@ -9,11 +9,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 15:38+0200\n"
+"POT-Creation-Date: 2021-04-21 08:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,15 +48,6 @@ msgid ":obj:`pidroidbot_discord.default_conf <pidroidbot_discord.default_conf>`\
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.rst:35:<autosummary>:1
-msgid ":obj:`pidroidbot_discord.launcher <pidroidbot_discord.launcher>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.rst:35:<autosummary>:1 of
-#: pidroidbot_discord.launcher:1
-msgid "This is the launcher of the bot"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.rst:35:<autosummary>:1
 msgid ":obj:`pidroidbot_discord.module <pidroidbot_discord.module>`\\"
 msgstr ""
 
@@ -73,25 +65,6 @@ msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.launcher.rst:2
 msgid "pidroidbot\\_discord.launcher"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.launcher.rst:13
-#: ../../_autosummary/pidroidbot_discord.module.config.rst:13
-#: ../../_autosummary/pidroidbot_discord.module.language.rst:13
-#: ../../_autosummary/pidroidbot_discord.plugins.vers.rst:13
-msgid "Functions"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
-msgid ":obj:`main <pidroidbot_discord.launcher.main>`\\ \\(\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
-msgid "This is the main launcher"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
-msgid ":obj:`on_ready <pidroidbot_discord.launcher.on_ready>`\\ \\(\\)"
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.rst:2
@@ -112,6 +85,12 @@ msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.config.rst:2
 msgid "pidroidbot\\_discord.module.config"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.config.rst:13
+#: ../../_autosummary/pidroidbot_discord.module.language.rst:13
+#: ../../_autosummary/pidroidbot_discord.plugins.vers.rst:13
+msgid "Functions"
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.config.rst:16:<autosummary>:1
@@ -194,4 +173,19 @@ msgid ""
 ":obj:`Version <pidroidbot_discord.plugins.vers.Version>`\\ \\(\\*args\\, "
 "\\*\\*kwargs\\)"
 msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord.launcher <pidroidbot_discord.launcher>`\\"
+#~ msgstr ""
+
+#~ msgid "This is the launcher of the bot"
+#~ msgstr ""
+
+#~ msgid ":obj:`main <pidroidbot_discord.launcher.main>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "This is the main launcher"
+#~ msgstr ""
+
+#~ msgid ":obj:`on_ready <pidroidbot_discord.launcher.on_ready>`\\ \\(\\)"
+#~ msgstr ""
 

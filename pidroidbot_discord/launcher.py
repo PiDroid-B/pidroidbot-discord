@@ -1,17 +1,26 @@
+"""Launcher of the bot.
+
+Manage :
+- logging system (log)
+- main settings (main.conf overrided by main.local if exist)
+- pluggins and bot initialization
 """
-This is the launcher of the bot
-"""
+# Standard Library
 import asyncio
 import logging.config
 import os
 
-from default_conf import DEFAULT_CONFIG
+# Third Party
 from discord.errors import LoginFailure
 from discord.ext import commands
+
+# Project
+from default_conf import DEFAULT_CONFIG
 from pidroidbot_discord import __version__
 from pidroidbot_discord.const import CONF_DIR, PLUGIN_DIR
 from pidroidbot_discord.module.config import config, load_config
 from pidroidbot_discord.module.language import load_language
+
 
 load_config("main", DEFAULT_CONFIG)
 _, __ = load_language(config["main"]["lang"])
@@ -34,6 +43,7 @@ bot = commands.Bot(command_prefix=config["main"]["bot"]["prefix"])
 
 @bot.event
 async def on_ready():
+    """Event called when all plugins are loaded and the bot is logged."""
     log.info(
         _("Logged as [{bot_username}] with ID [{bot_userid}]").format(
             bot_username=bot.user.name, bot_userid=bot.user.id
@@ -60,8 +70,7 @@ async def on_ready():
 
 
 def main():
-    """
-    This is the main launcher
+    """This is the main launcher
 
     :return: None
     :rtype: None

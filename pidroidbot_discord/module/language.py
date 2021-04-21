@@ -19,7 +19,10 @@ def load_language(lang):
     if lang != "en_UK":
         try:
             traduction = gettext.translation(
-                "messages", localedir=LANG_DIR, languages=[lang], fallback=False,
+                "messages",
+                localedir=LANG_DIR,
+                languages=[lang],
+                fallback=False,
             )
             traduction.install()
             _ = traduction.gettext

@@ -48,7 +48,7 @@ Author Information
 ****************************************************************
 `Table of Contents`_
 
-This woks was initiated in 2021 by `PiDroid-B <https://github.com/PiDroid-B>`_
+This works was initiated in 2021 by `PiDroid-B <https://github.com/PiDroid-B>`_
 
 Feedback, bug-reports, requests, ...
 ****************************************************************
@@ -65,7 +65,7 @@ Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_
     :alt: GitHub release (latest by date)
 
 .. |i_gh_build| image:: https://github.com/PiDroid-B/pidroidbot-discord/actions/workflows/do-release.yml/badge.svg?branch=main
-    :target: https://github.com/PiDroid-B/pidroidbot-discord/actions/workflows/do-release.yml
+    :target: https://github.com/PiDroid-B/pidroidbot-discord/actions/workflows/ci-build.yml
     :alt: Build
 
 .. |i_gh_codecov| image:: https://codecov.io/gh/PiDroid-B/pidroidbot-discord/branch/main/graph/badge.svg?token=D66J4JDE6L

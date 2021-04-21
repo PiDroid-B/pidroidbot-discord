@@ -1,0 +1,17 @@
+.dockerignore
+.ci/
+.github/
+devtools/
+log/*
+data/*
+settings/*
+tests/
+.bumpversion.cfg
+.codacy.yaml
+.coveragerc
+.github_changelog_generator
+.gitignore
+tox.ini
+.idea/
+.git
+

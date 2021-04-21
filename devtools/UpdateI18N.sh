@@ -23,7 +23,7 @@ for d in $(ls -d locales/*/ ); do
   for f in $(ls -d "${d}"/*/*.po ); do
     if ! grep -q "Language:" "${f}" ; then
       echo "Add Language to ${f}"
-      awk '/Language-Team/ { print; print "\"Language: '${lang}'\\n\""; next }1' "${f}" > "${f}.tmp"
+      awk '/Language-Team/ { print; print "\"Language: '"${lang}"'\\n\""; next }1' "${f}" > "${f}.tmp"
       mv "${f}.tmp" "${f}"
     fi
   done
