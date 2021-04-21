@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 15:40+0200\n"
+"POT-Creation-Date: 2021-04-21 20:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -22,14 +22,6 @@ msgstr ""
 
 #: ../../source.rst:2
 msgid "Source"
-msgstr ""
-
-#: ../../source.rst:8:<autosummary>:1
-msgid ":obj:`pidroidbot_discord <pidroidbot_discord>`\\"
-msgstr ""
-
-#: ../../source.rst:8:<autosummary>:1
-msgid "Initial documentation of SampleProject."
 msgstr ""
 
 #~ msgid "pidroidbot-discord"
@@ -148,5 +140,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Bases: :class:`pidroidbot_discord.plugins.core.CogCore`"
+#~ msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord <pidroidbot_discord>`\\"
+#~ msgstr ""
+
+#~ msgid "Initial documentation of SampleProject."
 #~ msgstr ""
 

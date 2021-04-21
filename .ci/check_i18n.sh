@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 
 dir_before="$(mktemp -d)"
 dir_after="$(mktemp -d)"
@@ -27,6 +27,6 @@ for f in $( find "$dir_after" -type f -name "*.po" ) ; do
 done
 
 git diff --check "$dir_before/" "$dir_after/" || {
-  echo "i18n require an update, please run devtools/updateI18N.sh"
+  echo "i18n require an update, please run devtools/UpdateI18N.sh"
   exit 1
 }
