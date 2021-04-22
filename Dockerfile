@@ -21,7 +21,9 @@ WORKDIR ${HOME}
 
 RUN \
   apt-get update && \
-  apt-get install dumb-init && \
+  apt-get install -y --no-install-recommends dumb-init && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
   chown -R ${USER_ID}:${GROUP_ID} ${HOME} && \
   pip install --no-cache-dir -r requirements.txt
 

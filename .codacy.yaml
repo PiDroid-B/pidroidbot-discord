@@ -3,4 +3,3 @@ exclude_paths:
  - 'test/**'
  - '**/CHANGELOG.md'
  - 'docs/conf.py'
- -
