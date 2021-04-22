@@ -1,5 +1,4 @@
-"""
-Launcher of the bot.
+"""Launcher of the bot.
 
 Manage :
 - logging system (log)
