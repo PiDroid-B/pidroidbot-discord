@@ -115,3 +115,4 @@ def main():
     finally:
         pass
         # bot.db.close()
+    log.info(_("Good bye !!!"))
