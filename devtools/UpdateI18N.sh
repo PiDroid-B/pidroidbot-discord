@@ -19,7 +19,7 @@ make gettext
 sphinx-intl update -p _build/gettext
 
 for d in $(ls -d locales/*/ ); do
-  lang="$( basename ${d})"
+  lang="$( basename "${d}")"
   for f in $(ls -d "${d}"/*/*.po ); do
     if ! grep -q "Language:" "${f}" ; then
       echo "Add Language to ${f}"

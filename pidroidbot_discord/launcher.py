@@ -1,4 +1,5 @@
-"""Launcher of the bot.
+"""
+Launcher of the bot.
 
 Manage :
 - logging system (log)
@@ -24,7 +25,6 @@ from pidroidbot_discord.module.language import load_language
 
 load_config("main", DEFAULT_CONFIG)
 _, __ = load_language(config["main"]["lang"])
-
 
 logging.config.dictConfig(config["main"]["log"])
 
@@ -71,28 +71,34 @@ async def on_ready():
     log.info(_("I'm ready !"))
 
 
+def load_extension():
+    """
+    Load all extensions in according with the defined list of plugins.
+
+    The list of plugins to load is defined in conf file "main".
+    """
+    for extension in [f for f in os.listdir(PLUGIN_DIR) if not f.startswith("_")]:
+        try:
+            if extension in config["main"]["plugins"]:
+                log.info("\t" + extension)
+                bot.load_extension(f"plugin.{extension}")
+
+        except commands.ExtensionError:
+            log.error(
+                f'Failed to load extension "{extension}". \n',
+                exc_info=True,
+            )
+
+
 def main():
     """Launch the bot."""
     log.info(_("Initialization"))
     # TODO list_ignore cogs hardcoded a retirer
-    config["main"]["pluggin"] = ["core"]
+    config["main"]["plugins"] = ["inspector"]
     try:
         log.info(_("Load extensions..."))
-        for extension in [
-            f
-            for f in os.listdir(PLUGIN_DIR)
-            if os.path.isdir(os.path.join(PLUGIN_DIR, f)) and not f.startswith("_")
-        ]:
-            try:
-                if extension in config["main"]["pluggin"]:
-                    log.info("\t" + extension)
-                    bot.load_extension(f"plugin.{extension}")
 
-            except commands.ExtensionError:
-                log.error(
-                    f'Failed to load extension "{extension}". \n',
-                    exc_info=True,
-                )
+        load_extension()
 
         bot.run(config["main"]["bot"]["token"])
     except FileNotFoundError:
