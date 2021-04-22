@@ -1,4 +1,5 @@
-"""Manage all configuration's features.
+"""
+Manage all configuration's features.
 
 global var config{} contains all setting ordered by key=(pluggin name|main)
 filled by function load_config(conf_name, yaml_default_conf)
@@ -8,7 +9,7 @@ import logging
 import logging.config
 import os
 from pathlib import Path
-from sys import exit
+from sys import exit as sysexit
 
 # Third Party
 import yaml
@@ -29,7 +30,7 @@ def load_config(conf_name, yaml_default_conf):
     use env variable PBD__CONFIG_DIR for spécific conf path
 
     :param conf_name: Name of the config (part of file name without extension)
-    :type conf_name:  string
+    :type conf_name: string
     :param yaml_default_conf: Content of the config in yaml
     :type yaml_default_conf: string
     """
@@ -50,7 +51,7 @@ def load_config(conf_name, yaml_default_conf):
         logging.error(
             f"Didn't find default conf file, autoregenerated into {config_file_default}"
         )
-        exit(1)
+        sysexit(1)
 
     # if "main" then we load default log conf as the first choice
     # will help for next log in this unit
@@ -68,7 +69,7 @@ def load_config(conf_name, yaml_default_conf):
     #  yaml.scanner.ScannerError
     except yaml.YAMLError as e:
         logging.error(f"YAML syntax error in {config_file_local}\n{e}")
-        exit(1)
+        sysexit(1)
     except FileNotFoundError:
         log.warning(
             f"No {config_file_local} found - default configuration is not overrided"

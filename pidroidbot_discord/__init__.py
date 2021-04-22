@@ -1,4 +1,5 @@
-"""Package interface.
+"""
+Package interface.
 
 This is the init package interface.
 """

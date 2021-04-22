@@ -13,6 +13,7 @@ pidroidbot\_discord.launcher
 
    .. autosummary::
    
+      load_extension
       main
       on_ready
    

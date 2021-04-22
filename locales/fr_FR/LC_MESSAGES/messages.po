@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-21 18:22+0000\n"
+"POT-Creation-Date: 2021-04-22 17:01+0200\n"
 "PO-Revision-Date: 2021-03-19 15:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -42,25 +42,33 @@ msgstr ""
 msgid "I'm ready !"
 msgstr "Je suis prêt"
 
-#: pidroidbot_discord/launcher.py:76
+#: pidroidbot_discord/launcher.py:95
 msgid "Initialization"
 msgstr "Initialisation"
 
-#: pidroidbot_discord/launcher.py:80
+#: pidroidbot_discord/launcher.py:99
 msgid "Load extensions..."
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:100
+#: pidroidbot_discord/launcher.py:106
 msgid ""
 "No plugin found in plugin' directory...\n"
 "\tPlease check your installation"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:108
+#: pidroidbot_discord/launcher.py:114
 msgid ""
 "Token is wrong or missing in configuration's file\n"
 "\tPlease check the value for the key [bot][token]\n"
 "\tin {file}"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:124
+msgid "Good bye !!!"
+msgstr ""
+
+#: pidroidbot_discord/plugin/inspector/__init__.py:33
+msgid "\t\t{} loaded..."
 msgstr ""
 
 #~ msgid ""

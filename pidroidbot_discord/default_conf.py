@@ -1,4 +1,5 @@
-"""Default global configuration.
+"""
+Default global configuration.
 
 Pluggins' configurations are not included.
 """
@@ -41,8 +42,7 @@ log:
     plugins:
       level: INFO
       handlers: [stdout,stderr_file]
-cogs:
-  list_ignore: []
+plugins: []
 bot:
   prefix: "."
   token: "YOUR_TOKEN"
