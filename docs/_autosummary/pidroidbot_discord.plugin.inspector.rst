@@ -1,7 +1,7 @@
-pidroidbot\_discord.plugins.vers
-================================
+pidroidbot\_discord.plugin.inspector
+====================================
 
-.. automodule:: pidroidbot_discord.plugins.vers
+.. automodule:: pidroidbot_discord.plugin.inspector
 
    
    
@@ -23,7 +23,7 @@ pidroidbot\_discord.plugins.vers
 
    .. autosummary::
    
-      Version
+      Inspector
    
    
 
