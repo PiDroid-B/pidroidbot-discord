@@ -1,7 +1,7 @@
 # docker build . --tag pidroidbot-discord
 FROM python:3.8-slim
 
-LABEL version="v0.0.67.dev_1" maintainer="Pidroid-B" url="https://github.com/PiDroid-B/pidroidbot-discord"
+LABEL version="v0.0.67.dev_2" maintainer="Pidroid-B" url="https://github.com/PiDroid-B/pidroidbot-discord"
 
 ARG USER_ID="10001"
 ARG GROUP_ID="app"
