@@ -8,7 +8,8 @@ from pidroidbot_discord.const import LANG_DIR
 
 
 def load_language(lang):
-    """Load locales from requested language, default english.
+    """
+    Load locales from requested language, default english.
 
     :param lang: requested language, coming from locales/ (i.e. : fr_FR)
     :type lang: string
