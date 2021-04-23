@@ -1,8 +1,10 @@
 ================================================================
-PidroidBot for Discord v0.0.67 |i_gh_star| |i_gh_license|
+PidroidBot for Discord 0.0.67 |i_gh_star| |i_gh_license|
 ================================================================
 
-|i_gh_release| |i_gh_build| |i_gh_codecov| |i_gh_codacy| |i_gh_codeclimate|
+Release : |i_gh_release| |i_gh_docker|
+
+Latest : |i_gh_build| |i_gh_codecov| |i_gh_codacy| |i_gh_codeclimate|
 
 Internationalization(Languages | Coverage) : |i_gh_i18nApp| |i_gh_i18nDoc|
 
@@ -90,3 +92,7 @@ Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_
 .. |i_gh_i18nDoc| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PiDroid-B/pidroidbot-discord/main/.ci/badges/i18n_doccov.json
    :target: https://pidroid-b.github.io/pidroidbot-discord/
    :alt: Documentation i18n
+
+.. |i_gh_docker| image:: https://img.shields.io/docker/pulls/pidroidb/pidroidbot-discord
+   :target: https://hub.docker.com/r/pidroidb/pidroidbot-discord
+   :alt: Docker image

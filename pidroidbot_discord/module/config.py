@@ -22,7 +22,8 @@ config = {}
 
 
 def load_config(conf_name, yaml_default_conf):
-    """Load config from file or default_conf.
+    """
+    Load config from file or default_conf.
 
     load configuration from a conf_name and add it to the dict config
     for the same conf_name, <conf_name>.local override <conf_name>.conf
