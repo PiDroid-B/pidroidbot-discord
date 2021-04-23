@@ -4,32 +4,35 @@ FROM python:3.8-slim
 LABEL version="v0.0.67.dev_3" maintainer="Pidroid-B" url="https://github.com/PiDroid-B/pidroidbot-discord"
 
 ARG USER_ID="10001"
-ARG GROUP_ID="app"
+ARG USER_NAME="app"
+ARG GROUP_ID="10001"
+ARG GROUP_NAME="app"
+
 ARG HOME="/app/"
 
-ENV \
-  HOME=${HOME} \
-  PYTHONPATH=${HOME}
+ENV PYTHONPATH="${HOME}"
+ENV USER_NAME="${USER_NAME}"
+ENV DEFAULT_UID="${USER_ID}"
+ENV GROUP_NAME="${GROUP_NAME}"
+ENV DEFAULT_GID="${GROUP_ID}"
 
 RUN \
-  groupadd --gid ${USER_ID} ${GROUP_ID} && \
-  useradd --create-home --uid ${USER_ID} --gid ${GROUP_ID} --home-dir ${HOME} ${GROUP_ID}
+  groupadd -g ${GROUP_ID} -o ${GROUP_NAME} && \
+  useradd --create-home --home-dir ${HOME} -s /bin/bash -o -u ${USER_ID} -g ${GROUP_ID} ${USER_NAME}
 
 COPY . ${HOME}
-# COPY .docker/ /
 WORKDIR ${HOME}
 
 RUN \
   apt-get update && \
-  apt-get install -y --no-install-recommends dumb-init && \
+  apt-get install -y --no-install-recommends dumb-init sudo && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
-  chown -R ${USER_ID}:${GROUP_ID} ${HOME} && \
   pip install --no-cache-dir -r requirements.txt
-
-USER ${USER_ID}
 
 VOLUME /app/log /app/settings /app/data
 
-# CMD python pidroidbot_discord/__init__.py
-ENTRYPOINT ["dumb-init", "-v", "--", "python3", "/app/pidroidbot_discord/__init__.py"]
+RUN chmod +x /app/.docker/entrypoint.sh
+
+ENTRYPOINT [ "/app/.docker/entrypoint.sh" ]
+CMD ["sudo", "-n", "-u", "app", "dumb-init", "-v", "--", "python3", "/app/pidroidbot_discord/__init__.py"]
