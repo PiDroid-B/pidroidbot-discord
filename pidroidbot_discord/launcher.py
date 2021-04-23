@@ -10,6 +10,7 @@ Manage :
 import asyncio
 import logging.config
 import os
+from getpass import getuser as getusername
 
 # Third Party
 from discord.errors import LoginFailure
@@ -31,9 +32,10 @@ logging.config.dictConfig(config["main"]["log"])
 log = logging.getLogger("main")
 log.info("*" * 80)
 log.info(
-    " START pidroidbot-discord v{version} [{lang}] ".format(
+    " START pidroidbot-discord v{version} [{lang}/{user}] ".format(
         version=__version__,
         lang=config["main"]["lang"],
+        user=getusername(),
     ).center(80, "*")
 )
 log.info("*" * 80)
