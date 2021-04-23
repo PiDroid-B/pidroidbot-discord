@@ -14,8 +14,26 @@ from discord.ext import commands
 from pidroidbot_discord.launcher import _
 
 
-class Inspector(commands.Cog):
+class InspectorToDel:
+    """
+    Dels sqdqsd fdfz fdsf sdf sds.
 
+    Do nothing yet
+    """
+
+    def __init__(self, bot):
+        """
+        Construct all the required attributes of the Plugin.
+
+        :param bot: Bot managed by launcher
+        :type bot: commands.Bot
+        """
+        self.bot = bot
+        self.log = getLogger(f"plugins.{__class__.__name__}")
+        self.log.info(_("\t\t{} loaded...").format(__class__.__name__))
+
+
+class Inspector(commands.Cog):
     """
     Plugin Inspector.
 
