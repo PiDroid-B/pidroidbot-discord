@@ -34,7 +34,7 @@ version = ""
 
 # The full version, including alpha/beta/rc tags
 
-release = "0.0.67"
+release = "0.0.67.beta_0"
 
 
 # -- General configuration ---------------------------------------------------
