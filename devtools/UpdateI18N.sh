@@ -1,11 +1,14 @@
 #!/bin/bash
+set -x
 
-[ "$(dirname "$0")" != "." ] && {
+if [ "$(dirname "$0")" == "." ]; then
+  pushd ..
+elif [ "$(dirname "$0")" == "devtools" ]; then
+  pushd .
+else
   echo "Please go to the devtools' directory before run this script"
   exit 1
-}
-
-pushd ..
+fi
 
 pybabel extract -o locales/base.pot pidroidbot_discord/
 pybabel update -i locales/base.pot -d locales

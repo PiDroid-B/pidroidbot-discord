@@ -1,20 +1,18 @@
 ---
-name: Build
+name: Build Release/RC
 
 on:
   push:
     branches:
       - main
-      - dev
-      - test
+      - rc
 
 jobs:
 
   new_release:
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[SKIP]')"
-#    if: "1 == 0"
-    name: New Release / Dev / Test
+    if: "!startsWith(github.event.head_commit.message, 'Version bump')"
+    name: New Release/RC
 
     steps:
       - name: checkout
@@ -136,8 +134,8 @@ jobs:
           INC=1
 
           if [[ $INC -eq 0 ]]; then
-              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}_0"
-              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}_0"
+              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}0"
+              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}0"
           else
               echo "INFO > version ++"
               bump2version build --allow-dirty
@@ -161,20 +159,20 @@ jobs:
           sudo gem install github_changelog_generator
           echo "::endgroup::"
           echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
-          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
+          github_changelog_generator --future-release "${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
           cp CHANGELOG.md docs/autogen/CHANGELOG.md
-          github_changelog_generator --future-release "v${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o .ci/CHANGELOG.md
+          github_changelog_generator --future-release "${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o .ci/CHANGELOG.md
 
       - name: Commit version
         run: |
           git add .
-          git commit -m "[SKIP] version bump v${{ env.OLD_VERSION }} -> v${{ env.NEW_VERSION }}"
+          git commit -m "Version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
           git push
 
       - name: Create tag and release (only on main)
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          gh release create "v${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F .ci/CHANGELOG.md
+          gh release create "${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F .ci/CHANGELOG.md
         if: "env.BRANCH == 'main'"
 
   docs:

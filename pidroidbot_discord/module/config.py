@@ -1,5 +1,4 @@
-"""
-Manage all configuration's features.
+"""Manage all configuration's features.
 
 global var config{} contains all setting ordered by key=(pluggin name|main)
 filled by function load_config(conf_name, yaml_default_conf)
