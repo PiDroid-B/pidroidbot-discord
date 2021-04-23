@@ -1,5 +1,5 @@
 ================================================================
-PidroidBot for Discord 0.0.67.rc_0 |i_gh_star| |i_gh_license|
+PidroidBot for Discord 0.0.67.rc0 |i_gh_star| |i_gh_license|
 ================================================================
 
 Release : |i_gh_release| |i_gh_docker|

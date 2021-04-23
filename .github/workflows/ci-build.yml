@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Build Release/RC
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
   new_release:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, 'Version bump')"
-    name: New Release / Dev / Test
+    name: New Release/RC
 
     steps:
       - name: checkout
@@ -134,8 +134,8 @@ jobs:
           INC=1
 
           if [[ $INC -eq 0 ]]; then
-              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}_0"
-              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}_0"
+              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}0"
+              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}0"
           else
               echo "INFO > version ++"
               bump2version build --allow-dirty
