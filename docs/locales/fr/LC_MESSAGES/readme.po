@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 16:53+0200\n"
+"POT-Creation-Date: 2021-04-23 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -21,107 +21,109 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../../README.rst:3
-msgid "PidroidBot for Discord v0.0.66 |i_gh_star| |i_gh_license|"
+msgid "PidroidBot for Discord 0.0.67.rc_0 |i_gh_star| |i_gh_license|"
 msgstr ""
 
 #: ../../../README.rst:5
-msgid ""
-"|i_gh_release| |i_gh_build| |i_gh_codecov| |i_gh_codacy| "
-"|i_gh_codeclimate|"
+msgid "Release : |i_gh_release| |i_gh_docker|"
 msgstr ""
 
 #: ../../../README.rst:7
+msgid "Latest : |i_gh_build| |i_gh_codecov| |i_gh_codacy| |i_gh_codeclimate|"
+msgstr ""
+
+#: ../../../README.rst:9
 msgid "Internationalization(Languages | Coverage) : |i_gh_i18nApp| |i_gh_i18nDoc|"
 msgstr ""
 
-#: ../../../README.rst:10
+#: ../../../README.rst:12
 msgid "A new friend to manage your discord server !"
 msgstr ""
 
-#: ../../../README.rst:13
+#: ../../../README.rst:15
 msgid "Table of Contents"
 msgstr ""
 
-#: ../../../README.rst:15
+#: ../../../README.rst:17
 msgid "`How it works`_"
 msgstr ""
 
-#: ../../../README.rst:16
+#: ../../../README.rst:18
 msgid "`Plugins' inventory`_"
 msgstr ""
 
-#: ../../../README.rst:17
+#: ../../../README.rst:19
 msgid "`Installation`_"
 msgstr ""
 
-#: ../../../README.rst:18
+#: ../../../README.rst:20
 msgid "`Configuration`_"
 msgstr ""
 
-#: ../../../README.rst:19
+#: ../../../README.rst:21
 msgid "`License`_"
 msgstr ""
 
-#: ../../../README.rst:20
+#: ../../../README.rst:22
 msgid "`Author Information`_"
 msgstr ""
 
-#: ../../../README.rst:21
+#: ../../../README.rst:23
 msgid "`Feedback, bug-reports, requests, ...`_"
 msgstr ""
 
-#: ../../../README.rst:24
+#: ../../../README.rst:26
 msgid "How it works"
 msgstr ""
 
-#: ../../../README.rst:25 ../../../README.rst:29 ../../../README.rst:33
-#: ../../../README.rst:37 ../../../README.rst:41 ../../../README.rst:49
-#: ../../../README.rst:55
+#: ../../../README.rst:27 ../../../README.rst:31 ../../../README.rst:35
+#: ../../../README.rst:39 ../../../README.rst:43 ../../../README.rst:51
+#: ../../../README.rst:57
 msgid "`Table of Contents`_"
 msgstr ""
 
-#: ../../../README.rst:28
+#: ../../../README.rst:30
 msgid "Plugins' inventory"
 msgstr ""
 
-#: ../../../README.rst:32
+#: ../../../README.rst:34
 msgid "Installation"
 msgstr ""
 
-#: ../../../README.rst:36
+#: ../../../README.rst:38
 msgid "Configuration"
 msgstr ""
 
-#: ../../../README.rst:40
+#: ../../../README.rst:42
 msgid "License"
 msgstr ""
 
-#: ../../../README.rst:43
+#: ../../../README.rst:45
 msgid "|i_gh_license|"
 msgstr ""
 
-#: ../../../README.rst:45
+#: ../../../README.rst:47
 msgid ""
 "`Creative Commons : Attribution-NonCommercial-ShareAlike 4.0 "
 "International (CC BY-NC-SA 4.0) <http://creativecommons.org/licenses/by-"
 "nc-sa/4.0/>`_"
 msgstr ""
 
-#: ../../../README.rst:48
+#: ../../../README.rst:50
 msgid "Author Information"
 msgstr ""
 
-#: ../../../README.rst:51
+#: ../../../README.rst:53
 msgid ""
 "This works was initiated in 2021 by `PiDroid-B "
 "<https://github.com/PiDroid-B>`_"
 msgstr ""
 
-#: ../../../README.rst:54
+#: ../../../README.rst:56
 msgid "Feedback, bug-reports, requests, ..."
 msgstr ""
 
-#: ../../../README.rst:57
+#: ../../../README.rst:59
 msgid "Are `welcome ! <https://github.com/PiDroid-B/pidroidbot-discord/issues>`_"
 msgstr ""
 
@@ -140,5 +142,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "PidroidBot for Discord v0.0.65 |i_gh_star| |i_gh_license|"
+#~ msgstr ""
+
+#~ msgid "PidroidBot for Discord v0.0.66 |i_gh_star| |i_gh_license|"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "|i_gh_release| |i_gh_build| |i_gh_codecov| "
+#~ "|i_gh_codacy| |i_gh_codeclimate|"
 #~ msgstr ""
 

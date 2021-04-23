@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-23 13:36+0000\n"
+"POT-Creation-Date: 2021-04-23 15:59+0200\n"
 "PO-Revision-Date: 2021-03-19 15:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -18,52 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: pidroidbot_discord/launcher.py:49
+#: pidroidbot_discord/launcher.py:51
 msgid "Logged as [{bot_username}] with ID [{bot_userid}]"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:58
+#: pidroidbot_discord/launcher.py:60
 msgid "Servers' list :"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:60
+#: pidroidbot_discord/launcher.py:62
 msgid "- Server {servername}"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:61
+#: pidroidbot_discord/launcher.py:63
 msgid "\t- Chans"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:65
+#: pidroidbot_discord/launcher.py:67
 msgid "\t- Roles"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:71
+#: pidroidbot_discord/launcher.py:73
 msgid "I'm ready !"
 msgstr "Je suis prêt"
 
-#: pidroidbot_discord/launcher.py:95
+#: pidroidbot_discord/launcher.py:97
 msgid "Initialization"
 msgstr "Initialisation"
 
-#: pidroidbot_discord/launcher.py:99
+#: pidroidbot_discord/launcher.py:101
 msgid "Load extensions..."
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:106
+#: pidroidbot_discord/launcher.py:108
 msgid ""
 "No plugin found in plugin' directory...\n"
 "\tPlease check your installation"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:114
+#: pidroidbot_discord/launcher.py:116
 msgid ""
 "Token is wrong or missing in configuration's file\n"
 "\tPlease check the value for the key [bot][token]\n"
 "\tin {file}"
 msgstr ""
 
-#: pidroidbot_discord/launcher.py:124
+#: pidroidbot_discord/launcher.py:126
 msgid "Good bye !!!"
 msgstr ""
 
