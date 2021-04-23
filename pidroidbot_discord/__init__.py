@@ -3,7 +3,7 @@ Package interface.
 
 This is the init package interface.
 """
-__version__ = "0.0.67.rc0"
+__version__ = "1.0.0"
 
 
 # Project
