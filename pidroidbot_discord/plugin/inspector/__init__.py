@@ -15,6 +15,7 @@ from pidroidbot_discord.launcher import _
 
 
 class Inspector(commands.Cog):
+
     """
     Plugin Inspector.
 

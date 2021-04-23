@@ -4,7 +4,3 @@ exclude_paths:
  - '**/CHANGELOG.md'
  - 'CHANGELOG.md'
  - 'docs/conf.py'
-
-pep257:
-  disable:
-    - D213
