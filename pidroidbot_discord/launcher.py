@@ -2,9 +2,11 @@
 Launcher of the bot.
 
 Manage :
+
 - logging system (log)
-- main setting (main.conf overrided by main.local if exist)
+- main setting (main.default.yml overrided by main.local.yml if exist)
 - pluggins and bot initialization
+
 """
 # Standard Library
 import asyncio
@@ -80,9 +82,11 @@ def load_extension():
 
     The list of plugins to load is defined in conf file "main".
     """
-    for extension in [f for f in os.listdir(PLUGIN_DIR) if not f.startswith("_")]:
+    for extension in [
+        f.lower() for f in os.listdir(PLUGIN_DIR) if not f.startswith("_")
+    ]:
         try:
-            if extension in config["main"]["plugins"]:
+            if extension in [p.lower() for p in config["main"]["plugins"]]:
                 bot.load_extension(f"plugin.{extension}")
 
         except commands.ExtensionError:
@@ -95,12 +99,10 @@ def load_extension():
 def main():
     """Launch the bot."""
     log.info(_("Initialization"))
-    # TODO list_ignore cogs hardcoded a retirer
-    config["main"]["plugins"] = ["inspector"]
     try:
         for info in wrap(
             _("Load extensions : {}").format(
-                config["main"]["plugins"],
+                " ".join(config["main"]["plugins"]),
             ),
             width=80,
         ):
@@ -123,7 +125,7 @@ def main():
                 "Token is wrong or missing in configuration's file"
                 "\n\tPlease check the value for the key [bot][token]"
                 "\n\tin {file}"
-            ).format(file=f"{os.path.join(CONF_DIR,'main.local')}")
+            ).format(file=f"{os.path.join(CONF_DIR,'main.local.yml')}")
         )
         exit(1)
     finally:

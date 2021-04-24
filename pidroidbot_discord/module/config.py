@@ -20,15 +20,18 @@ from pidroidbot_discord.const import CONF_DIR
 
 config = {}
 
+# TODO séparer en 2 fonctions (réécrire tous les default_conf + cherger les local_conf)
+
 
 def load_config(conf_name, yaml_default_conf):
     """
-    Load config from file or default_conf.
+    Load config from files in configuration's directory.
 
     load configuration from a conf_name and add it to the dict config
-    for the same conf_name, <conf_name>.local override <conf_name>.conf
-    <conf_name>.conf will be created if missing (exit(1))
-    use env variable PBD__CONFIG_DIR for spécific conf path
+    for the same conf_name, <conf_name>.local.yml override <conf_name>.default.yml
+
+    <conf_name>.default.yml will be created if missing (exit(1))
+    use env variable PBD__CONFIG_DIR for specific conf path
 
     :param conf_name: Name of the config (part of file name without extension)
     :type conf_name: string
@@ -37,12 +40,9 @@ def load_config(conf_name, yaml_default_conf):
     """
     # load default conf or create it and exit(1)
     config_content = {}
-    # config_file_without_ext = CONF_DIR os.path.join(
-    #     os.getenv("PBD__CONFIG_DIR", _DEFAULT_CONF_DIR), conf_name
-    # )
 
-    config_file_default = os.path.join(CONF_DIR, f"{conf_name}.conf")
-    config_file_local = os.path.join(CONF_DIR, f"{conf_name}.local")
+    config_file_default = os.path.join(CONF_DIR, f"{conf_name}.default.yml")
+    config_file_local = os.path.join(CONF_DIR, f"{conf_name}.local.yml")
     try:
         config_content = yaml.safe_load(Path(config_file_default).read_text())
     except IOError:
@@ -63,8 +63,7 @@ def load_config(conf_name, yaml_default_conf):
 
     try:
         config_content_local = yaml.safe_load(Path(config_file_local).read_text())
-        # config_content.update(config_content)
-        config_content = config_content_local
+        config_content.update(config_content_local)
         logging.config.dictConfig(config_content["log"])
 
     #  yaml.scanner.ScannerError

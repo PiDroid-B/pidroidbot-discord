@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-24 11:26+0200\n"
+"POT-Creation-Date: 2021-04-24 16:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -32,6 +32,7 @@ msgstr ""
 msgid "This is the init package interface."
 msgstr ""
 
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.rst:25
 #: ../../_autosummary/pidroidbot_discord.module.rst:25
 #: ../../_autosummary/pidroidbot_discord.plugin.rst:25
 #: ../../_autosummary/pidroidbot_discord.rst:25
@@ -100,9 +101,19 @@ msgid "pidroidbot\\_discord.launcher"
 msgstr ""
 
 #: of pidroidbot_discord.launcher:3
-msgid ""
-"Manage : - logging system (log) - main setting (main.conf overrided by "
-"main.local if exist) - pluggins and bot initialization"
+msgid "Manage :"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:5
+msgid "logging system (log)"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:6
+msgid "main setting (main.default.yml overrided by main.local.yml if exist)"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:7
+msgid "pluggins and bot initialization"
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.launcher.rst:13
@@ -143,35 +154,46 @@ msgstr ""
 msgid "pidroidbot\\_discord.module"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
 msgid ""
 ":obj:`pidroidbot_discord.module.config "
 "<pidroidbot_discord.module.config>`\\"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1 of
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1 of
 #: pidroidbot_discord.module.config:1
 msgid "Manage all configuration's features."
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
 msgid ""
 ":obj:`pidroidbot_discord.module.language "
 "<pidroidbot_discord.module.language>`\\"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1 of
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1 of
 #: pidroidbot_discord.module.language:1
 msgid "Manage all i18n features."
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
+msgid ""
+":obj:`pidroidbot_discord.module.pluginmanager "
+"<pidroidbot_discord.module.pluginmanager>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1 of
+#: pidroidbot_discord.module.pluginmanager:1
+msgid "Contains all elements to manage plugins (inheritance, const...)."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
 msgid ""
 ":obj:`pidroidbot_discord.module.str_utils "
 "<pidroidbot_discord.module.str_utils>`\\"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1 of
+#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1 of
 #: pidroidbot_discord.module.str_utils:1
 msgid "All tools about string manipulation."
 msgstr ""
@@ -193,7 +215,7 @@ msgid ""
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.config.rst:16:<autosummary>:1
-msgid "Load config from file or default_conf."
+msgid "Load config from files in configuration's directory."
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.language.rst:2
@@ -208,6 +230,46 @@ msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.language.rst:16:<autosummary>:1
 msgid "Load locales from requested language, default english."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.rst:2
+msgid "pidroidbot\\_discord.module.pluginmanager"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.rst:32:<autosummary>:1
+msgid ""
+":obj:`pidroidbot_discord.module.pluginmanager.checker "
+"<pidroidbot_discord.module.pluginmanager.checker>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.rst:32:<autosummary>:1
+msgid ""
+":obj:`pidroidbot_discord.module.pluginmanager.core "
+"<pidroidbot_discord.module.pluginmanager.core>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.checker.rst:2
+msgid "pidroidbot\\_discord.module.pluginmanager.checker"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.core.rst:2
+msgid "pidroidbot\\_discord.module.pluginmanager.core"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.core.rst:17
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:23
+msgid "Classes"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.core.rst:20:<autosummary>:1
+msgid ""
+":obj:`Core <pidroidbot_discord.module.pluginmanager.core.Core>`\\ "
+"\\(\\*args\\, \\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.core.rst:20:<autosummary>:1
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
+msgid "Plugin Inspector."
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.str_utils.rst:2
@@ -247,18 +309,10 @@ msgstr ""
 msgid ":obj:`setup <pidroidbot_discord.plugin.inspector.setup>`\\ \\(bot\\)"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:23
-msgid "Classes"
-msgstr ""
-
 #: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
 msgid ""
 ":obj:`Inspector <pidroidbot_discord.plugin.inspector.Inspector>`\\ "
 "\\(\\*args\\, \\*\\*kwargs\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
-msgid "Plugin Inspector."
 msgstr ""
 
 #~ msgid ":obj:`pidroidbot_discord.launcher <pidroidbot_discord.launcher>`\\"
@@ -342,5 +396,15 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "pidroidbot\\_discord.plugins.vers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Manage : - logging system (log) -"
+#~ " main setting (main.conf overrided by "
+#~ "main.local if exist) - pluggins and "
+#~ "bot initialization"
+#~ msgstr ""
+
+#~ msgid "Load config from file or default_conf."
 #~ msgstr ""
 

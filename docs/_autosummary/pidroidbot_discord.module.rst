@@ -29,5 +29,6 @@
 
    pidroidbot_discord.module.config
    pidroidbot_discord.module.language
+   pidroidbot_discord.module.pluginmanager
    pidroidbot_discord.module.str_utils
 

@@ -67,12 +67,10 @@ for current_version in ${versions}; do
       continue
    fi
 
-   # workaround about ci required keys (logger, token, cogs etc) in launcher
+   # conf file required for ci : workaround first launch to generate it
    pushd pidroidbot_discord
    PYTHONPATH=.. python3 __main__.py
    popd
-   # override only log part
-#   cp .ci/main_for_docs.conf setting/main.local
 
    languages="en $(find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; )"
    for current_language in ${languages}; do
