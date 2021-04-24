@@ -1,4 +1,4 @@
-pidroidbot\_discord.module
+﻿pidroidbot\_discord.module
 ==========================
 
 .. automodule:: pidroidbot_discord.module
@@ -29,4 +29,5 @@ pidroidbot\_discord.module
 
    pidroidbot_discord.module.config
    pidroidbot_discord.module.language
+   pidroidbot_discord.module.str_utils
 

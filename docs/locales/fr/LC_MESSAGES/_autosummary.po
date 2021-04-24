@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 17:01+0200\n"
+"POT-Creation-Date: 2021-04-24 11:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -108,6 +108,7 @@ msgstr ""
 #: ../../_autosummary/pidroidbot_discord.launcher.rst:13
 #: ../../_autosummary/pidroidbot_discord.module.config.rst:13
 #: ../../_autosummary/pidroidbot_discord.module.language.rst:13
+#: ../../_autosummary/pidroidbot_discord.module.str_utils.rst:13
 #: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:13
 msgid "Functions"
 msgstr ""
@@ -142,26 +143,37 @@ msgstr ""
 msgid "pidroidbot\\_discord.module"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:32:<autosummary>:1
+#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1
 msgid ""
 ":obj:`pidroidbot_discord.module.config "
 "<pidroidbot_discord.module.config>`\\"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:32:<autosummary>:1 of
+#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1 of
 #: pidroidbot_discord.module.config:1
 msgid "Manage all configuration's features."
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:32:<autosummary>:1
+#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1
 msgid ""
 ":obj:`pidroidbot_discord.module.language "
 "<pidroidbot_discord.module.language>`\\"
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.rst:32:<autosummary>:1 of
+#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1 of
 #: pidroidbot_discord.module.language:1
 msgid "Manage all i18n features."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1
+msgid ""
+":obj:`pidroidbot_discord.module.str_utils "
+"<pidroidbot_discord.module.str_utils>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.rst:33:<autosummary>:1 of
+#: pidroidbot_discord.module.str_utils:1
+msgid "All tools about string manipulation."
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.config.rst:2
@@ -196,6 +208,20 @@ msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.module.language.rst:16:<autosummary>:1
 msgid "Load locales from requested language, default english."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.str_utils.rst:2
+msgid "pidroidbot\\_discord.module.str\\_utils"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.str_utils.rst:16:<autosummary>:1
+msgid ""
+":obj:`wrap <pidroidbot_discord.module.str_utils.wrap>`\\ \\(text\\[\\, "
+"width\\, indent\\]\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.module.str_utils.rst:16:<autosummary>:1
+msgid "Wrap text by length into array of texts wich indent for each new line."
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.plugin.rst:2

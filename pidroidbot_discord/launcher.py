@@ -15,6 +15,7 @@ from getpass import getuser as getusername
 # Third Party
 from discord.errors import LoginFailure
 from discord.ext import commands
+from module.str_utils import wrap
 
 # Project
 from pidroidbot_discord import __version__
@@ -82,7 +83,6 @@ def load_extension():
     for extension in [f for f in os.listdir(PLUGIN_DIR) if not f.startswith("_")]:
         try:
             if extension in config["main"]["plugins"]:
-                log.info("\t" + extension)
                 bot.load_extension(f"plugin.{extension}")
 
         except commands.ExtensionError:
@@ -98,7 +98,13 @@ def main():
     # TODO list_ignore cogs hardcoded a retirer
     config["main"]["plugins"] = ["inspector"]
     try:
-        log.info(_("Load extensions..."))
+        for info in wrap(
+            _("Load extensions : {}").format(
+                config["main"]["plugins"],
+            ),
+            width=80,
+        ):
+            log.info(info)
 
         load_extension()
 

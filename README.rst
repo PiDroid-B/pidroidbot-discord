@@ -2,6 +2,8 @@
 PidroidBot for Discord 1.0.0 |i_gh_star| |i_gh_license|
 ================================================================
 
+**Under development, please no fork yet (risk of rewrite git's history)**
+
 Release : |i_gh_release| |i_gh_docker|
 
 Latest : |i_gh_build| |i_gh_codecov| |i_gh_codacy| |i_gh_codeclimate|
