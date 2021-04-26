@@ -4,8 +4,8 @@ version: 2
 updates:
   - package-ecosystem: "pip"
     # Look for a requirements.txt in the root directory
-    directory: "/.ci/dependabot/"
-    versioning-strategy: lockfile-only
+    directory: "/"
+    # directory: "/.ci/dependabot/"
     schedule:
       interval: "daily"
 
