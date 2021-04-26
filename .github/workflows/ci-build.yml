@@ -6,6 +6,8 @@ on:
     branches:
       - main
       - rc
+      - test
+      - dev
 
 jobs:
 
@@ -37,6 +39,18 @@ jobs:
           git config user.email 'pidroid-b@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.AC_GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git checkout "${GITHUB_REF:11}"
+
+      - name: Change branch for dev or test
+        env:
+          BRANCH: ${{ env.BRANCH }}
+        run: |
+          rm -rf .git/
+          git init
+          git config user.name 'PiDroid-B Action New release'
+          git config user.email 'pidroid-b@users.noreply.github.com'
+          git remote add deploy "https://token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git checkout -b "${BRANCH}-output"
+        if: "env.BRANCH == 'dev' || env.BRANCH == 'test'"
 
       - name: Install dependencies
         run: |
@@ -160,14 +174,26 @@ jobs:
           echo "::endgroup::"
           echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
           github_changelog_generator --future-release "${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
-          cp CHANGELOG.md docs/autogen/CHANGELOG.md
+          cp CHANGELOG.md docs/_autogen/CHANGELOG.md
           github_changelog_generator --future-release "${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o .ci/CHANGELOG.md
 
-      - name: Commit version
+      - name: Commit version and push
+        env:
+          BRANCH: ${{ env.BRANCH }}
         run: |
+          echo "::group::git add ."
           git add .
+          echo "::endgroup::"
+
           git commit -m "Version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
-          git push
+
+          if [ "${BRANCH}" == "dev" ] || [ "${BRANCH}" == "test" ]; then
+            echo "INFO > push force ${BRANCH}-output"
+            git push deploy "${BRANCH}-output" --force
+          else
+            echo "INFO > push on ${BRANCH}"
+            git push
+          fi
 
       - name: Create tag and release (only on main)
         run: |

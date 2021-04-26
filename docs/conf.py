@@ -347,7 +347,7 @@ html_context["onreadthedoc"].append(
         + current_language
         + "/"
         + current_version
-        + "/autogen/CHANGELOG.html",
+        + "/_autogen/CHANGELOG.html",
     )
 )
 

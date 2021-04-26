@@ -1,0 +1,16 @@
+---
+version: 2
+
+updates:
+  - package-ecosystem: "pip"
+    # Look for a requirements.txt in the root directory
+    directory: "/"
+    # directory: "/.ci/dependabot/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    # Look for a Dockerfile in the root directory
+    directory: "/"
+    schedule:
+      interval: "daily"
