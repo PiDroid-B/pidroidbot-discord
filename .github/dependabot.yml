@@ -4,7 +4,7 @@ version: 2
 updates:
   - package-ecosystem: "pip"
     # Look for a requirements.txt in the root directory
-    directory: "/"
+    directory: "/requirements.txt"
     schedule:
       interval: "daily"
 
@@ -13,3 +13,4 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      ignore:
