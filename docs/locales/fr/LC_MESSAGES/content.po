@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-24 16:38+0200\n"
+"POT-Creation-Date: 2021-04-26 11:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -58,6 +58,46 @@ msgstr ""
 msgid ""
 "The environment variable `PBD__CONFIG_DIR` can be used to defined another"
 " place for them"
+msgstr ""
+
+#: ../../content/dev/git.rst:5
+msgid "git management"
+msgstr ""
+
+#: ../../content/dev/git.rst:8
+msgid "Branches"
+msgstr ""
+
+#: ../../content/dev/git.rst:10
+msgid "There are several type of branch :"
+msgstr ""
+
+#: ../../content/dev/git.rst:12
+msgid ""
+"main : contains all releases (latest included) about this project. Never "
+"push on it."
+msgstr ""
+
+#: ../../content/dev/git.rst:13
+msgid ""
+"rc : (if exist) contains the release candidate (will be the next "
+"release). Never push on it."
+msgstr ""
+
+#: ../../content/dev/git.rst:14
+msgid ""
+"dev / test : only for special test (ci), output will be create on dev-"
+"output|test-output."
+msgstr ""
+
+#: ../../content/dev/git.rst:16
+msgid ""
+"For each new development, create a dedicated branch and create pull "
+"request to rc when the dev is done."
+msgstr ""
+
+#: ../../content/dev/index.rst:5
+msgid "Development"
 msgstr ""
 
 #~ msgid "There are two types of"

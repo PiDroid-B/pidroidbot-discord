@@ -57,7 +57,12 @@ echo "##### INFO - All versions from Buildocs : ${versions} ####################
 for current_version in ${versions}; do
    # make the current language available to conf.py
    export current_version
-   git checkout "${current_version}"
+
+   if [ "${current_version}" == "dev" ] || [ "${current_version}" == "test" ]; then
+      git checkout "${current_version}-output"
+   else
+      git checkout "${current_version}"
+   fi
 
    echo "##### INFO - version ${current_version} ########################################"
 
