@@ -46,6 +46,8 @@ jobs:
         run: |
           rm -rf .git/
           git init
+          git config user.name 'PiDroid-B Action New release'
+          git config user.email 'pidroid-b@users.noreply.github.com'
           git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git checkout -b "${BRANCH}-output"
         if: "env.BRANCH == 'dev' || env.BRANCH == 'test'"
@@ -183,8 +185,10 @@ jobs:
           git commit -m "Version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
 
           if [ "${BRANCH}" == "dev" ] || [ "${BRANCH}" == "test" ]; then
-            git push deploy gh-pages --force
+            echo "INFO > push force ${BRANCH}-output"
+            git push deploy "${BRANCH}-output" --force
           else
+            echo "INFO > push on ${BRANCH}"
             git push
           fi
 
