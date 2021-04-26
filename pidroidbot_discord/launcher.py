@@ -17,14 +17,15 @@ from getpass import getuser as getusername
 # Third Party
 from discord.errors import LoginFailure
 from discord.ext import commands
-from module.str_utils import wrap
 
 # Project
 from pidroidbot_discord import __version__
 from pidroidbot_discord.const import CONF_DIR, PLUGIN_DIR
 from pidroidbot_discord.default_conf import DEFAULT_CONFIG
-from pidroidbot_discord.module.config import config, load_config
-from pidroidbot_discord.module.language import load_language
+from pidroidbot_discord.module.bot import MyBot
+from pidroidbot_discord.module.tools.config import config, load_config
+from pidroidbot_discord.module.tools.language import load_language
+from pidroidbot_discord.module.tools.str_utils import wrap
 
 
 load_config("main", DEFAULT_CONFIG)
@@ -44,36 +45,37 @@ log.info(
 log.info("*" * 80)
 
 
-bot = commands.Bot(command_prefix=config["main"]["bot"]["prefix"])
+# bot = commands.Bot(command_prefix=config["main"]["bot"]["prefix"])
+bot = MyBot()
 
 
-@bot.event
-async def on_ready():
-    """Event called when all plugins are loaded and the bot is logged."""
-    log.info(
-        _("Logged as [{bot_username}] with ID [{bot_userid}]").format(
-            bot_username=bot.user.name,
-            bot_userid=bot.user.id,
-        )
-    )
-    await asyncio.sleep(1)
-    # servers' inventory where the bot is registered
-    if config["main"]["debug"]["what_i_see"]:
-        try:
-            log.debug(_("Servers' list :"))
-            for server in bot.guilds:
-                log.debug(_("- Server {servername}").format(servername=server.name))
-                log.debug(_("\t- Chans"))
-                for channel in server.channels:
-                    log.debug(f"\t\t{channel.id} - {channel.name}")
-
-                log.debug(_("\t- Roles"))
-                for role in server.roles:
-                    log.debug(f"\t\t {role.id} - {role.name}")
-        except Exception as e:
-            log.error(e, exc_info=True)
-
-    log.info(_("I'm ready !"))
+# @bot.event
+# async def on_ready():
+#     """Event called when all plugins are loaded and the bot is logged."""
+#     log.info(
+#         _("Logged as [{bot_username}] with ID [{bot_userid}]").format(
+#             bot_username=bot.user.name,
+#             bot_userid=bot.user.id,
+#         )
+#     )
+#     await asyncio.sleep(1)
+#     # servers' inventory where the bot is registered
+#     if config["main"]["debug"]["what_i_see"]:
+#         try:
+#             log.debug(_("Servers' list :"))
+#             for server in bot.guilds:
+#                 log.debug(_("- Server {servername}").format(servername=server.name))
+#                 log.debug(_("\t- Chans"))
+#                 for channel in server.channels:
+#                     log.debug(f"\t\t{channel.id} - {channel.name}")
+#
+#                 log.debug(_("\t- Roles"))
+#                 for role in server.roles:
+#                     log.debug(f"\t\t {role.id} - {role.name}")
+#         except Exception as e:
+#             log.error(e, exc_info=True)
+#
+#     log.info(_("I'm ready !"))
 
 
 def load_extension():
