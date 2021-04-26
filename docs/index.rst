@@ -10,9 +10,9 @@ Welcome to pidroidbot-discord's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   readme
-   configuration/index
-   dev/index
+   Readme <readme>
+   content/configuration/index
+   content/dev/index
    source
 
 
