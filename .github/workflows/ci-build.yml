@@ -48,7 +48,7 @@ jobs:
           git init
           git config user.name 'PiDroid-B Action New release'
           git config user.email 'pidroid-b@users.noreply.github.com'
-          git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git remote add deploy "https://token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git checkout -b "${BRANCH}-output"
         if: "env.BRANCH == 'dev' || env.BRANCH == 'test'"
 
@@ -181,7 +181,10 @@ jobs:
         env:
           BRANCH: ${{ env.BRANCH }}
         run: |
+          echo "::group::git add ."
           git add .
+          echo "::endgroup::"
+
           git commit -m "Version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
 
           if [ "${BRANCH}" == "dev" ] || [ "${BRANCH}" == "test" ]; then
