@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-26 11:50+0200\n"
+"POT-Creation-Date: 2021-04-27 11:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../../README.rst:3
-msgid "PidroidBot for Discord 1.0.1 |i_gh_star| |i_gh_license|"
+msgid "PidroidBot for Discord 1.0.3 |i_gh_star| |i_gh_license|"
 msgstr ""
 
 #: ../../../README.rst:5
@@ -160,5 +160,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "PidroidBot for Discord 1.0.0 |i_gh_star| |i_gh_license|"
+#~ msgstr ""
+
+#~ msgid "PidroidBot for Discord 1.0.1 |i_gh_star| |i_gh_license|"
 #~ msgstr ""
 
