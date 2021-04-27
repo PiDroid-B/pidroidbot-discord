@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-27 09:33+0200\n"
+"POT-Creation-Date: 2021-04-27 09:43+0200\n"
 "PO-Revision-Date: 2021-03-19 15:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -41,6 +41,30 @@ msgstr ""
 
 #: pidroidbot_discord/launcher.py:133
 msgid "Good bye !!!"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:36
+msgid "Logged as [{bot_username}] with ID [{bot_userid}]"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:45
+msgid "Servers' list :"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:48
+msgid "- Server {servername}"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:50
+msgid "\t- Chans"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:54
+msgid "\t- Roles"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:60
+msgid "I'm ready !"
 msgstr ""
 
 #: pidroidbot_discord/module/plugin/core.py:24
