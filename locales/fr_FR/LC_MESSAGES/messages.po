@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-27 09:25+0200\n"
+"POT-Creation-Date: 2021-04-27 09:33+0200\n"
 "PO-Revision-Date: 2021-03-19 15:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -43,10 +43,6 @@ msgstr ""
 msgid "Good bye !!!"
 msgstr ""
 
-#: pidroidbot_discord/module/bot/__init__.py:31
-msgid "toto"
-msgstr ""
-
 #: pidroidbot_discord/module/plugin/core.py:24
 #: pidroidbot_discord/module/plugin/messages.py:24
 msgid "\t{} loaded"
@@ -80,4 +76,7 @@ msgstr ""
 
 #~ msgid "I'm ready !"
 #~ msgstr "Je suis prêt"
+
+#~ msgid "toto"
+#~ msgstr ""
 

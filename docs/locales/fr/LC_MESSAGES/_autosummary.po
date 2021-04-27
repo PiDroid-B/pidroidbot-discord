@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-27 09:25+0200\n"
+"POT-Creation-Date: 2021-04-27 09:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -32,11 +32,6 @@ msgstr ""
 msgid "This is the init package interface."
 msgstr ""
 
-#: ../../_autosummary/pidroidbot_discord.module.checker.rst:25
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:25
-#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.rst:25
-#: ../../_autosummary/pidroidbot_discord.module.rst:25
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:25
 #: ../../_autosummary/pidroidbot_discord.plugin.rst:25
 #: ../../_autosummary/pidroidbot_discord.rst:25
 msgid "Modules"
@@ -111,9 +106,6 @@ msgid "pluggins and bot initialization"
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.launcher.rst:13
-#: ../../_autosummary/pidroidbot_discord.module.tools.config.rst:13
-#: ../../_autosummary/pidroidbot_discord.module.tools.language.rst:13
-#: ../../_autosummary/pidroidbot_discord.module.tools.str_utils.rst:13
 #: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:13
 msgid "Functions"
 msgstr ""
@@ -134,259 +126,6 @@ msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
 msgid "Launch the bot."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:2
-msgid "pidroidbot\\_discord.module"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
-msgid ":obj:`pidroidbot_discord.module.bot <pidroidbot_discord.module.bot>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1 of
-#: pidroidbot_discord.module.bot:1
-msgid "Package bot extend discord's bot for improve maintainability."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.checker "
-"<pidroidbot_discord.module.checker>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.plugin "
-"<pidroidbot_discord.module.plugin>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1 of
-#: pidroidbot_discord.module.plugin:1
-msgid "Contains all elements to manage plugins (inheritance, const...)."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.rst:34:<autosummary>:1
-msgid ":obj:`pidroidbot_discord.module.tools <pidroidbot_discord.module.tools>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.bot.rst:2
-msgid "pidroidbot\\_discord.module.bot"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.bot.rst:17
-#: ../../_autosummary/pidroidbot_discord.module.plugin.base.rst:17
-#: ../../_autosummary/pidroidbot_discord.module.plugin.core.rst:17
-#: ../../_autosummary/pidroidbot_discord.module.plugin.messages.rst:17
-#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:23
-msgid "Classes"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.bot.rst:20:<autosummary>:1
-msgid ":obj:`MyBot <pidroidbot_discord.module.bot.MyBot>`\\ \\(\\_\\, \\_\\_\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.bot.rst:20:<autosummary>:1
-msgid "Class used to add default behaviour on the bot."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.checker.rst:2
-msgid "pidroidbot\\_discord.module.checker"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.checker.rst:31:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.checker.checker "
-"<pidroidbot_discord.module.checker.checker>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.checker.checker.rst:2
-msgid "pidroidbot\\_discord.module.checker.checker"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.config.rst:2
-msgid "pidroidbot\\_discord.module.config"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.language.rst:2
-msgid "pidroidbot\\_discord.module.language"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:2
-msgid "pidroidbot\\_discord.module.plugin"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:33:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.plugin.base "
-"<pidroidbot_discord.module.plugin.base>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:33:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.plugin.core "
-"<pidroidbot_discord.module.plugin.core>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:33:<autosummary>:1
-#: of pidroidbot_discord.module.plugin.core:1
-msgid "Core is the part for the root's features."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:33:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.plugin.messages "
-"<pidroidbot_discord.module.plugin.messages>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.rst:33:<autosummary>:1
-#: of pidroidbot_discord.module.plugin.messages:1
-msgid "Message is the part for communication between users and the bot."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.base.rst:2
-msgid "pidroidbot\\_discord.module.plugin.base"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.base.rst:20:<autosummary>:1
-msgid ""
-":obj:`PluginBase <pidroidbot_discord.module.plugin.base.PluginBase>`\\ "
-"\\(\\*args\\, \\*\\*kwargs\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.base.rst:20:<autosummary>:1
-#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
-msgid "Plugin Inspector."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.core.rst:2
-msgid "pidroidbot\\_discord.module.plugin.core"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.core.rst:20:<autosummary>:1
-msgid ""
-":obj:`PluginCore <pidroidbot_discord.module.plugin.core.PluginCore>`\\ "
-"\\(\\*args\\, \\*\\*kwargs\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.core.rst:20:<autosummary>:1
-msgid "All about root features."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.messages.rst:2
-msgid "pidroidbot\\_discord.module.plugin.messages"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.messages.rst:20:<autosummary>:1
-msgid ""
-":obj:`PluginMessage "
-"<pidroidbot_discord.module.plugin.messages.PluginMessage>`\\ "
-"\\(\\*args\\, \\*\\*kwargs\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.plugin.messages.rst:20:<autosummary>:1
-msgid "All about communication between users and the bot."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.rst:2
-msgid "pidroidbot\\_discord.module.pluginmanager"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.checker.rst:2
-msgid "pidroidbot\\_discord.module.pluginmanager.checker"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.pluginmanager.core.rst:2
-msgid "pidroidbot\\_discord.module.pluginmanager.core"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.str_utils.rst:2
-msgid "pidroidbot\\_discord.module.str\\_utils"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:2
-msgid "pidroidbot\\_discord.module.tools"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:33:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.tools.config "
-"<pidroidbot_discord.module.tools.config>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:33:<autosummary>:1 of
-#: pidroidbot_discord.module.tools.config:1
-msgid "Manage all configuration's features."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:33:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.tools.language "
-"<pidroidbot_discord.module.tools.language>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:33:<autosummary>:1 of
-#: pidroidbot_discord.module.tools.language:1
-msgid "Manage all i18n features."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:33:<autosummary>:1
-msgid ""
-":obj:`pidroidbot_discord.module.tools.str_utils "
-"<pidroidbot_discord.module.tools.str_utils>`\\"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.rst:33:<autosummary>:1 of
-#: pidroidbot_discord.module.tools.str_utils:1
-msgid "All tools about string manipulation."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.config.rst:2
-msgid "pidroidbot\\_discord.module.tools.config"
-msgstr ""
-
-#: of pidroidbot_discord.module.tools.config:3
-msgid ""
-"global var config{} contains all setting ordered by key=(pluggin "
-"name|main) filled by function load_config(conf_name, yaml_default_conf)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.config.rst:16:<autosummary>:1
-msgid ""
-":obj:`load_config <pidroidbot_discord.module.tools.config.load_config>`\\"
-" \\(conf\\_name\\, yaml\\_default\\_conf\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.config.rst:16:<autosummary>:1
-msgid "Load config from files in configuration's directory."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.language.rst:2
-msgid "pidroidbot\\_discord.module.tools.language"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.language.rst:16:<autosummary>:1
-msgid ""
-":obj:`load_language "
-"<pidroidbot_discord.module.tools.language.load_language>`\\ \\(lang\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.language.rst:16:<autosummary>:1
-msgid "Load locales from requested language, default english."
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.str_utils.rst:2
-msgid "pidroidbot\\_discord.module.tools.str\\_utils"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.str_utils.rst:16:<autosummary>:1
-msgid ""
-":obj:`wrap <pidroidbot_discord.module.tools.str_utils.wrap>`\\ "
-"\\(text\\[\\, width\\, indent\\]\\)"
-msgstr ""
-
-#: ../../_autosummary/pidroidbot_discord.module.tools.str_utils.rst:16:<autosummary>:1
-msgid "Wrap text by length into array of texts wich indent for each new line."
 msgstr ""
 
 #: ../../_autosummary/pidroidbot_discord.plugin.rst:2
@@ -412,10 +151,18 @@ msgstr ""
 msgid ":obj:`setup <pidroidbot_discord.plugin.inspector.setup>`\\ \\(bot\\)"
 msgstr ""
 
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:23
+msgid "Classes"
+msgstr ""
+
 #: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
 msgid ""
 ":obj:`Inspector <pidroidbot_discord.plugin.inspector.Inspector>`\\ "
 "\\(\\*args\\, \\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
+msgid "Plugin Inspector."
 msgstr ""
 
 #~ msgid ":obj:`pidroidbot_discord.launcher <pidroidbot_discord.launcher>`\\"
@@ -570,5 +317,198 @@ msgstr ""
 #~ msgid ""
 #~ ":obj:`wrap <pidroidbot_discord.module.str_utils.wrap>`\\ "
 #~ "\\(text\\[\\, width\\, indent\\]\\)"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module"
+#~ msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord.module.bot <pidroidbot_discord.module.bot>`\\"
+#~ msgstr ""
+
+#~ msgid "Package bot extend discord's bot for improve maintainability."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.checker "
+#~ "<pidroidbot_discord.module.checker>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin "
+#~ "<pidroidbot_discord.module.plugin>`\\"
+#~ msgstr ""
+
+#~ msgid "Contains all elements to manage plugins (inheritance, const...)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools "
+#~ "<pidroidbot_discord.module.tools>`\\"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.bot"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`MyBot <pidroidbot_discord.module.bot.MyBot>`\\ "
+#~ "\\(\\_\\, \\_\\_\\)"
+#~ msgstr ""
+
+#~ msgid "Class used to add default behaviour on the bot."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.checker"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.checker.checker "
+#~ "<pidroidbot_discord.module.checker.checker>`\\"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.checker.checker"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.config"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.language"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin.base "
+#~ "<pidroidbot_discord.module.plugin.base>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin.core "
+#~ "<pidroidbot_discord.module.plugin.core>`\\"
+#~ msgstr ""
+
+#~ msgid "Core is the part for the root's features."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin.messages "
+#~ "<pidroidbot_discord.module.plugin.messages>`\\"
+#~ msgstr ""
+
+#~ msgid "Message is the part for communication between users and the bot."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin.base"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`PluginBase "
+#~ "<pidroidbot_discord.module.plugin.base.PluginBase>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin.core"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`PluginCore "
+#~ "<pidroidbot_discord.module.plugin.core.PluginCore>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "All about root features."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin.messages"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`PluginMessage "
+#~ "<pidroidbot_discord.module.plugin.messages.PluginMessage>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "All about communication between users and the bot."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.pluginmanager"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.pluginmanager.checker"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.pluginmanager.core"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.str\\_utils"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools.config "
+#~ "<pidroidbot_discord.module.tools.config>`\\"
+#~ msgstr ""
+
+#~ msgid "Manage all configuration's features."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools.language "
+#~ "<pidroidbot_discord.module.tools.language>`\\"
+#~ msgstr ""
+
+#~ msgid "Manage all i18n features."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools.str_utils "
+#~ "<pidroidbot_discord.module.tools.str_utils>`\\"
+#~ msgstr ""
+
+#~ msgid "All tools about string manipulation."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools.config"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "global var config{} contains all setting"
+#~ " ordered by key=(pluggin name|main) filled"
+#~ " by function load_config(conf_name, "
+#~ "yaml_default_conf)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_config "
+#~ "<pidroidbot_discord.module.tools.config.load_config>`\\ "
+#~ "\\(conf\\_name\\, yaml\\_default\\_conf\\)"
+#~ msgstr ""
+
+#~ msgid "Load config from files in configuration's directory."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools.language"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_language "
+#~ "<pidroidbot_discord.module.tools.language.load_language>`\\ "
+#~ "\\(lang\\)"
+#~ msgstr ""
+
+#~ msgid "Load locales from requested language, default english."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools.str\\_utils"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`wrap <pidroidbot_discord.module.tools.str_utils.wrap>`\\"
+#~ " \\(text\\[\\, width\\, indent\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Wrap text by length into array of texts wich indent for each new line."
 #~ msgstr ""
 

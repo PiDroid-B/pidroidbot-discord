@@ -1,14 +1,14 @@
 """Package bot extend discord's bot for improve maintainability."""
 
+# Standard Library
+from asyncio import sleep
+from logging import getLogger
+
 # Third Party
 from discord.ext import commands
 
 # Project
 from pidroidbot_discord.module.tools.config import config
-# from pidroidbot_discord import _
-# from pidroidbot_discord.launcher import _
-
-from asyncio import sleep
 
 
 class MyBot(commands.Bot):
@@ -27,33 +27,34 @@ class MyBot(commands.Bot):
         # workaround : avoid circular import on global var
         self._ = _
         self.__ = __
+        self.log = getLogger("main.Bot")
         super().__init__(command_prefix=command_prefix)
-        print(_("toto"))
 
-    # @bot.event
-    # async def on_ready(self):
-    #     """Event called when all plugins are loaded and the bot is logged."""
-    #     self.log.info(
-    #         _("Logged as [{bot_username}] with ID [{bot_userid}]").format(
-    #             bot_username=bot.user.name,
-    #             bot_userid=bot.user.id,
-    #         )
-    #     )
-    #     await sleep(1)
-    #     # servers' inventory where the bot is registered
-    #     if config["main"]["debug"]["what_i_see"]:
-    #         try:
-    #             log.debug(_("Servers' list :"))
-    #             for server in bot.guilds:
-    #                 log.debug(_("- Server {servername}").format(servername=server.name))
-    #                 log.debug(_("\t- Chans"))
-    #                 for channel in server.channels:
-    #                     log.debug(f"\t\t{channel.id} - {channel.name}")
-    #
-    #                 log.debug(_("\t- Roles"))
-    #                 for role in server.roles:
-    #                     log.debug(f"\t\t {role.id} - {role.name}")
-    #         except Exception as e:
-    #             log.error(e, exc_info=True)
-    #
-    #     log.info(_("I'm ready !"))
+    async def on_ready(self):
+        """Event called when all plugins are loaded and the bot is logged."""
+        self.log.info(
+            self._("Logged as [{bot_username}] with ID [{bot_userid}]").format(
+                bot_username=self.user.name,
+                bot_userid=self.user.id,
+            )
+        )
+        await sleep(1)
+        # servers' inventory where the bot is registered
+        if config["main"]["debug"]["what_i_see"]:
+            try:
+                self.log.debug(self._("Servers' list :"))
+                for server in self.guilds:
+                    self.log.debug(
+                        self._("- Server {servername}").format(servername=server.name)
+                    )
+                    self.log.debug(self._("\t- Chans"))
+                    for channel in server.channels:
+                        self.log.debug(f"\t\t{channel.id} - {channel.name}")
+
+                    self.log.debug(self._("\t- Roles"))
+                    for role in server.roles:
+                        self.log.debug(f"\t\t {role.id} - {role.name}")
+            except Exception as e:
+                self.log.error(e, exc_info=True)
+
+        self.log.info(self._("I'm ready !"))
