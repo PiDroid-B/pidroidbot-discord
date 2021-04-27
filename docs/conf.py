@@ -54,7 +54,7 @@ extensions = [
 # TODO : Sphinx and PDF
 # don't find how to use rinoh + cairosvg with sphinx...
 # no PDF generation
-# in requirements_docs.in :
+# in requirements_docs.txt :
 #     sphinxcontrib-svg2pdfconverter[CairoSVG]
 #     cairosvg
 #     rinohtype
