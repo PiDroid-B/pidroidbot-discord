@@ -15,7 +15,6 @@ pidroidbot\_discord.launcher
    
       load_extension
       main
-      on_ready
    
    
 

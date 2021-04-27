@@ -8,6 +8,7 @@ __version__ = "1.0.1"
 
 # Project
 from pidroidbot_discord import launcher
+from pidroidbot_discord.launcher import _, __, bot, log
 
 
 if __name__ == "__main__":
