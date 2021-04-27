@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidroidbot-discord main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-26 11:34+0200\n"
+"POT-Creation-Date: 2021-04-27 14:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -94,6 +94,54 @@ msgstr ""
 msgid ""
 "For each new development, create a dedicated branch and create pull "
 "request to rc when the dev is done."
+msgstr ""
+
+#: ../../content/dev/i18n.rst:5
+msgid "i18n Internationalization/Documentation"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:7
+msgid "All translations are managed by `devtools/UpdateI18N.sh`"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:9
+msgid "for manual generation, please see below"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:12
+msgid "Project"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:14
+msgid "**Requirements**"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:16
+msgid "Python::"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:23
+msgid "Babel::"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:27
+msgid "**Usage**"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:29
+msgid "Generate base.pot::"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:33
+msgid "Update each catalogs with then new base.pot::"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:37
+msgid "Init catalog for a new language::"
+msgstr ""
+
+#: ../../content/dev/i18n.rst:41
+msgid "Compile::"
 msgstr ""
 
 #: ../../content/dev/index.rst:5

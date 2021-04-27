@@ -8,6 +8,5 @@ Development
    :maxdepth: 2
 
    git
-
-
+   i18n
 
