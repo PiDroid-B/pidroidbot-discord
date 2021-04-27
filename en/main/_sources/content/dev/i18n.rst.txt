@@ -1,0 +1,44 @@
+.. _dev_i18n:
+
+===================================================
+i18n Internationalization/Documentation
+===================================================
+
+All translations are managed by `devtools/UpdateI18N.sh`
+
+for manual generation, please see below
+
+Project
+-----------
+
+**Requirements**
+
+- Python::
+
+   apt-get install python3
+   python -m pip install --upgrade pip
+   #pip install setuptools wheel
+   pip install Babel
+
+- Babel::
+
+   pip install Babel
+
+**Usage**
+
+- Generate base.pot::
+
+   pybabel extract -o locales/base.pot pidroidbot_discord/
+
+- Update each catalogs with then new base.pot::
+
+   pybabel update -i locales/base.pot -d locales
+
+- Init catalog for a new language::
+
+   pybabel init -l en_US -i locales/base.pot -d locales
+
+- Compile::
+
+   pybabel compile -d locales
+
