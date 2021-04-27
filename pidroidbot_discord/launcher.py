@@ -44,10 +44,7 @@ log.info(
 )
 log.info("*" * 80)
 
-
-# bot = commands.Bot(command_prefix=config["main"]["bot"]["prefix"])
-bot = MyBot()
-
+bot = MyBot(_, __)
 
 # @bot.event
 # async def on_ready():

@@ -27,8 +27,8 @@
    :toctree:
    :recursive:
 
-   pidroidbot_discord.module.config
-   pidroidbot_discord.module.language
-   pidroidbot_discord.module.pluginmanager
-   pidroidbot_discord.module.str_utils
+   pidroidbot_discord.module.bot
+   pidroidbot_discord.module.checker
+   pidroidbot_discord.module.plugin
+   pidroidbot_discord.module.tools
 

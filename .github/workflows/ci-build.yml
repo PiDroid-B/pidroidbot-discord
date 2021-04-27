@@ -55,7 +55,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r .ci/requirements_release.txt
+          pip install -r .ci/requirements_release.in
 
       - name: Generate base.pot
         run: pybabel extract -o locales/base.pot pidroidbot_discord/
@@ -225,7 +225,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install -r .ci/requirements_docs.txt
+          pip install -r .ci/requirements_docs.in
           export PYTHONPATH=..
 
       - name: Execute script to build our documentation and update pages

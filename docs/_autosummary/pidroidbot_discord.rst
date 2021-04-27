@@ -30,6 +30,5 @@
    pidroidbot_discord.const
    pidroidbot_discord.default_conf
    pidroidbot_discord.launcher
-   pidroidbot_discord.module
    pidroidbot_discord.plugin
 

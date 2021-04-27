@@ -5,7 +5,7 @@ from discord.ext import commands
 
 # Project
 from pidroidbot_discord.module.tools.config import config
-from pidroidbot_discord import _
+# from pidroidbot_discord import _
 # from pidroidbot_discord.launcher import _
 
 from asyncio import sleep
@@ -21,9 +21,12 @@ class MyBot(commands.Bot):
 
     """
 
-    def __init__(self):
+    def __init__(self, _, __):
         """"""
         command_prefix = config["main"]["bot"]["prefix"]
+        # workaround : avoid circular import on global var
+        self._ = _
+        self.__ = __
         super().__init__(command_prefix=command_prefix)
         print(_("toto"))
 
