@@ -1,5 +1,5 @@
 ================================================================
-PidroidBot for Discord 1.0.1 |i_gh_star| |i_gh_license|
+PidroidBot for Discord 1.0.2 |i_gh_star| |i_gh_license|
 ================================================================
 
 **Under development, please no fork yet (risk of rewrite git's history)**
