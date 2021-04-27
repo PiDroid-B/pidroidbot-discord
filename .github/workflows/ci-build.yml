@@ -1,0 +1,235 @@
+---
+name: Build Release/RC
+
+on:
+  push:
+    branches:
+      - main
+      - rc
+      - test
+      - dev
+
+jobs:
+
+  new_release:
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, 'Version bump')"
+    name: New Release/RC
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Setup env variables
+        run: |
+          set -x
+          echo "SKIPBUMP=FALSE" >> $GITHUB_ENV
+          echo "BRANCH=${GITHUB_REF:11}" >> $GITHUB_ENV
+          echo "OLD_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+          echo "LAST_TAG=$( git ls-remote --tags | grep -o 'refs/tags/v.*' | sort -Vr | head -1 | grep -o '[^\/]*$' )" >> $GITHUB_ENV
+
+      - name: Setup Git
+        run: |
+          git config user.name 'PiDroid-B Action New release'
+          git config user.email 'pidroid-b@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.AC_GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout "${GITHUB_REF:11}"
+
+      - name: Change branch for dev or test
+        env:
+          BRANCH: ${{ env.BRANCH }}
+        run: |
+          rm -rf .git/
+          git init
+          git config user.name 'PiDroid-B Action New release'
+          git config user.email 'pidroid-b@users.noreply.github.com'
+          git remote add deploy "https://token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git checkout -b "${BRANCH}-output"
+        if: "env.BRANCH == 'dev' || env.BRANCH == 'test'"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r .ci/requirements_release.in
+
+      - name: Generate base.pot
+        run: pybabel extract -o locales/base.pot pidroidbot_discord/
+
+      - name: Upadate catalogs
+        run: pybabel update -i locales/base.pot -d locales
+
+      - name: Compile i18n catalogs
+        run: pybabel compile -d locales
+
+      - name: Check i18n coverage Source
+        id: i18nCoverageSrc
+        uses: alexkiro/i18n-coverage@v1.0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          translations-path: 'locales/**/LC_MESSAGES/*.po'
+
+      - name: Check i18n coverage Docs
+        id: i18nCoverageDoc
+        uses: alexkiro/i18n-coverage@v1.0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          translations-path: 'docs/locales/**/LC_MESSAGES/*.po'
+
+      - name: Check i18n languages
+        run: |
+          set -x
+          I18N_SRC_COUNT="$( find locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; | wc -l )"
+          I18N_DOC_COUNT="$( find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \; | wc -l )"
+          echo "I18N_SRC_COUNT=${I18N_SRC_COUNT}" >> $GITHUB_ENV
+          echo "I18N_DOC_COUNT=${I18N_DOC_COUNT}" >> $GITHUB_ENV
+
+      - name: Create json's files for bages i18n
+        env:
+          SRC_NB: ${{ env.I18N_SRC_COUNT }}
+          DOC_NB: ${{ env.I18N_DOC_COUNT }}
+        run: |
+          # i18n Coverage
+          SRC_PCT="$(printf "%.1f" "${{ steps.i18nCoverageSrc.outputs.coverage }}")"
+          DOC_PCT="$(printf "%.1f" "${{ steps.i18nCoverageDoc.outputs.coverage }}")"
+          # add default language
+          ((SRC_NB++))
+          ((DOC_NB++))
+
+          echo "{ \"schemaVersion\": 1, \"label\": \"i18n Bot\", \"message\": \"${SRC_NB} | ${SRC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_appcov.json
+          echo "{ \"schemaVersion\": 1, \"label\": \"i18n Documentation\", \"message\": \"${DOC_NB} | ${DOC_PCT} %\", \"color\": \"blueviolet\" }" > .ci/badges/i18n_doccov.json
+
+          git add .
+
+      - name: Bump Major Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          bump2version major --allow-dirty
+          echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
+        if: "startsWith(github.event.head_commit.message, '[MAJOR]') && env.BRANCH == 'main'"
+
+      - name: Bump Minor Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          bump2version minor --allow-dirty
+          echo "SKIPBUMP=TRUE" >> $GITHUB_ENV
+        if: "startsWith(github.event.head_commit.message, '[FEATURE]') && env.BRANCH == 'main'"
+
+      # Default action
+      - name: Bump Patch Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          bump2version patch --allow-dirty
+        if: "env.SKIPBUMP == 'FALSE' && env.BRANCH == 'main'"
+
+      # Other branch
+      - name: Bump Branch Version
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+          BRANCH: ${{ env.BRANCH }}
+          OLD_VERSION: ${{ env.OLD_VERSION }}
+        run: |
+          INC=0
+          echo "INFO > old_version:${OLD_VERSION} branch:${BRANCH}"
+
+          # check if vars are not empty
+          #   and if current version contains name of the branch
+          # then INC=1
+          [[ "${#BRANCH}" -gt 0 ]] && \
+          [[ "${#OLD_VERSION}" -gt 0 ]] && \
+          [[ ${OLD_VERSION^^} == *"${BRANCH^^}"* ]] && \
+          INC=1
+
+          if [[ $INC -eq 0 ]]; then
+              echo "INFO > Create new version ${OLD_VERSION}.${BRANCH,,}0"
+              bump2version build --allow-dirty --new-version "${OLD_VERSION}.${BRANCH,,}0"
+          else
+              echo "INFO > version ++"
+              bump2version build --allow-dirty
+          fi
+        shell: bash
+        if: "env.BRANCH != 'main'"
+
+      - name: Push Version to Env
+        run: |
+          set -x
+          echo "NEW_VERSION=$(awk '/^current_version/{print $3}' .bumpversion.cfg)" >> $GITHUB_ENV
+#        if: "env.BRANCH == 'main'"
+
+      - name: Generate changelog
+        env:
+          LAST_TAG: ${{ env.LAST_TAG }}
+          NEW_VERSION: ${{ env.NEW_VERSION }}
+        run: |
+          echo "::group::install Ruby and github_changelog_generator"
+          sudo apt-get install ruby-full
+          sudo gem install github_changelog_generator
+          echo "::endgroup::"
+          echo "INFO > Last tag : $LAST_TAG, new version : $NEW_VERSION"
+          github_changelog_generator --future-release "${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}"
+          cp CHANGELOG.md docs/_autogen/CHANGELOG.md
+          github_changelog_generator --future-release "${NEW_VERSION}" --token "${{ secrets.GITHUB_TOKEN }}" --since-tag "$LAST_TAG" -o .ci/CHANGELOG.md
+
+      - name: Commit version and push
+        env:
+          BRANCH: ${{ env.BRANCH }}
+        run: |
+          echo "::group::git add ."
+          git add .
+          echo "::endgroup::"
+
+          git commit -m "Version bump ${{ env.OLD_VERSION }} -> ${{ env.NEW_VERSION }}"
+
+          if [ "${BRANCH}" == "dev" ] || [ "${BRANCH}" == "test" ]; then
+            echo "INFO > push force ${BRANCH}-output"
+            git push deploy "${BRANCH}-output" --force
+          else
+            echo "INFO > push on ${BRANCH}"
+            git push
+          fi
+
+      - name: Create tag and release (only on main)
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          gh release create "${{ env.NEW_VERSION }}" -t "Release v${{ env.NEW_VERSION }}" -F .ci/CHANGELOG.md
+        if: "env.BRANCH == 'main'"
+
+  docs:
+    runs-on: ubuntu-latest
+    name: Documentations
+    needs: new_release
+
+    steps:
+      - name: Prereqs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools imagemagick
+          git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        shell: bash
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r .ci/requirements_docs.in
+          export PYTHONPATH=..
+
+      - name: Execute script to build our documentation and update pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: "bash .ci/buildDocs.sh"
+        shell: bash

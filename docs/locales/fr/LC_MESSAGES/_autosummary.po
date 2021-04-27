@@ -1,0 +1,514 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-27 09:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../_autosummary/pidroidbot_discord.rst:2
+msgid "pidroidbot\\_discord"
+msgstr ""
+
+#: of pidroidbot_discord:1
+msgid "Package interface."
+msgstr ""
+
+#: of pidroidbot_discord:3
+msgid "This is the init package interface."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.rst:25
+#: ../../_autosummary/pidroidbot_discord.rst:25
+msgid "Modules"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1
+msgid ":obj:`pidroidbot_discord.const <pidroidbot_discord.const>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1 of
+#: pidroidbot_discord.const:1
+msgid "All global const about this project."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1
+msgid ":obj:`pidroidbot_discord.default_conf <pidroidbot_discord.default_conf>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1 of
+#: pidroidbot_discord.default_conf:1
+msgid "Default global configuration."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1
+msgid ":obj:`pidroidbot_discord.launcher <pidroidbot_discord.launcher>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1 of
+#: pidroidbot_discord.launcher:1
+msgid "Launcher of the bot."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1
+msgid ":obj:`pidroidbot_discord.plugin <pidroidbot_discord.plugin>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.rst:34:<autosummary>:1 of
+#: pidroidbot_discord.plugin:1
+msgid "Contains all available pluggins, each of them has her config's file."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.const.rst:2
+msgid "pidroidbot\\_discord.const"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.default_conf.rst:2
+msgid "pidroidbot\\_discord.default\\_conf"
+msgstr ""
+
+#: of pidroidbot_discord.default_conf:3
+msgid "Pluggins' configurations are not included."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.launcher.rst:2
+msgid "pidroidbot\\_discord.launcher"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:3
+msgid "Manage :"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:5
+msgid "logging system (log)"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:6
+msgid "main setting (main.default.yml overrided by main.local.yml if exist)"
+msgstr ""
+
+#: of pidroidbot_discord.launcher:7
+msgid "pluggins and bot initialization"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.launcher.rst:13
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
+msgid ""
+":obj:`load_extension <pidroidbot_discord.launcher.load_extension>`\\ "
+"\\(\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
+msgid "Load all extensions in according with the defined list of plugins."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
+msgid ":obj:`main <pidroidbot_discord.launcher.main>`\\ \\(\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.launcher.rst:17:<autosummary>:1
+msgid "Launch the bot."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.rst:2
+msgid "pidroidbot\\_discord.plugin"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.rst:31:<autosummary>:1
+msgid ""
+":obj:`pidroidbot_discord.plugin.inspector "
+"<pidroidbot_discord.plugin.inspector>`\\"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.rst:31:<autosummary>:1 of
+#: pidroidbot_discord.plugin.inspector:1
+msgid "Inspector contains all main's tools for administrators."
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:2
+msgid "pidroidbot\\_discord.plugin.inspector"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:21:<autosummary>:1
+msgid ":obj:`setup <pidroidbot_discord.plugin.inspector.setup>`\\ \\(bot\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:23
+msgid "Classes"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
+msgid ""
+":obj:`Inspector <pidroidbot_discord.plugin.inspector.Inspector>`\\ "
+"\\(\\*args\\, \\*\\*kwargs\\)"
+msgstr ""
+
+#: ../../_autosummary/pidroidbot_discord.plugin.inspector.rst:26:<autosummary>:1
+msgid "Plugin Inspector."
+msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord.launcher <pidroidbot_discord.launcher>`\\"
+#~ msgstr ""
+
+#~ msgid "This is the launcher of the bot"
+#~ msgstr ""
+
+#~ msgid ":obj:`main <pidroidbot_discord.launcher.main>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "This is the main launcher"
+#~ msgstr ""
+
+#~ msgid ":obj:`on_ready <pidroidbot_discord.launcher.on_ready>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Initial documentation of SampleProject."
+#~ msgstr ""
+
+#~ msgid "All const about this project"
+#~ msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord.plugins <pidroidbot_discord.plugins>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "load configuration from a conf_name and"
+#~ " add it to the dict config for"
+#~ " the same conf_name, <conf_name>.local "
+#~ "override <conf_name>.conf <conf_name>.conf will "
+#~ "be created if missing (exit(1)) use "
+#~ "env variable PBD__CONFIG_DIR for spécific "
+#~ "conf path"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "load locales from requested language, "
+#~ "default english :param lang: requested "
+#~ "language, coming from locales/ (i.e."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.plugins.core "
+#~ "<pidroidbot_discord.plugins.core>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.plugins.vers "
+#~ "<pidroidbot_discord.plugins.vers>`\\"
+#~ msgstr ""
+
+#~ msgid "Classes"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`CogCore <pidroidbot_discord.plugins.core.CogCore>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "Exceptions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`ECogsManagedException "
+#~ "<pidroidbot_discord.plugins.core.ECogsManagedException>`\\"
+#~ msgstr ""
+
+#~ msgid ":obj:`setup <pidroidbot_discord.plugins.vers.setup>`\\ \\(bot\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`Version <pidroidbot_discord.plugins.vers.Version>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.plugins"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.plugins.core"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.plugins.vers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Manage : - logging system (log) -"
+#~ " main setting (main.conf overrided by "
+#~ "main.local if exist) - pluggins and "
+#~ "bot initialization"
+#~ msgstr ""
+
+#~ msgid "Load config from file or default_conf."
+#~ msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord.module <pidroidbot_discord.module>`\\"
+#~ msgstr ""
+
+#~ msgid "Folder contains all modules."
+#~ msgstr ""
+
+#~ msgid "Event called when all plugins are loaded and the bot is logged."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.config "
+#~ "<pidroidbot_discord.module.config>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.language "
+#~ "<pidroidbot_discord.module.language>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.pluginmanager "
+#~ "<pidroidbot_discord.module.pluginmanager>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.str_utils "
+#~ "<pidroidbot_discord.module.str_utils>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_config "
+#~ "<pidroidbot_discord.module.config.load_config>`\\ "
+#~ "\\(conf\\_name\\, yaml\\_default\\_conf\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_language "
+#~ "<pidroidbot_discord.module.language.load_language>`\\ \\(lang\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.pluginmanager.checker "
+#~ "<pidroidbot_discord.module.pluginmanager.checker>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.pluginmanager.core "
+#~ "<pidroidbot_discord.module.pluginmanager.core>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`Core "
+#~ "<pidroidbot_discord.module.pluginmanager.core.Core>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`wrap <pidroidbot_discord.module.str_utils.wrap>`\\ "
+#~ "\\(text\\[\\, width\\, indent\\]\\)"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module"
+#~ msgstr ""
+
+#~ msgid ":obj:`pidroidbot_discord.module.bot <pidroidbot_discord.module.bot>`\\"
+#~ msgstr ""
+
+#~ msgid "Package bot extend discord's bot for improve maintainability."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.checker "
+#~ "<pidroidbot_discord.module.checker>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin "
+#~ "<pidroidbot_discord.module.plugin>`\\"
+#~ msgstr ""
+
+#~ msgid "Contains all elements to manage plugins (inheritance, const...)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools "
+#~ "<pidroidbot_discord.module.tools>`\\"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.bot"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`MyBot <pidroidbot_discord.module.bot.MyBot>`\\ "
+#~ "\\(\\_\\, \\_\\_\\)"
+#~ msgstr ""
+
+#~ msgid "Class used to add default behaviour on the bot."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.checker"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.checker.checker "
+#~ "<pidroidbot_discord.module.checker.checker>`\\"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.checker.checker"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.config"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.language"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin.base "
+#~ "<pidroidbot_discord.module.plugin.base>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin.core "
+#~ "<pidroidbot_discord.module.plugin.core>`\\"
+#~ msgstr ""
+
+#~ msgid "Core is the part for the root's features."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.plugin.messages "
+#~ "<pidroidbot_discord.module.plugin.messages>`\\"
+#~ msgstr ""
+
+#~ msgid "Message is the part for communication between users and the bot."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin.base"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`PluginBase "
+#~ "<pidroidbot_discord.module.plugin.base.PluginBase>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin.core"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`PluginCore "
+#~ "<pidroidbot_discord.module.plugin.core.PluginCore>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "All about root features."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.plugin.messages"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`PluginMessage "
+#~ "<pidroidbot_discord.module.plugin.messages.PluginMessage>`\\ "
+#~ "\\(\\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "All about communication between users and the bot."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.pluginmanager"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.pluginmanager.checker"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.pluginmanager.core"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.str\\_utils"
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools.config "
+#~ "<pidroidbot_discord.module.tools.config>`\\"
+#~ msgstr ""
+
+#~ msgid "Manage all configuration's features."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools.language "
+#~ "<pidroidbot_discord.module.tools.language>`\\"
+#~ msgstr ""
+
+#~ msgid "Manage all i18n features."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`pidroidbot_discord.module.tools.str_utils "
+#~ "<pidroidbot_discord.module.tools.str_utils>`\\"
+#~ msgstr ""
+
+#~ msgid "All tools about string manipulation."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools.config"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "global var config{} contains all setting"
+#~ " ordered by key=(pluggin name|main) filled"
+#~ " by function load_config(conf_name, "
+#~ "yaml_default_conf)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_config "
+#~ "<pidroidbot_discord.module.tools.config.load_config>`\\ "
+#~ "\\(conf\\_name\\, yaml\\_default\\_conf\\)"
+#~ msgstr ""
+
+#~ msgid "Load config from files in configuration's directory."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools.language"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`load_language "
+#~ "<pidroidbot_discord.module.tools.language.load_language>`\\ "
+#~ "\\(lang\\)"
+#~ msgstr ""
+
+#~ msgid "Load locales from requested language, default english."
+#~ msgstr ""
+
+#~ msgid "pidroidbot\\_discord.module.tools.str\\_utils"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`wrap <pidroidbot_discord.module.tools.str_utils.wrap>`\\"
+#~ " \\(text\\[\\, width\\, indent\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Wrap text by length into array of texts wich indent for each new line."
+#~ msgstr ""
+

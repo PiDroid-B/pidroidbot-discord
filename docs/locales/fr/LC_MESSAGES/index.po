@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-26 11:50+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../index.rst:9
+msgid "Readme"
+msgstr ""
+
+#: ../../index.rst:9
+msgid "Contents:"
+msgstr ""
+
+#: ../../index.rst:7
+msgid "Welcome to pidroidbot-discord's documentation!"
+msgstr ""
+
+#: ../../index.rst:20
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:22
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:23
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:24
+msgid ":ref:`search`"
+msgstr ""
+
+#~ msgid "Changelog"
+#~ msgstr ""
+
+#~ msgid "Readme"
+#~ msgstr ""
+
+#~ msgid "Source"
+#~ msgstr ""
+

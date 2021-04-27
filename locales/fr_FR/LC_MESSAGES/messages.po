@@ -1,0 +1,106 @@
+# French (France) translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-04-27 07:43+0000\n"
+"PO-Revision-Date: 2021-03-19 15:51+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr_FR\n"
+"Language-Team: fr_FR <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: pidroidbot_discord/launcher.py:100
+msgid "Initialization"
+msgstr "Initialisation"
+
+#: pidroidbot_discord/launcher.py:103
+msgid "Load extensions : {}"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:115
+msgid ""
+"No plugin found in plugin' directory...\n"
+"\tPlease check your installation"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:123
+msgid ""
+"Token is wrong or missing in configuration's file\n"
+"\tPlease check the value for the key [bot][token]\n"
+"\tin {file}"
+msgstr ""
+
+#: pidroidbot_discord/launcher.py:133
+msgid "Good bye !!!"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:36
+msgid "Logged as [{bot_username}] with ID [{bot_userid}]"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:45
+msgid "Servers' list :"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:48
+msgid "- Server {servername}"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:50
+msgid "\t- Chans"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:54
+msgid "\t- Roles"
+msgstr ""
+
+#: pidroidbot_discord/module/bot/__init__.py:60
+msgid "I'm ready !"
+msgstr ""
+
+#: pidroidbot_discord/module/plugin/core.py:24
+#: pidroidbot_discord/module/plugin/messages.py:24
+msgid "\t{} loaded"
+msgstr ""
+
+#~ msgid ""
+#~ "No plugin found in plugins' directory...\n"
+#~ "\tPlease check your installation"
+#~ msgstr ""
+
+#~ msgid "Load extensions..."
+#~ msgstr ""
+
+#~ msgid "\t\t{} loaded..."
+#~ msgstr ""
+
+#~ msgid "Logged as [{bot_username}] with ID [{bot_userid}]"
+#~ msgstr ""
+
+#~ msgid "Servers' list :"
+#~ msgstr ""
+
+#~ msgid "- Server {servername}"
+#~ msgstr ""
+
+#~ msgid "\t- Chans"
+#~ msgstr ""
+
+#~ msgid "\t- Roles"
+#~ msgstr ""
+
+#~ msgid "I'm ready !"
+#~ msgstr "Je suis prêt"
+
+#~ msgid "toto"
+#~ msgstr ""
+

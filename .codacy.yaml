@@ -1,0 +1,6 @@
+---
+exclude_paths:
+ - 'test/**'
+ - '**/CHANGELOG.md'
+ - 'CHANGELOG.md'
+ - 'docs/conf.py'

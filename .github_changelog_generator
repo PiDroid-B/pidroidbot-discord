@@ -1,0 +1,5 @@
+project=pidroidbot-discord
+user=PiDroid-B
+exclude-labels=duplicate,question,invalid,wontfix,weekly-digest,dependencies
+output=CHANGELOG.md
+max-issues=30

@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, PiDroid-B
+# This file is distributed under the same license as the pidroidbot-discord
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidroidbot-discord main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-24 11:26+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../autogen/CHANGELOG.md:1
+msgid "Changelog"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:3
+msgid "1.0.0 (2021-04-23)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:5 ../../autogen/CHANGELOG.md:13
+#: ../../autogen/CHANGELOG.md:21 ../../autogen/CHANGELOG.md:29
+#: ../../autogen/CHANGELOG.md:33 ../../autogen/CHANGELOG.md:41
+#: ../../autogen/CHANGELOG.md:51 ../../autogen/CHANGELOG.md:55
+#: ../../autogen/CHANGELOG.md:59 ../../autogen/CHANGELOG.md:63
+#: ../../autogen/CHANGELOG.md:67 ../../autogen/CHANGELOG.md:71
+#: ../../autogen/CHANGELOG.md:75 ../../autogen/CHANGELOG.md:79
+#: ../../autogen/CHANGELOG.md:83 ../../autogen/CHANGELOG.md:87
+#: ../../autogen/CHANGELOG.md:91 ../../autogen/CHANGELOG.md:95
+#: ../../autogen/CHANGELOG.md:99 ../../autogen/CHANGELOG.md:103
+#: ../../autogen/CHANGELOG.md:107 ../../autogen/CHANGELOG.md:111
+#: ../../autogen/CHANGELOG.md:115 ../../autogen/CHANGELOG.md:119
+#: ../../autogen/CHANGELOG.md:123 ../../autogen/CHANGELOG.md:127
+#: ../../autogen/CHANGELOG.md:131 ../../autogen/CHANGELOG.md:135
+#: ../../autogen/CHANGELOG.md:139 ../../autogen/CHANGELOG.md:143
+#: ../../autogen/CHANGELOG.md:147 ../../autogen/CHANGELOG.md:151
+#: ../../autogen/CHANGELOG.md:155 ../../autogen/CHANGELOG.md:159
+#: ../../autogen/CHANGELOG.md:163 ../../autogen/CHANGELOG.md:167
+#: ../../autogen/CHANGELOG.md:171 ../../autogen/CHANGELOG.md:175
+#: ../../autogen/CHANGELOG.md:179 ../../autogen/CHANGELOG.md:183
+#: ../../autogen/CHANGELOG.md:187 ../../autogen/CHANGELOG.md:191
+#: ../../autogen/CHANGELOG.md:199 ../../autogen/CHANGELOG.md:207
+#: ../../autogen/CHANGELOG.md:215 ../../autogen/CHANGELOG.md:219
+#: ../../autogen/CHANGELOG.md:223 ../../autogen/CHANGELOG.md:227
+#: ../../autogen/CHANGELOG.md:231 ../../autogen/CHANGELOG.md:235
+#: ../../autogen/CHANGELOG.md:239 ../../autogen/CHANGELOG.md:243
+#: ../../autogen/CHANGELOG.md:247 ../../autogen/CHANGELOG.md:251
+#: ../../autogen/CHANGELOG.md:255 ../../autogen/CHANGELOG.md:259
+#: ../../autogen/CHANGELOG.md:263 ../../autogen/CHANGELOG.md:271
+#: ../../autogen/CHANGELOG.md:275 ../../autogen/CHANGELOG.md:279
+#: ../../autogen/CHANGELOG.md:283 ../../autogen/CHANGELOG.md:287
+#: ../../autogen/CHANGELOG.md:291 ../../autogen/CHANGELOG.md:295
+#: ../../autogen/CHANGELOG.md:299 ../../autogen/CHANGELOG.md:303
+#: ../../autogen/CHANGELOG.md:307
+msgid "Full Changelog"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:7 ../../autogen/CHANGELOG.md:15
+#: ../../autogen/CHANGELOG.md:23 ../../autogen/CHANGELOG.md:35
+#: ../../autogen/CHANGELOG.md:43 ../../autogen/CHANGELOG.md:193
+#: ../../autogen/CHANGELOG.md:201 ../../autogen/CHANGELOG.md:209
+#: ../../autogen/CHANGELOG.md:265 ../../autogen/CHANGELOG.md:309
+msgid "Merged pull requests:"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:9
+msgid "First RC #46 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:11
+msgid "v0.0.67 (2021-04-22)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:17
+msgid "Quality Improv. #44 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:19
+msgid "v0.0.66 (2021-04-21)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:25
+msgid "CI and Tox and Lint ok #43 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:27
+msgid "v0.0.65 (2021-04-21)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:31
+msgid "v0.0.64 (2021-04-19)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:37
+msgid "Tox #42 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:39
+msgid "v0.0.63 (2021-04-17)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:45
+msgid "New Tox #41 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:46
+msgid "Final Tox #40 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:47
+msgid "Tox #39 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:49
+msgid "v0.0.62 (2021-04-12)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:53
+msgid "v0.0.61 (2021-04-12)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:57
+msgid "v0.0.60 (2021-04-12)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:61
+msgid "v0.0.59 (2021-04-12)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:65
+msgid "v0.0.58 (2021-04-12)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:69
+msgid "v0.0.57 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:73
+msgid "v0.0.56 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:77
+msgid "v0.0.55 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:81
+msgid "v0.0.54 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:85
+msgid "v0.0.53 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:89
+msgid "v0.0.52 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:93
+msgid "v0.0.51 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:97
+msgid "v0.0.50 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:101
+msgid "v0.0.49 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:105
+msgid "v0.0.47 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:109
+msgid "v0.0.46 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:113
+msgid "v0.0.45 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:117
+msgid "v0.0.44 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:121
+msgid "v0.0.43 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:125
+msgid "v0.0.42 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:129
+msgid "v0.0.41 (2021-04-11)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:133
+msgid "v0.0.40 (2021-04-10)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:137
+msgid "v0.0.39 (2021-04-09)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:141
+msgid "v0.0.38 (2021-04-09)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:145
+msgid "v0.0.37 (2021-04-08)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:149
+msgid "v0.0.36 (2021-04-07)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:153
+msgid "v0.0.35 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:157
+msgid "v0.0.34 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:161
+msgid "v0.0.33 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:165
+msgid "v0.0.32 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:169
+msgid "v0.0.31 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:173
+msgid "v0.0.30 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:177
+msgid "v0.0.29 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:181
+msgid "v0.0.28 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:185
+msgid "v0.0.27 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:189
+msgid "v0.0.26 (2021-04-05)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:195
+msgid "Test #38 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:197
+msgid "v0.0.25 (2021-04-04)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:203
+msgid "Test #37 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:205
+msgid "v0.0.24 (2021-04-03)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:211
+msgid "Test #36 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:213
+msgid "v0.0.23 (2021-04-03)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:217
+msgid "v0.0.22 (2021-04-03)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:221
+msgid "v0.0.21 (2021-04-03)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:225
+msgid "v0.0.20 (2021-04-03)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:229
+msgid "v0.0.19 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:233
+msgid "v0.0.18 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:237
+msgid "v0.0.17 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:241
+msgid "v0.0.16 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:245
+msgid "v0.0.15 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:249
+msgid "v0.0.14 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:253
+msgid "v0.0.13 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:257
+msgid "v0.0.12 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:261
+msgid "v0.0.11 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:267
+msgid "Test #35 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:269
+msgid "v0.0.10 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:273
+msgid "v0.0.9 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:277
+msgid "v0.0.8 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:281
+msgid "v0.0.7 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:285
+msgid "v0.0.6 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:289
+msgid "v0.0.5 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:293
+msgid "v0.0.4 (2021-04-02)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:297
+msgid "v0.0.3 (2021-04-01)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:301
+msgid "v0.0.2 (2021-04-01)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:305
+msgid "v0.0.1 (2021-04-01)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:311
+msgid "Test CI BuildDocs #34 (PiDroid-B)"
+msgstr ""
+
+#: ../../autogen/CHANGELOG.md:315
+msgid "* This Changelog was automatically generated by github_changelog_generator"
+msgstr ""
+
