@@ -1,5 +1,5 @@
 # docker build . --tag pidroidbot-discord
-FROM python:3.8-slim
+FROM python:3.9.5-slim
 
 LABEL version="1.0.5" maintainer="Pidroid-B" url="https://github.com/PiDroid-B/pidroidbot-discord"
 
